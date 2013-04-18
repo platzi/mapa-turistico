@@ -20,4 +20,19 @@ En esta primera fase se creará la estructura de la aplicación con Express Js y
 
 ### Fase 2 - Geolocalización y Sistema de gestión de usuarios
 
+...
+
 ### Fase 3 - Maquetación de la aplicación y adaptación a dispositivos móviles
+
+...
+
+
+---
+
+## Créditos y agradecimientos
+
+Iniciativa creada por @mikenieva y @davidsingal.
+
+Colaboradores:
+
+* ¿Quieres estar en esta lista? Ayúdanos :)
