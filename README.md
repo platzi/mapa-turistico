@@ -1,6 +1,6 @@
-# Mapa turístico
-
 ![Mapa](http://www.digitalsurgeons.com/wp-content/uploads/2010/12/geolocation.png)
+
+# Mapa turístico
 
 Proyecto creado para y por los alumnos de Mejorandola. El objetivo de este mapa es crear una aplicación donde todos los que deseemos participemos para crear una aplicación. Una aplicación creada para demostrar qué hemos aprendido y ganar una nueva experiencia colaborando en equipo.
 
@@ -29,7 +29,7 @@ En esta primera fase se creará la estructura de la aplicación con Express Js y
 
 ---
 
-## Créditos y agradecimientos
+#### Créditos y agradecimientos
 
 Iniciativa creada por @mikenieva y @davidsingal.
 
