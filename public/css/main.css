@@ -1,0 +1,12 @@
+body {
+	background: #222;
+	font-size: 1em;
+	color: #333;
+}
+
+#mimapa {
+	position: absolute;
+	height: 100%;
+	top: 0;
+	width: 100%;
+}
