@@ -10,7 +10,17 @@ Invito a cualquier que desee participar en este miniproyecto. ¡Animo!
 
 Una aplicación web donde en enseñar los lugares de tu ciudad o cualquier sitio del que estés orgulloso, pudiendo subir una foto y hacer un comentario. De momento sólo eso, ya se extenderá con un sistema de puntuaciones y comentarios de otros usuarios y otras ideas que se os ocurra.
 
-## El desarrollo - v1.0
+## Cómo colaborar
+
+Se puede colaborar activamente o de forma puntual. Si es de forma puntual tan sólo tienes que hacer un Fork del código y solicitar un "Pull Request" para añadir tu código al proyecto.
+
+A los que se comprometan activamente con el proyecto se les dará acceso al gestor de tareas (Do.com) para desarrollar el proyecto de una forma más eficiente. Dado que en Twitter no es fácil mantener mensajes privados, el primer contacto lo haremos por mail. Entonces, si quieres participar en el proyecto envíamos un correo a [undakel@gmail.com](mailto:undakel@gmail.com). De esta forma se crearía un pequeño equipo.
+
+Si sólo quieres dar una opinión, comentario o sugerencia puedes enviar un correo a la dirección del párrafo anterior o puedes usar la pestañita de Issues de Github (preferentemente).
+
+## El desarrollo (v1.0)
+
+NOTA: Esto aún estoy organizardelo y puede variar un poco.
 
 Para esta primera versión la aplicación será soportada sobre Node Js y se ha pensado hacer el desarrollo en 3 fases:
 
