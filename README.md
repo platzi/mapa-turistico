@@ -31,21 +31,37 @@ No son normas pero si nos ayudará a trabajar en equipo.
 
 ## El desarrollo (v1.0)
 
-NOTA: Esto aún estoy organizándolo y puede variar un poco.
-
 Para esta primera versión la aplicación será soportada sobre Node Js y se ha pensado hacer el desarrollo en 3 fases:
 
-### Fase 1 - Estructura y modelo de datos
+### Fase 1 - Modelo de datos y gestión de usuarios
 
-En esta primera fase se creará la estructura de la aplicación con Express Js y se implementará una base de datos.
+En esta primera fase vamos a definir cómo va ser nuestra base de datos para guardar usuarios, lugares y comentarios. Por último terminaremos por incoporar un sistema para gestionar registros y acceso de usuarios.
 
-### Fase 2 - Geolocalización y Sistema de gestión de usuarios
 
-...
+### Fase 2 - Mapa, introducción de lugares y sistema de comentarios
+
+En esta fase vamos a hacer el formulario para agregar lugares, imágenes y un pequeño comentario, además de mostrarlo en el mapa en tiempo real.
+
 
 ### Fase 3 - Maquetación de la aplicación y adaptación a dispositivos móviles
 
-...
+Puliremos nuestra aplicación para hacerlo más hermosa y además que se vea bien incluso desde un cepillo de dientes con pantalla y conexión a internet.
+
+## Cómo empezar
+
+Recuerden que deben tener **instalado Node Js**.
+
+Antes de arrancar por primera vez la aplicación debemos instalar primero las librerías:
+
+	npm install
+	
+Y para iniciar la aplicación podemos hacerlo simplemente tecleando:
+
+	node app
+	
+Si teneís dudas podeís revisar las instrucciones de [mapa-tiempo-real](https://github.com/davidsingal/mapa-tiempo-real), escribirnos o abrir un ticket en el apartado de Issues de Github (preferentemente).
+
+
 
 
 ---
