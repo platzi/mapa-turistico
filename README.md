@@ -2,21 +2,23 @@
 
 # Mapa turístico
 
-Proyecto creado para y por los alumnos de Mejorandola. El objetivo de este mapa es crear una aplicación donde todos los que deseemos participemos para crear una aplicación. Una aplicación creada para demostrar qué hemos aprendido y ganar una nueva experiencia colaborando en equipo. Si no sabes o piensas que tienes poco que aportar no te preocupes, otro de los objetivos es que todos aprendamos y nos apoyemos los alumnos.
+Proyecto creado para y por los alumnos de Mejorandola. El objetivo de este proyecto es crear una aplicación donde todos los que deseemos participemos para crear una aplicación. Una aplicación creada para demostrar qué hemos aprendido y ganar una nueva experiencia colaborando en equipo. Si no sabes o piensas que tienes poco que aportar no te preocupes, otro de los objetivos es que todos aprendamos y nos apoyemos los alumnos.
 
 Todos estáis invitados a participar en este miniproyecto. ¡Animo!
 
 ## La idea
 
-Una aplicación web donde en enseñar los lugares de tu ciudad o cualquier sitio del que estés orgulloso, pudiendo subir una foto y hacer un comentario. De momento sólo eso, ya se extenderá con un sistema de puntuaciones y comentarios de otros usuarios y otras ideas que se os ocurra.
+Una aplicación web donde mostrar los lugares de tu ciudad o cualquier sitio del que estés orgulloso, pudiendo subir una foto y hacer un comentario. De momento sólo eso, ya se extenderá con un sistema de puntuaciones y comentarios de otros usuarios y otras ideas que se os ocurra.
 
 ## Cómo colaborar
 
-Este miniproyecto en realidad es una extensión a la ponencia del día 9 de abril 'Geolocalización en NodeJS', si tenéis dudas y no sabéis como continuar podeis mirar el vídeo [Geolocalización en NodeJS](https://www.youtube.com/watch?v=b3nvLvKnLyw&feature=c4-feed-u).
+Este miniproyecto en realidad es una extensión a la ponencia del día 9 de abril '[Geolocalización en NodeJS](https://www.youtube.com/watch?v=b3nvLvKnLyw&feature=c4-feed-u)', donde explicamos la base del código y cómo trabajar con mapas, recomiendo echarle un ojo si no has trabajado antes con mapas y geolocalización.
 
-Se puede colaborar activamente o de forma puntual. Si es de forma puntual tan sólo tienes que hacer un Fork del código y solicitar un "Pull Request" para añadir tu código al proyecto.
+¿Qué necesitamos? ¡A todos vosotros! Seas diseñador, front end, back end o comunicador. Como dice el dicho, muchos granitos de arena hace una montaña.
 
-A los que se comprometan activamente con el proyecto se les dará acceso al gestor de tareas (Do.com) para desarrollar el proyecto de una forma más eficiente. Dado que en Twitter no es fácil mantener mensajes privados, el primer contacto lo haremos por mail. Entonces, si quieres participar en el proyecto envíamos un correo a [undakel@gmail.com](mailto:undakel@gmail.com). De esta forma se crearía un pequeño equipo.
+**Si quieres colaborar tan sólo tienes que hacer un "Fork" del código y solicitar un "Pull Request" para añadir tu aportación al proyecto**.
+
+A los que más colaboren o desean participar activamente con el proyecto se les dará acceso al gestor de tareas (Do.com) para desarrollar el proyecto de una forma más eficiente. Dado que en Twitter no es fácil mantener mensajes privados, el primer contacto lo haremos por mail. Entonces, si quieres participar en el proyecto envíamos un correo a [undakel@gmail.com](mailto:undakel@gmail.com). De esta forma se crearía un pequeño equipo.
 
 Si sólo quieres dar una opinión, comentario o sugerencia puedes enviar un correo a la dirección del párrafo anterior o puedes usar la pestañita de Issues de Github (preferentemente).
 
@@ -29,7 +31,7 @@ No son normas pero si nos ayudará a trabajar en equipo.
 
 ## El desarrollo (v1.0)
 
-NOTA: Esto aún estoy organizardelo y puede variar un poco.
+NOTA: Esto aún estoy organizándolo y puede variar un poco.
 
 Para esta primera versión la aplicación será soportada sobre Node Js y se ha pensado hacer el desarrollo en 3 fases:
 
