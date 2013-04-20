@@ -12,6 +12,8 @@ Una aplicación web donde en enseñar los lugares de tu ciudad o cualquier sitio
 
 ## Cómo colaborar
 
+Este miniproyecto en realidad es una extensión a la ponencia del día 9 de abril 'Geolocalización en NodeJS', si tenéis dudas y no sabéis como continuar podeis mirar el vídeo [Geolocalización en NodeJS](https://www.youtube.com/watch?v=b3nvLvKnLyw&feature=c4-feed-u).
+
 Se puede colaborar activamente o de forma puntual. Si es de forma puntual tan sólo tienes que hacer un Fork del código y solicitar un "Pull Request" para añadir tu código al proyecto.
 
 A los que se comprometan activamente con el proyecto se les dará acceso al gestor de tareas (Do.com) para desarrollar el proyecto de una forma más eficiente. Dado que en Twitter no es fácil mantener mensajes privados, el primer contacto lo haremos por mail. Entonces, si quieres participar en el proyecto envíamos un correo a [undakel@gmail.com](mailto:undakel@gmail.com). De esta forma se crearía un pequeño equipo.
