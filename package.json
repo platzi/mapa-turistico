@@ -1,0 +1,8 @@
+{
+	"name": "mapa-turistico",
+	"description": "Proyecto colaborativo de los alumnos de Mejorandola",
+	"version": "0.0.1",
+	"dependencies": {
+		"express": "*"
+	}
+}
