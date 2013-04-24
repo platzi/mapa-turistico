@@ -2,12 +2,12 @@ function onDocumentReady() {
 	var socket = io.connect(window.location.href);
 
     var map = L.map('mimapa', {
-	    center: [0, -23],
-	    zoom: 3
-	});
+    	center: [0, -23],
+    	zoom: 3
+    });
 
 	var tiles = L.tileLayer('http://a.tiles.mapbox.com/v3/calosth.map-v5t9aoe3/{z}/{x}/{y}.png');
-	
+
 	map.addLayer(tiles);
 
 	map.locate({
@@ -35,6 +35,15 @@ function onDocumentReady() {
 		map.addLayer(marker);
 		marker.bindPopup('Estás aquí');
 	}
+
+	// Efectos para mostrar/ocultar formulario.
+	var $form = $("#formulario");
+	$form.fadeIn(); // Mostrar formualrio al iniciar.
+	// Oculta el formulario.
+	$("#cerrar").on("click", function(e){
+		e.preventDefault();
+		$form.fadeOut();
+	});
 }
 
 $(document).on('ready', onDocumentReady);
