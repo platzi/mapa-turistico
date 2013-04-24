@@ -62,7 +62,11 @@ Y para iniciar la aplicación podemos hacerlo simplemente tecleando:
 Si teneís dudas podeís revisar las instrucciones de [mapa-tiempo-real](https://github.com/davidsingal/mapa-tiempo-real), escribirnos o abrir un ticket en el apartado de Issues de Github (preferentemente).
 
 
+## Recursos
 
+* [Cómo hacer un fork](http://aprendegit.com/fork-de-repositorios-para-que-sirve/?goback=%2Egde_3956944_member_214176162)
+* [Mantener tu fork al día](http://aprendegit.com/mantener-tu-fork-al-dia/)
+* [Qué es un pull request](http://aprendegit.com/que-es-un-pull-request/)
 
 ---
 
