@@ -10,9 +10,17 @@ html(lang="es")
         link(rel="stylesheet", href="http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.css")
         link(rel="stylesheet", href="/css/main.css")
     body
-        div(id="mimapa")
-        div(id="formulario", style="display:none;")
-            h1 agregar sitio turisticos
+        header(id="header")
+            h1 Mapa turístico
+        section(id="sidebar")
+            h2 Últimos sitios agregados
+            ul(id="places")
+
+        section(id="main")
+            div(id="mimapa")
+
+        article(id="formulario", style="display:none;")
+            h1 Agregar sitio turistico
             form(action="#", methos="post")
                 a(id="cerrar", href="#cerrar") x
                 p
