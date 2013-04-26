@@ -1,0 +1,38 @@
+!!!
+html(lang="es")
+    head
+        meta(charset="utf-8")
+        title= title
+        meta(name="description", content= description)
+        meta(name="viewport", content="width=device-width, initial-scale=1, maximum-scale=1")
+
+        link(rel="stylesheet", href="/css/normalize.css")
+        link(rel="stylesheet", href="http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.css")
+        link(rel="stylesheet", href="/css/main.css")
+    body
+        header(id="header")
+            h1 Mapa turístico
+        section(id="sidebar")
+            h2 Últimos sitios agregados
+            ul(id="places")
+
+        section(id="main")
+            div(id="mimapa")
+
+        section(id="place")
+            a(id="cerrar", href="#cerrar") x
+            h1= title
+            p= description
+            abbr= autor
+            div(id="social")
+                a(href="http://facebook.com", target="_blank") 
+                    img(src="css/img/facebook.png", alt="Compartir en Facebook")
+                a(href="http://twitter.com", target="_blank") 
+                    img(src="css/img/twitter.png", alt="Compartir en Twitter")
+                a(href="http://pinterest.com", target="_blank") 
+                    img(src="css/img/pinterest.png", alt="Compartir en Pinterest")
+
+        script(src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js")
+        script(src="http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.js")
+        script(src="/socket.io/socket.io.js")
+        script(src="/js/main.js")

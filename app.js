@@ -22,6 +22,14 @@ app.get('/', function(req, res) {
 	});
 });
 
+app.get('/lugar',function(req, res){
+	res.render('place', {
+		title: 'Toronto',
+		description: 'Toronto es la ciudad canadiense más visitada por los turistas, recibiendo cada año algo más de 4 millones de personas y ocupando el puesto 14. La siguiente ciudad del país, Montreal, queda muy lejos con 679 000 turistas, según un estudio realizado con relación al año 2006',
+		autor: 'Carlos Suarez'
+	});
+});
+
 io.sockets.on('connection', function (socket) {
 	socket.on('coords:me', function (data) {
 		socket.broadcast.emit('coords:user', data);
