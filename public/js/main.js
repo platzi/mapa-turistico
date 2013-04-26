@@ -44,6 +44,8 @@ function onDocumentReady() {
 		e.preventDefault();
 		$form.fadeOut();
 	});
+	//Efecto para que se pueda mover el formulario.
+	$form.draggable();
 }
 
 $(document).on('ready', onDocumentReady);
