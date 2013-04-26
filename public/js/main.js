@@ -2,7 +2,7 @@ function onDocumentReady() {
 	var socket = io.connect(window.location.href);
 
     var map = L.map('mimapa', {
-    	center: [0, -23],
+    	center: [0, -28],
     	zoom: 3
     });
 
@@ -23,7 +23,7 @@ function onDocumentReady() {
 		var marker = L.marker([mycoords.lat, mycoords.lng]);
 
 		map.addLayer(marker);
-		marker.bindPopup('Estás aquí');
+		marker.bindPopup('<b>Estás aquí</b>');
 
 		socket.emit('coords:me', {latlng: mycoords});
 	}
