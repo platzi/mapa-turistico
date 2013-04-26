@@ -146,8 +146,8 @@ input[type="submit"]{
 #place h1{
     margin: 0em 0;
     padding: 0.5em 2em 0.5em 0.6em;
-    background:rgba(98, 165, 58, .8);
-    box-shadow: rgba(98, 165, 58, .5) 0 .4em;
+    background: rgba(41, 128, 185, 1);
+    box-shadow: rgba(52, 152, 219, .5) 0 .4em;
     color: rgba(255, 255, 255, 1);
     text-align: left;
     text-transform: uppercase;
