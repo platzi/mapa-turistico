@@ -38,11 +38,13 @@ function onDocumentReady() {
 
 	// Efectos para mostrar/ocultar formulario.
 	var $form = $("#formulario");
+	var $place = $("#place");
 	$form.fadeIn(); // Mostrar formualrio al iniciar.
 	// Oculta el formulario.
 	$("#cerrar").on("click", function(e){
 		e.preventDefault();
 		$form.fadeOut();
+		$place.fadeOut();
 	});
 }
 
