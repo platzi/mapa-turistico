@@ -6,10 +6,75 @@ body {
     font-size: 16px;
 }
 
-/* Header */
-#header {
-    background: #222;
+label {
+    color:#ccc;
+    font-size: .65em;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, .7);
+    text-transform:uppercase;
 }
+
+input, textarea{
+    border-bottom: 3px solid rgba(72, 118, 255, .8);
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+    padding: .3em;
+    width: 95%;
+}
+
+input[type="submit"]{
+    background: rgba(72, 118, 255, 1);
+    box-shadow: rgba(72, 118, 255, .5) 0 .4em;
+    color: rgba(255, 255, 255, 1);
+    font-size: .8em;
+    padding: 1em 0;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, .5);
+    text-transform: uppercase;
+    width: 100%;
+}
+/* Formulario */
+#cerrar{
+    background: rgba(255, 0, 0, .8);
+    border-radius: 90% 90%;
+    box-shadow: 0 0 3px rgba(0, 0, 0, .5);
+    color: #fff;
+    height: 2.2em;
+    line-height: 2.2em;
+    position: absolute;
+    right: -15px;
+    text-align: center;
+    text-decoration: none;
+    top: -20px;
+    width: 2.2em;
+}
+
+#formulario{
+    position: absolute;
+    background: rgba(0, 0, 0, .8);
+    border-radius: 0 7px 7px 7px;
+    box-shadow: rgba(0, 0, 0, .5) 5px 5px 7px;
+    left: 50%;
+    margin-left: -125px;
+    padding: 1em;
+    width: 250px;
+    top: 15%;
+    z-index: 999;
+}
+
+#formulario h2{
+    background:rgba(98, 165, 58, 1);
+    box-shadow: rgba(98, 165, 58, .5) 0 .4em;
+    color: rgba(255, 255, 255, 1);
+    font-size: .8em;
+    margin: 1em 0;
+    padding: 1.5em 0;
+    text-align: center;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, .5);
+    text-transform: uppercase;
+}
+
+
+/* Header */
 #header h1 {
     color: #fff;
     font-size: 1.2em;
@@ -56,73 +121,75 @@ body {
     font-size: 1em;
     margin: 0;
     padding: .5em;
+    text-align:  center;
+}
+
+@media screen and (max-width: 1200px) {
+    header {
+        background: red;
+    }
+     #formulario {
+        left: 140px;
+    }
+    #sidebar {
+        width: 290px;
+    }
+    #main {
+        left: 290px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    header {
+        background: green;
+    }
+    #formulario {
+        left: 100px;
+    }
+    #sidebar {
+        width: 280px;
+    }
+    #main {
+        left: 280px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    header {
+        background: blue;
+    }
+     #formulario {
+        left: 140px;
+    }
 }
 
 
-/* Formulario */
-#cerrar{
-    background: rgba(255, 0, 0, .8);
-    border-radius: 90% 90%;
-    box-shadow: 0 0 3px rgba(0, 0, 0, .5);
-    color: #fff;
-    height: 2.2em;
-    line-height: 2.2em;
-    position: absolute;
-    right: -15px;
-    text-align: center;
-    text-decoration: none;
-    top: -20px;
-    width: 2.2em;
+@media screen and (max-width: 600px) {
+    header {
+        background: cyan;
+    }
+    #formulario {
+        left: 0;
+    }
+    #sidebar {
+        height: 100%;
+        top: 650px;
+        width: 100%;
+    }
+    #main {
+        left: 0;
+        height: 620px;
+        width:  100%;
+    }
 }
 
-#formulario{
-    position: relative;
-    background: rgba(0, 0, 0, .8);
-    border-radius: 0 7px 7px 7px;
-    box-shadow: rgba(0, 0, 0, .5) 5px 5px 7px;
-    margin: 100px auto 50px auto;
-    padding: 1em;
-    width: 250px;
+@media screen and (max-width: 480px) {
+    header {
+        background: magenta;
+    }
+    
 }
 
-#formulario h1{
-    background:rgba(98, 165, 58, 1);
-    box-shadow: rgba(98, 165, 58, .5) 0 .4em;
-    color: rgba(255, 255, 255, 1);
-    font-size: .8em;
-    margin: 1em 0;
-    padding: 1.5em 0;
-    text-align: center;
-    text-shadow: 3px 3px 5px rgba(0, 0, 0, .5);
-    text-transform: uppercase;
-}
-
-label {
-    color:#ccc;
-    font-size: .65em;
-    text-shadow: 3px 3px 5px rgba(0, 0, 0, .7);
-    text-transform:uppercase;
-}
-
-input, textarea{
-    border-bottom: 3px solid rgba(72, 118, 255, .8);
-    border-left: 0;
-    border-right: 0;
-    border-top: 0;
-    padding: .3em;
-    width: 95%;
-}
-
-input[type="submit"]{
-    background: rgba(72, 118, 255, 1);
-    box-shadow: rgba(72, 118, 255, .5) 0 .4em;
-    color: rgba(255, 255, 255, 1);
-    font-size: .8em;
-    padding: 1em 0;
-    text-shadow: 3px 3px 5px rgba(0, 0, 0, .5);
-    text-transform: uppercase;
-    width: 100%;
-}
 
 /* Place */
 #place{
