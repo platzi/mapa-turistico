@@ -73,6 +73,42 @@ input[type="submit"]{
     text-transform: uppercase;
 }
 
+/*Login Twitter*/
+#logintt{
+    position: absolute;
+    background: rgba(0, 0, 0, .8);
+    border-radius: 0 7px 7px 7px;
+    box-shadow: rgba(0, 0, 0, .5) 5px 5px 7px;
+    left: 50%;
+    margin-left: -125px;
+    padding: 1em;
+    width: 250px;
+    top: 25%;
+    z-index: 999;
+}
+
+#logintt h2{
+    background:rgba(98, 165, 58, 1);
+    box-shadow: rgba(98, 165, 58, .5) 0 .4em;
+    color: rgba(255, 255, 255, 1);
+    font-size: .8em;
+    margin: 1em 0;
+    padding: 1.5em 0;
+    text-align: center;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, .5);
+    text-transform: uppercase;
+}
+
+#logintt a{
+    background-color: #1bb2e9;
+    color:#fff;
+    display:block;
+    font-weight: bold;
+    margin:2em auto;
+    padding:0.5em 0.2em;
+    text-align: center;
+    text-decoration: none;
+}
 
 /* Header */
 #header h1 {
@@ -82,6 +118,8 @@ input[type="submit"]{
     margin: 0;
     text-align: center;
 }
+
+
 
 /* Main */
 #main {
