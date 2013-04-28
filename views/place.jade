@@ -18,12 +18,21 @@ html(lang="es")
 
         section(id="main")
             div(id="mimapa")
-        section(id="logintt")
-            h2 ProudPlaces
-            a(id="tt", href="/auth/twitter", title="Conéctate con Twitter") Conéctate con Twitter
+
+        section(id="place")
+            a(id="cerrar", href="#cerrar") x
+            h1= title
+            p= description
+            abbr= autor
+            div(id="social")
+                a(href="http://facebook.com", target="_blank") 
+                    img(src="css/img/facebook.png", alt="Compartir en Facebook")
+                a(href="http://twitter.com", target="_blank") 
+                    img(src="css/img/twitter.png", alt="Compartir en Twitter")
+                a(href="http://pinterest.com", target="_blank") 
+                    img(src="css/img/pinterest.png", alt="Compartir en Pinterest")
 
         script(src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js")
-        script(src="//code.jquery.com/ui/1.10.2/jquery-ui.js")
         script(src="http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.js")
         script(src="/socket.io/socket.io.js")
         script(src="/js/main.js")
