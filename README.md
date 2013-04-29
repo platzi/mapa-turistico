@@ -16,11 +16,13 @@ Este miniproyecto en realidad es una extensión a la ponencia del día 9 de abri
 
 ¿Qué necesitamos? ¡A todos vosotros! Seas diseñador, front end, back end o comunicador. Como dice el dicho, muchos granitos de arena hace una montaña.
 
-**Si quieres colaborar tan sólo tienes que hacer un "Fork" del código y solicitar un "Pull Request" para añadir tu aportación al proyecto**.
+**Si quieres colaborar tan sólo tienes que hacer un "Fork" del código y solicitar un "Pull Request" para añadir tu aportación al proyecto**. Más abajo en el apartado de Recursos tienes documentación e información.
 
-A los que más colaboren o desean participar activamente con el proyecto se les dará acceso al gestor de tareas (Do.com) para desarrollar el proyecto de una forma más eficiente. Dado que en Twitter no es fácil mantener mensajes privados, el primer contacto lo haremos por mail. Entonces, si quieres participar en el proyecto envíamos un correo a [undakel@gmail.com](mailto:undakel@gmail.com). De esta forma se crearía un pequeño equipo.
+Una vez tengas hecho el Fork y tu copia funcione puedes **revisar la pestaña de Issues de Github** para ver las tareas que se están desarrollando y cuáles falta por hacer, también puedes proponer tus propias tareas, discusiones e incluso si has encontrado un fallo o un bug puedes hacernoslo saber en este mismo apartado.
 
-Si sólo quieres dar una opinión, comentario o sugerencia puedes enviar un correo a la dirección del párrafo anterior o puedes usar la pestañita de Issues de Github (preferentemente).
+Por otro lado los viernes a las 21:00 (hora en España) tenemos reuniones de los colaboradores donde puedes participar y conocer al resto de desarrolladores activos en el desarrollo del proyecto. Para participar en estas sesiones necesitas Google + y [añadirme](https://plus.google.com/u/0/111142569351915543389/posts).
+
+Si sólo quieres dar una opinión, comentario o sugerencia puedes enviar un correo a la dirección [undakel@gmail.com](mailto:undakel@gmail.com) o puedes usar la pestañita de Issues de Github (preferentemente).
 
 ## Recomendaciones antes de empezar
 
