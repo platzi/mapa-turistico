@@ -38,53 +38,12 @@ connection.connect();
 
 
 
-
-//le pasamos el usuario y crea la sesión
-passport.serializeUser(function(user, done) {
-  done(null, user.id);
-});
-
-
-passport.deserializeUser(function(id, done) {
-  connection.query('SELECT * FROM usuarios WHERE id="'+id+'"', function (err,usuario){
-              done(err, usuario);
-  });
-});
-
-passport.use(new TwitterStrategy({
-    consumerKey: "sVWLivQC1afK6ULcUqWjg",//consumer key
-    consumerSecret: "uGpUX34oJ8h7Hp5jiETk1hK1lgFykS6qXNM5vvf7QC0", //consumer secret
-    callbackURL: "http://localhost:3000/auth/twitter/callback"
-  },
-  function(token, tokenSecret, profile, done) {
-    // asynchronous verification, for effect...
-    process.nextTick(function () {
-      //si es válido la cuenta de twitter comprobamos que en nuestra base de datos este usuario no lo hayamos metido
-      usuario=profile.username;
-      id=profile._json.id;
-      connection.query('SELECT id From usuarios WHERE usuario="'+usuario+'"', function(err, rows, fields) {
-        if (err) throw err;
-        if(rows.length==0)
-        {
-          imagen=profile.photos[0].value;
-          connection.query('Insert into usuarios(id, usuario, imagen) values("'+id+'","'+usuario+'","'+imagen+'")', function (err,rows){
-              nuevoUsuario={"id":id, "usuario":usuario, "imagen":imagen};
-              done(null,nuevoUsuario);
-            });
-        }else{
-          connection.query('SELECT * FROM usuarios WHERE id="'+id+'"', function (err,usuario){
-              done(err, usuario[0]);
-          });
-        }
-      });
-    });
-  }
-));
-//fin conexion con twitter
+var host="";//tomará el valor del dominio
 
 // Routing
 app.get('/', function(req, res) {
-	if(typeof(req.user)=="undefined")
+	host=req.host;
+  if(typeof(req.user)=="undefined")
 	{
 		res.render('layout', {
 		title: 'Mapa en tiempo real',
@@ -141,5 +100,49 @@ io.sockets.on('connection', function (socket) {
 
 // Iniciamos server en el puerto 3000
 server.listen(3000);
+
+//le pasamos el usuario y crea la sesión
+passport.serializeUser(function(user, done) {
+  done(null, user.id);
+});
+
+
+passport.deserializeUser(function(id, done) {
+  connection.query('SELECT * FROM usuarios WHERE id="'+id+'"', function (err,usuario){
+              done(err, usuario);
+  });
+});
+
+passport.use(new TwitterStrategy({
+    consumerKey: "sVWLivQC1afK6ULcUqWjg",//consumer key
+    consumerSecret: "uGpUX34oJ8h7Hp5jiETk1hK1lgFykS6qXNM5vvf7QC0", //consumer secret
+    callbackURL: host+"/auth/twitter/callback"
+  },
+  function(token, tokenSecret, profile, done) {
+    // asynchronous verification, for effect...
+    process.nextTick(function () {
+      //si es válido la cuenta de twitter comprobamos que en nuestra base de datos este usuario no lo hayamos metido
+      usuario=profile.username;
+      id=profile._json.id;
+      connection.query('SELECT id From usuarios WHERE usuario="'+usuario+'"', function(err, rows, fields) {
+        if (err) throw err;
+        if(rows.length==0)
+        {
+          imagen=profile.photos[0].value;
+          connection.query('Insert into usuarios(id, usuario, imagen) values("'+id+'","'+usuario+'","'+imagen+'")', function (err,rows){
+              nuevoUsuario={"id":id, "usuario":usuario, "imagen":imagen};
+              done(null,nuevoUsuario);
+            });
+        }else{
+          connection.query('SELECT * FROM usuarios WHERE id="'+id+'"', function (err,usuario){
+              done(err, usuario[0]);
+          });
+        }
+      });
+    });
+  }
+));
+//fin conexion con twitter
+
 
 console.log('Servidor Node Js en http://localhost:3000');
