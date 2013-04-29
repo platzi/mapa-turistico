@@ -1,0 +1,9 @@
+- var items = [{ titulo : "Toronto", descripcion : "Loremp ipsum", latLng : "0,-38", imagen : "/images/toronto_thumb.jpg" },{ titulo : "Toronto", descripcion : "Loremp ipsum", latLng : "latLng", imagen : "/images/toronto_thumb.jpg" },{ titulo : "Toronto", descripcion : "Loremp ipsum", latLng : "latLng", imagen : "/images/toronto_thumb.jpg" },{ titulo : "Toronto", descripcion : "Loremp ipsum", latLng : "latLng", imagen : "/images/toronto_thumb.jpg" }]
+ul(id="places")
+    each item in items
+        li
+            a(href="#",title=item.titulo,data-latlng=item.latLng)
+                img(src=item.imagen,width="52",alt=item.titulo)
+                div
+                    h3= item.titulo
+                    p= item.descripcion
