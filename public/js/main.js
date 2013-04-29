@@ -10,6 +10,14 @@ function onDocumentReady() {
 
 	map.addLayer(tiles);
 
+	// Plugin GeoSearch.
+	// Nos permite ubicarnos en el mapa dando una direccion.
+	// Asi como lo hace Google Maps, de echo usa como proveedor Google Maps.
+	var geosearch = new L.Control.GeoSearch({
+            provider: new L.GeoSearch.Provider.Google(),
+            zoomLevel: 18
+    }).addTo(map);
+
 	map.locate({
 		enableHighAccuracy: true
 	});
@@ -37,17 +45,29 @@ function onDocumentReady() {
 	}
 
 	// Efectos para mostrar/ocultar formulario.
-	var $form = $("#formulario");
-	var $place = $("#place");
-	$form.fadeIn(); // Mostrar formualrio al iniciar.
-	// Oculta el formulario.
-	$("#cerrar").on("click", function(e){
+	var $form = $('#formulario');
+	var $place = $('#place');
+	//Efecto para que se pueda mover el formulario.
+	$form.draggable();
+
+	// Mostrar formualrio al iniciar.
+	$form.fadeIn();
+
+
+	$('#cerrar').on('click', cerrarFormulario); // Ocultar formaulario.
+	$('#guardar').on('click', guardarInformacion); // Guardar datos del lugar.
+
+	function cerrarFormulario(e){
 		e.preventDefault();
 		$form.fadeOut();
 		$place.fadeOut();
-	});
-	//Efecto para que se pueda mover el formulario.
-	$form.draggable();
+	}
+
+	function guardarInformacion(e){
+		e.preventDefault();
+		geosearch.geosearch($('#ubicacion').val());
+		$form.fadeOut();
+	}
 }
 
 $(document).on('ready', onDocumentReady);

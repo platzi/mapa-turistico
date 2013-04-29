@@ -225,7 +225,7 @@ input[type="submit"]{
     header {
         background: magenta;
     }
-    
+
 }
 
 
@@ -278,4 +278,9 @@ input[type="submit"]{
 
 #place a{
     text-decoration: none;
+}
+
+/* Esconder el input que crea el plugin GeoSearch */
+.leaflet-top.leaflet-center{
+    display: none;
 }
