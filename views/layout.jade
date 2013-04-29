@@ -8,6 +8,7 @@ html(lang="es")
 
         link(rel="stylesheet", href="/css/normalize.css")
         link(rel="stylesheet", href="http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.css")
+        //- link(rel="stylesheet", href="/css/l.geosearch.css")
         link(rel="stylesheet", href="/css/main.css")
     body
         header(id="header")
@@ -21,7 +22,7 @@ html(lang="es")
 
         article(id="formulario", style="display:none;")
             h2 Agregar sitio turistico
-            form(action="#", methos="post")
+            form(action="#", method="post")
                 a(id="cerrar", href="#cerrar") x
                 p
                     label(for="lugar") nombre:
@@ -40,10 +41,12 @@ html(lang="es")
                     br
                     textarea(id="descripcion", name="descripcion")
                 p
-                    input(type="submit", value="guardar")
+                    input(id="guardar", type="submit", value="guardar")
 
         script(src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js")
         script(src="//code.jquery.com/ui/1.10.2/jquery-ui.js")
         script(src="http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.js")
+        script(src="/js/l.control.geosearch.js")
+        script(src="/js/l.geosearch.provider.google.js")
         script(src="/socket.io/socket.io.js")
         script(src="/js/main.js")
