@@ -8,6 +8,11 @@ var app = express();
 var server = require('http').createServer(app);
 var io = require('socket.io').listen(server);
 var TwitterStrategy = require('passport-twitter').Strategy;
+var FacebookStrategy = require('passport-facebook').Strategy;
+
+// Datos de coneccion a Facebook
+var FACEBOOK_APP_ID = "422463831183129";
+var FACEBOOK_APP_SECRET = "b58d71edfe29e6feae82388230e2d055";
 
 // Base de datos
 var bbdd = require('./config/database.js').database;
@@ -91,6 +96,16 @@ passport.authenticate('twitter', {
     failureRedirect: '/'
 }));
 
+app.get('/auth/facebook',passport.authenticate('facebook'));
+
+app.get(
+    '/auth/facebook/callback', 
+    passport.authenticate('facebook', { failureRedirect: '/', display : 'touch' }),
+    function(req, res) {
+        res.redirect('/');
+    }
+);
+
 
 io.sockets.on('connection', function(socket) {
     socket.on('coords:me', function(data) {
@@ -113,13 +128,7 @@ passport.deserializeUser(function(id, done) {
     });
 });
 
-passport.use(new TwitterStrategy({
-    consumerKey: "sVWLivQC1afK6ULcUqWjg", //consumer key
-    consumerSecret: "uGpUX34oJ8h7Hp5jiETk1hK1lgFykS6qXNM5vvf7QC0", //consumer secret
-    callbackURL: host + "/auth/twitter/callback"
-},
-
-function(token, tokenSecret, profile, done) {
+var callbackLogin = function(token, tokenSecret, profile, done) {
     // asynchronous verification, for effect...
     process.nextTick(function() {
         //si es válido la cuenta de twitter comprobamos que en nuestra base de datos este usuario no lo hayamos metido
@@ -144,8 +153,22 @@ function(token, tokenSecret, profile, done) {
             }
         });
     });
-}));
+}
+
+passport.use(new TwitterStrategy({
+    consumerKey: "sVWLivQC1afK6ULcUqWjg", //consumer key
+    consumerSecret: "uGpUX34oJ8h7Hp5jiETk1hK1lgFykS6qXNM5vvf7QC0", //consumer secret
+    callbackURL: host + "/auth/twitter/callback"
+},callbackLogin));
 //fin conexion con twitter
+
+// Conexion Facebook
+passport.use(new FacebookStrategy({
+    clientID: FACEBOOK_APP_ID,
+    clientSecret: FACEBOOK_APP_SECRET,
+    callbackURL: host + "/auth/facebook/callback",
+    profileFields: ['id', 'username', 'photos']
+},callbackLogin));
 
 
 console.log('Servidor Node Js en http://localhost:3000');
