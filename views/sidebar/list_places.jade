@@ -1,9 +1,10 @@
 ul(id="places")
-    each item in lugares
-        li
-            a(href="#",title=item.titulo,data-latlng=item.latLng)
-                img(src=item.imagen,width="100",height="100",alt=item.titulo)
-                div
-                    div(class="center")
-                        h3= item.descripcion
-                        p= item.titulo
+    if lugares
+        each item in lugares
+            li
+                a(href="#",title=item.titulo,data-latlng=item.latLng)
+                    img(src=item.imagen,width="100",height="100",alt=item.titulo)
+                    div
+                        div(class="center")
+                            h3= item.descripcion
+                            p= item.titulo
