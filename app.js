@@ -37,14 +37,18 @@ var connection = mysql.createConnection(bbdd);
 connection.connect();
 
 var host = ""; //tomará el valor del dominio
+var lugares = {};
 
 // Routing
 app.get('/', function(req, res) {
     host = req.host;
     if (typeof(req.user) == "undefined") {
-        res.render('layout', {
-            title: 'Mapa en tiempo real',
-            description: 'Mi primer mapa'
+        connection.query('SELECT * FROM lugares', function(err, lugares) {
+            res.render('layout', {
+                title: 'Mapa en tiempo real',
+                description: 'Mi primer mapa',
+                lugares : lugares
+            });
         });
     } else {
         res.redirect('/mapa');

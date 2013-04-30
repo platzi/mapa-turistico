@@ -2,7 +2,7 @@
 body {
     background: #222;
     color: #333;
-    font-family:Arial;
+    font-family: Helvetica, Arial;
     font-size: 16px;
 }
 
@@ -140,7 +140,7 @@ input[type="submit"]{
 
 /* Sidebar */
 #sidebar {
-    background: #f6f6f6;
+    background: #f4f5f3;
     -webkit-box-shadow: 0 0 10px -2px rgba(0, 0, 0, .5);
     -moz-box-shadow: 0 0 10px -2px rgba(0, 0, 0, .5);
     -o-box-shadow: 0 0 10px -2px rgba(0, 0, 0, .5);
@@ -155,11 +155,14 @@ input[type="submit"]{
 }
 
 #sidebar h2 {
-    background: #fff;
-    font-size: 1em;
+    background: #dc2833;
+    color: #FFF;
+    font-size: 1.2em;
     margin: 0;
     padding: .5em;
     text-align:  center;
+    text-shadow: 1px 2px 5px #000;
+    filter: dropshadow(color=#000, offx=1, offy=1)
 }
 
 /* Sidebar Places */
@@ -169,35 +172,45 @@ input[type="submit"]{
 }
 
 #places li {
-	padding: 1em;
+	padding: 0;
+    margin-bottom: .5em;
 }
 
 #places a {
+    background-color: #FFF;
 	color: #666;
 	display: block;
+    padding: 1em;
 }
 
-#places a:hover {
-	color: #000;
+#places a:hover,
+#places a.active {
+	background-color: #e1e2e5;
 }
 
 #places a img {
-	display: inline-block;
-	margin-right: 1em;
-	vertical-align: top;
+    border-radius: 5em;
+	float: left;
 }
 
 #places a > div {
-	display: inline-block;
+	display: table;
+    height: 100px;
+    margin-left: 110px;
 	vertical-align: top;
 }
 
+#places a > div > .center {
+    display: table-cell;
+    vertical-align: middle;
+}
 #places a > div h3 {
+    font-size: .9em;
 	margin: .2em 0;
 }
 
 #places a > div p {
-	font-size: .8em;
+	font-size: .7em;
 	margin: 0;
 }
 
