@@ -1,39 +1,44 @@
--- phpMyAdmin SQL Dump
--- version 3.5.2.2
--- http://www.phpmyadmin.net
---
--- Servidor: 127.0.0.1
--- Tiempo de generación: 28-04-2013 a las 22:43:53
--- Versión del servidor: 5.5.27
--- Versión de PHP: 5.4.7
-
-SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
-
-
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
---
--- Base de datos: `mapaturistico`
---
 
--- --------------------------------------------------------
+# Dump of table lugares
+# ------------------------------------------------------------
 
---
--- Estructura de tabla para la tabla `usuarios`
---
+DROP TABLE IF EXISTS `lugares`;
 
-CREATE TABLE IF NOT EXISTS `usuarios` (
+CREATE TABLE `lugares` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `fk_usuario_id` int(11) DEFAULT NULL,
+  `titulo` varchar(100) DEFAULT NULL,
+  `descripcion` varchar(100) DEFAULT NULL,
+  `latLng` varchar(10) DEFAULT NULL,
+  `imagen` varchar(200) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+# Dump of table usuarios
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `usuarios`;
+
+CREATE TABLE `usuarios` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `usuario` varchar(255) NOT NULL,
   `imagen` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `usuario` (`usuario`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

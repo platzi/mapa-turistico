@@ -190,14 +190,13 @@ input[type="submit"]{
 
 #places a img {
     border-radius: 5em;
-	display: inline-block;
-	margin-right: 1em;
-	vertical-align: top;
+	float: left;
 }
 
 #places a > div {
-	display: inline-table;
+	display: table;
     height: 100px;
+    margin-left: 110px;
 	vertical-align: top;
 }
 
@@ -206,51 +205,12 @@ input[type="submit"]{
     vertical-align: middle;
 }
 #places a > div h3 {
-    font-size: 1em;
+    font-size: .9em;
 	margin: .2em 0;
 }
 
 #places a > div p {
-	font-size: .8em;
-	margin: 0;
-}
-
-/* Sidebar Places */
-#places {
-	list-style: none;
-	padding: 0;
-}
-
-#places li {
-	padding: 1em;
-}
-
-#places a {
-	color: #666;
-	display: block;
-}
-
-#places a:hover {
-	color: #000;
-}
-
-#places a img {
-	display: inline-block;
-	margin-right: 1em;
-	vertical-align: top;
-}
-
-#places a > div {
-	display: inline-block;
-	vertical-align: top;
-}
-
-#places a > div h3 {
-	margin: .2em 0;
-}
-
-#places a > div p {
-	font-size: .8em;
+	font-size: .7em;
 	margin: 0;
 }
 

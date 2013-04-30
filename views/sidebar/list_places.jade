@@ -1,6 +1,5 @@
-- var items = [{ titulo : "Pfeiffer Beach, Big Sur, CA", descripcion : "Atardecer magnífico", latLng : "0,-38", imagen : "/images/toronto_thumb.jpg" },{ titulo : "Kaieteur Falls, Guyana", descripcion : "Cataratas", latLng : "latLng", imagen : "/images/toronto_thumb.jpg" },{ titulo : "Shinjang, China", descripcion : "Tranquilidad", latLng : "latLng", imagen : "/images/toronto_thumb.jpg" },{ titulo : "Melbourne VIC Australia", descripcion : "Una vista genial", latLng : "latLng", imagen : "/images/toronto_thumb.jpg" }]
 ul(id="places")
-    each item in items
+    each item in lugares
         li
             a(href="#",title=item.titulo,data-latlng=item.latLng)
                 img(src=item.imagen,width="100",height="100",alt=item.titulo)
