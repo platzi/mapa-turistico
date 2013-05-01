@@ -25,28 +25,7 @@ html(lang="es")
             h2 ProudPlaces
             a(id="tt", href="/auth/twitter", title="Conéctate con Twitter") Conéctate con Twitter
 
-        article(id="formulario", style="display:none;")
-            h2 Agregar sitio turistico
-            form(action="#", method="post")
-                a(id="cerrar", href="#cerrar") x
-                p
-                    label(for="lugar") nombre:
-                    br
-                    input(id="lugar", name="lugar", type="text")
-                p
-                    label(for="ubicacion") ubicacion:
-                    br
-                    input(id="ubicacion", name="ubicacion", type="text")
-                p
-                    label(for="imagen") imagen:
-                    br
-                    input(id="imagen", name="imagen", type="file")
-                p
-                    label(for="descripcion") descripcion:
-                    br
-                    textarea(id="descripcion", name="descripcion")
-                p
-                    input(id="guardar", type="submit", value="guardar")
+        
 
         script(src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js")
         script(src="//code.jquery.com/ui/1.10.2/jquery-ui.js")

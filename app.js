@@ -51,18 +51,11 @@ app.get('/', function(req, res) {
             });
         });
     } else {
-        res.redirect('/mapa');
-    }
-});
-
-app.get('/mapa', function(req, res) {
-    if (typeof(req.user) == "undefined") {
-        res.redirect('/');
-    } else {
         res.render('mapa', {
             title: 'Mapa en tiempo real',
             description: 'Mi primer mapa',
-            usuario: req.user
+            usuario: req.user,
+            lugares: lugares
         });
     }
 });
@@ -87,7 +80,7 @@ app.get('/auth/twitter', passport.authenticate('twitter'));
 //url dónde devuelve si realmente fue correcto o no
 app.get('/auth/twitter/callback',
 passport.authenticate('twitter', {
-    successRedirect: '/mapa',
+    successRedirect: '/',
     failureRedirect: '/'
 }));
 
@@ -125,10 +118,12 @@ function(token, tokenSecret, profile, done) {
         //si es válido la cuenta de twitter comprobamos que en nuestra base de datos este usuario no lo hayamos metido
         usuario = profile.username;
         id = profile._json.id;
+        imagen = profile.photos[0].value;
         connection.query('SELECT id From usuarios WHERE usuario="' + usuario + '"', function(err, rows, fields) {
             if (err) throw err;
+            //si no existe en la base de datos lo insertamos
             if (rows.length == 0) {
-                imagen = profile.photos[0].value;
+                
                 connection.query('Insert into usuarios(id, usuario, imagen) values("' + id + '","' + usuario + '","' + imagen + '")', function(err, rows) {
                     nuevoUsuario = {
                         "id": id,
@@ -138,8 +133,24 @@ function(token, tokenSecret, profile, done) {
                     done(null, nuevoUsuario);
                 });
             } else {
-                connection.query('SELECT * FROM usuarios WHERE id="' + id + '"', function(err, usuario) {
-                    done(err, usuario[0]);
+                //si si existe comprobamos primero que los parametros de ususario e imagen no han cambiado
+                connection.query('SELECT * FROM usuarios WHERE id="' + id + '"', function(err, registro) {
+                    if(err) throw err;
+                    if(registro[0]["usuario"]==usuario && registro[0]["imagen"]==imagen)
+                    {
+                        done(err, registro[0]);
+                    }else{
+                        connection.query('UPDATE usuarios SET usuario="'+usuario+'", imagen="'+imagen+'" WHERE id="'+id+'"', function(err, num) {
+                            if(err) throw err;
+                             usuarioEditado = {
+                                "id": id,
+                                "usuario": usuario,
+                                "imagen": imagen
+                            };
+                                done(null, usuarioEditado);
+                        });
+                    }
+                    
                 });
             }
         });
