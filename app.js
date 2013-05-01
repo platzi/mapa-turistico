@@ -51,18 +51,11 @@ app.get('/', function(req, res) {
             });
         });
     } else {
-        res.redirect('/mapa');
-    }
-});
-
-app.get('/mapa', function(req, res) {
-    if (typeof(req.user) == "undefined") {
-        res.redirect('/');
-    } else {
         res.render('mapa', {
             title: 'Mapa en tiempo real',
             description: 'Mi primer mapa',
-            usuario: req.user
+            usuario: req.user,
+            lugares: lugares
         });
     }
 });
@@ -87,7 +80,7 @@ app.get('/auth/twitter', passport.authenticate('twitter'));
 //url dónde devuelve si realmente fue correcto o no
 app.get('/auth/twitter/callback',
 passport.authenticate('twitter', {
-    successRedirect: '/mapa',
+    successRedirect: '/',
     failureRedirect: '/'
 }));
 
