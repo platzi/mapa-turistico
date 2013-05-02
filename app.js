@@ -47,17 +47,14 @@ var lugares = {};
 // Routing
 app.get('/', function(req, res) {
     host = req.host;
-    if (typeof(req.user) == "undefined") {
-        connection.query('SELECT * FROM lugares', function(err, lugares) {
-            res.render('layout', {
-                title: 'Mapa en tiempo real',
-                description: 'Mi primer mapa',
-                lugares : lugares
-            });
+    connection.query('SELECT * FROM lugares', function(err, lugares) {
+        res.render('layout', {
+            title: 'Mapa en tiempo real',
+            description: 'Mi primer mapa',
+            lugares : lugares,
+            usuario : req.user
         });
-    } else {
-        res.redirect('/mapa');
-    }
+    });
 });
 
 app.get('/mapa', function(req, res) {

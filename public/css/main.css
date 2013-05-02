@@ -111,12 +111,48 @@ input[type="submit"]{
 }
 
 /* Header */
-#header h1 {
+header {
+    padding: .7em 0;
+}
+
+header h1 {
     color: #fff;
+    float: left;
     font-size: 1.2em;
-    line-height: 40px;
-    margin: 0;
+    margin: 0 0 0 10px;
     text-align: center;
+    vertical-align: top;
+    width: 310px;
+}
+
+header .opciones {
+    float: right;
+    margin-right: 10px;
+}
+
+header .opciones img {
+    height: 24px;
+    width: 24px;
+}
+
+header .opciones a {
+    color: #fff;
+}
+
+header .opciones .btn {
+    background-color: #656767;
+    display: inline-block;
+    font-size: .8em;
+    margin-right: .4em;
+    padding: .5em;
+    text-decoration: none;
+    vertical-align: top
+}
+
+header .opciones .welcome {
+    display: inline-block;
+    line-height: 24px;
+    vertical-align: top;
 }
 
 
@@ -127,7 +163,7 @@ input[type="submit"]{
     bottom: 0;
     left: 320px;
     right: 0;
-    top: 40px;
+    top: 50px;
 }
 
 #mimapa {
@@ -149,7 +185,7 @@ input[type="submit"]{
     bottom: 0;
     left: 0;
     position: absolute;
-    top: 40px;
+    top: 50px;
     width: 320px;
     z-index: 1;
 }
@@ -335,4 +371,21 @@ input[type="submit"]{
 /* Esconder el input que crea el plugin GeoSearch */
 .leaflet-top.leaflet-center{
     display: none;
+}
+
+.clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+ 
+html[xmlns] .clearfix {
+    display: block;
+}
+ 
+* html .clearfix {
+    height: 1%;
 }
