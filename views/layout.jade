@@ -11,16 +11,8 @@ html(lang="es")
         //- link(rel="stylesheet", href="/css/l.geosearch.css")
         link(rel="stylesheet", href="/css/main.css")
     body
-        header(id="header",class="clearfix")
-            h1 ProudPlaces
-            div(class="opciones")
-                a(class="btn",href="#") Acerca del proyecto
-                a(class="btn",href="#") Colabora con nosotros
-                if usuario
-                    p(class="welcome")
-                        img(src="#{usuario[0].imagen}"), Hola #{usuario[0].username} | 
-                        a(href="/salir") Cerrar sesión
-
+        header(id="header")
+            h1 Mapa turístico
         section(id="sidebar")
             h2 Últimos sitios agregados
             include sidebar/list_places
@@ -32,7 +24,7 @@ html(lang="es")
         section(id="logintt")
             h2 ProudPlaces
             a(id="tt", href="/auth/twitter", title="Conéctate con Twitter") Conéctate con Twitter
-            a(id="tt", href="/auth/facebook", title="Conéctate con Facebook") Conéctate con Facebook
+            a(id="fb", href="/auth/facebook", title="Conéctate con Facebook") Conéctate con Facebook
 
         
 
