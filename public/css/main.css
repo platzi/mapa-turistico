@@ -167,37 +167,37 @@ input[type="submit"]{
 
 /* Sidebar Places */
 #places {
-	list-style: none;
-	padding: 0;
+    list-style: none;
+    padding: 0;
 }
 
 #places li {
-	padding: 0;
+    padding: 0;
     margin-bottom: .5em;
 }
 
 #places a {
     background-color: #FFF;
-	color: #666;
-	display: block;
+    color: #666;
+    display: block;
     padding: 1em;
 }
 
 #places a:hover,
 #places a.active {
-	background-color: #e1e2e5;
+    background-color: #e1e2e5;
 }
 
 #places a img {
     border-radius: 5em;
-	float: left;
+    float: left;
 }
 
 #places a > div {
-	display: table;
+    display: table;
     height: 100px;
     margin-left: 110px;
-	vertical-align: top;
+    vertical-align: top;
 }
 
 #places a > div > .center {
@@ -206,12 +206,12 @@ input[type="submit"]{
 }
 #places a > div h3 {
     font-size: .9em;
-	margin: .2em 0;
+    margin: .2em 0;
 }
 
 #places a > div p {
-	font-size: .7em;
-	margin: 0;
+    font-size: .7em;
+    margin: 0;
 }
 
 @media screen and (max-width: 1200px) {

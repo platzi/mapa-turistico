@@ -8,6 +8,7 @@
 		"socket.io": "*",
 		"passport":"*",
 		"passport-twitter":"*",
+		"passport-facebook":"*",
 		"mysql":"*"
 	}
 }
