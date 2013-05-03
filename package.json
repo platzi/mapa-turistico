@@ -5,6 +5,10 @@
 	"dependencies": {
 		"express": "*",
 		"jade": "*",
-		"socket.io": "*"
+		"socket.io": "*",
+		"passport":"*",
+		"passport-twitter":"*",
+		"passport-facebook":"*",
+		"mysql":"*"
 	}
 }
