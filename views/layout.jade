@@ -1,11 +1,15 @@
 !!!
+// if IE 8         
+    <html class="no-js lt-ie9">
+// if gt IE 8
+    <html class="no-js">
 html(lang="es")
     head
         meta(charset="utf-8")
         title= title
         meta(name="description", content= description)
         meta(name="viewport", content="width=device-width, initial-scale=1, maximum-scale=1")
-
+        meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
         link(rel="stylesheet", href="/css/normalize.css")
         link(rel="stylesheet", href="http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.css")
         link(rel="stylesheet", href="/css/main.css")
