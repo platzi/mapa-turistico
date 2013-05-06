@@ -6,7 +6,7 @@ function onDocumentReady() {
     	zoom: 3
     });
 
-	var tiles = L.tileLayer('http://a.tiles.mapbox.com/v3/calosth.map-v5t9aoe3/{z}/{x}/{y}.png');
+	var tiles = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
 
 	map.addLayer(tiles);
 
