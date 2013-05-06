@@ -8,11 +8,6 @@ var app = express();
 var server = require('http').createServer(app);
 var io = require('socket.io').listen(server);
 var TwitterStrategy = require('passport-twitter').Strategy;
-var FacebookStrategy = require('passport-facebook').Strategy;
-
-// Datos de coneccion a Facebook
-var FACEBOOK_APP_ID = "422463831183129";
-var FACEBOOK_APP_SECRET = "b58d71edfe29e6feae82388230e2d055";
 
 // Base de datos
 var bbdd = require('./config/database.js').database;
@@ -42,8 +37,17 @@ var connection = mysql.createConnection(bbdd);
 connection.connect();
 
 var host = ""; //tomará el valor del dominio
-var lugares = {};
-
+var lugares = [{
+    titulo: "San Carlos",
+    latLng: "15.0002,-14.1511",
+    imagen: "#",
+    descripcion: "Descripcion"
+},{
+    titulo: "San Carlos",
+    latLng: "15.0002,-14.1511",
+    imagen: "#",
+    descripcion: "Descripcion"
+}];
 // Routing
 app.get('/', function(req, res) {
     host = req.host;
@@ -56,11 +60,18 @@ app.get('/', function(req, res) {
             });
         });
     } else {
+        res.redirect('/mapa');
+    }
+});
+
+app.get('/mapa', function(req, res) {
+    if (typeof(req.user) == "undefined") {
+        res.redirect('/');
+    } else {
         res.render('mapa', {
             title: 'Mapa en tiempo real',
             description: 'Mi primer mapa',
-            usuario: req.user,
-            lugares: lugares
+            usuario: req.user
         });
     }
 });
@@ -85,19 +96,9 @@ app.get('/auth/twitter', passport.authenticate('twitter'));
 //url dónde devuelve si realmente fue correcto o no
 app.get('/auth/twitter/callback',
 passport.authenticate('twitter', {
-    successRedirect: '/',
+    successRedirect: '/mapa',
     failureRedirect: '/'
 }));
-
-app.get('/auth/facebook',passport.authenticate('facebook'));
-
-app.get(
-    '/auth/facebook/callback', 
-    passport.authenticate('facebook', { failureRedirect: '/', display : 'touch' }),
-    function(req, res) {
-        res.redirect('/');
-    }
-);
 
 
 io.sockets.on('connection', function(socket) {
@@ -121,18 +122,22 @@ passport.deserializeUser(function(id, done) {
     });
 });
 
-var callbackLogin = function(token, tokenSecret, profile, done) {
+passport.use(new TwitterStrategy({
+    consumerKey: "sVWLivQC1afK6ULcUqWjg", //consumer key
+    consumerSecret: "uGpUX34oJ8h7Hp5jiETk1hK1lgFykS6qXNM5vvf7QC0", //consumer secret
+    callbackURL: host + "/auth/twitter/callback"
+},
+
+function(token, tokenSecret, profile, done) {
     // asynchronous verification, for effect...
     process.nextTick(function() {
         //si es válido la cuenta de twitter comprobamos que en nuestra base de datos este usuario no lo hayamos metido
         usuario = profile.username;
         id = profile._json.id;
-        imagen = profile.photos[0].value;
         connection.query('SELECT id From usuarios WHERE usuario="' + usuario + '"', function(err, rows, fields) {
             if (err) throw err;
-            //si no existe en la base de datos lo insertamos
             if (rows.length == 0) {
-                
+                imagen = profile.photos[0].value;
                 connection.query('Insert into usuarios(id, usuario, imagen) values("' + id + '","' + usuario + '","' + imagen + '")', function(err, rows) {
                     nuevoUsuario = {
                         "id": id,
@@ -142,44 +147,14 @@ var callbackLogin = function(token, tokenSecret, profile, done) {
                     done(null, nuevoUsuario);
                 });
             } else {
-                //si si existe comprobamos primero que los parametros de ususario e imagen no han cambiado
-                connection.query('SELECT * FROM usuarios WHERE id="' + id + '"', function(err, registro) {
-                    if(err) throw err;
-                    if(registro[0]["usuario"]==usuario && registro[0]["imagen"]==imagen)
-                    {
-                        done(err, registro[0]);
-                    } else {
-                        connection.query('UPDATE usuarios SET usuario="'+usuario+'", imagen="'+imagen+'" WHERE id="'+id+'"', function(err, num) {
-                            if(err) throw err;
-                            usuarioEditado = {
-                                "id": id,
-                                "usuario": usuario,
-                                "imagen": imagen
-                            };
-                            done(null, usuarioEditado);
-                        });
-                    }
-                    
+                connection.query('SELECT * FROM usuarios WHERE id="' + id + '"', function(err, usuario) {
+                    done(err, usuario[0]);
                 });
             }
         });
     });
-}
-
-passport.use(new TwitterStrategy({
-    consumerKey: "sVWLivQC1afK6ULcUqWjg", //consumer key
-    consumerSecret: "uGpUX34oJ8h7Hp5jiETk1hK1lgFykS6qXNM5vvf7QC0", //consumer secret
-    callbackURL: host + "/auth/twitter/callback"
-},callbackLogin));
+}));
 //fin conexion con twitter
-
-// Conexion Facebook
-passport.use(new FacebookStrategy({
-    clientID: FACEBOOK_APP_ID,
-    clientSecret: FACEBOOK_APP_SECRET,
-    callbackURL: host + "/auth/facebook/callback",
-    profileFields: ['id', 'username', 'photos']
-},callbackLogin));
 
 
 console.log('Servidor Node Js en http://localhost:3000');

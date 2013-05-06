@@ -19,12 +19,12 @@ html(lang="es")
             div(id="mimapa")
         article(id="formulario", style="display:none;")
             h2 Agregar sitio turistico
-            form(action="#", method="post")
+            form(action="#", methos="post")
                 a(id="cerrar", href="#cerrar") x
                 p
-                    label(for="lugar") nombre:
-                    br
-                    input(id="lugar", name="lugar", type="text")
+                    img(src="#{usuario[0].imagen}", alt="#{usuario[0].usuario}")
+                    |#{usuario[0].usuario}
+                    input(type="hidden", name="id_usuario", value="#{usuario[0].id}")
                 p
                     label(for="ubicacion") ubicacion:
                     br
@@ -38,12 +38,12 @@ html(lang="es")
                     br
                     textarea(id="descripcion", name="descripcion")
                 p
-                    input(id="guardar", type="submit", value="guardar")
+                    input(type="submit", value="guardar")
+                p
+                    a(id="salir", href="/salir") Salir
 
         script(src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js")
         script(src="//code.jquery.com/ui/1.10.2/jquery-ui.js")
         script(src="http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.js")
-        script(src="/js/l.control.geosearch.js")
-        script(src="/js/l.geosearch.provider.google.js")
         script(src="/socket.io/socket.io.js")
         script(src="/js/main.js")
