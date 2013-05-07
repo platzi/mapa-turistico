@@ -59,7 +59,7 @@ Antes de arrancar por primera vez la aplicación debemos instalar primero las li
 	
 Y para iniciar la aplicación podemos hacerlo simplemente tecleando:
 
-	node app
+	node server
 	
 Si teneís dudas podeís revisar las instrucciones de [mapa-tiempo-real](https://github.com/davidsingal/mapa-tiempo-real), escribirnos o abrir un ticket en el apartado de Issues de Github (preferentemente).
 
