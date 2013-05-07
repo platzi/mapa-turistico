@@ -1,5 +1,6 @@
 // Desarrollo
 module.exports.development = {
+    host: 'http://localhost',
     port: 3000,
     database: {
         host     : 'localhost',//cambiar por el host de la base de datos
@@ -22,6 +23,7 @@ module.exports.development = {
 
 // Producción
 module.exports.production = {
+    host: 'http://proudplaces.com',
     port: 3000,
     database: {
         host     : 'localhost',//cambiar por el host de la base de datos

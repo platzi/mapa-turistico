@@ -5,13 +5,18 @@ var socketIO = require('socket.io');
 // Importamos la aplicación
 var app = require('./app');
 
-// Creamos servidor
+// Servidor HTTP
 var server = http.createServer(app);
+
+server.listen(app.get('port'), function() {
+    console.log("Servidor Node Js en http://localhost:" + app.get('port'));
+});
+
+// Socket IO
 var io = socketIO.listen(server); // Socket IO
 
-// Iniciamos server
-var port = app.get('port') || 3000; // Si no especificamos el puerto en la configuración toma por defecto el puerto 3000
-
-server.listen(port, function() {
-    console.log("Servidor Node Js en http://localhost:" + port);
+io.sockets.on('connection', function(socket) {
+    socket.on('coords:me', function(data) {
+        socket.broadcast.emit('coords:user', data);
+    });
 });

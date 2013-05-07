@@ -1,0 +1,1 @@
+Esta carpeta va a desaparecer, se controlará todo con el ORM

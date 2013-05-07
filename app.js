@@ -4,10 +4,6 @@ var passport = require('passport');
 var passportTwitter = require('passport-twitter');
 var passportFacebook = require('passport-facebook');
 
-// Variables globales
-var TwitterStrategy = passportTwitter.Strategy;
-var FacebookStrategy = passportFacebook.Strategy;
-
 // Creamos la aplicación
 var app = express();
 

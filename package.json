@@ -6,9 +6,10 @@
 		"express": "*",
 		"jade": "*",
 		"socket.io": "*",
-		"passport":"*",
-		"passport-twitter":"*",
-		"passport-facebook":"*",
-		"mysql":"*"
+		"sequelize": "*",
+		"mysql": "*",
+		"passport": "*",
+		"passport-twitter": "*",
+		"passport-facebook": "*"
 	}
 }
