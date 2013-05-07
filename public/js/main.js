@@ -55,7 +55,7 @@ function onDocumentReady() {
 
 
 	$('#cerrar').on('click', cerrarFormulario); // Ocultar formaulario.
-	$('#guardar').on('click', guardarInformacion); // Guardar datos del lugar.
+	$('#guardar').on('click', guardarInformacion); // Guardar datos del lugar.	
 
 	function cerrarFormulario(e){
 		e.preventDefault();
@@ -68,10 +68,23 @@ function onDocumentReady() {
 		geosearch.geosearch($('#ubicacion').val());
 		$form.fadeOut();
 	}
+
+	function clickLugar(){
+		var id = $(this).attr('id');			
+		var latlng = $(this).attr('data-latlng').split(','); 
+		var marker = L.marker([latlng[0],latlng[1]]);				
+		
+		console.log(marker);
+		console.log(latlng);
+		console.log(id);
+
+		map.addLayer(marker);		
+		map.panTo(new L.LatLng(latlng[0],latlng[1]));		
+		marker.bindPopup('Aqui es');
+
+	}
+
+	$("#places a").on('click', clickLugar);
 }
 
 $(document).on('ready', onDocumentReady);
-
-
-
-

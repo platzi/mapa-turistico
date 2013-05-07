@@ -37,16 +37,221 @@ var connection = mysql.createConnection(bbdd);
 connection.connect();
 
 var host = ""; //tomará el valor del dominio
-var lugares = [{
+var lugares_temporales = [{
+    id: 0,
     titulo: "San Carlos",
     latLng: "15.0002,-14.1511",
-    imagen: "#",
-    descripcion: "Descripcion"
+    imagen: "http://www.sancarlosmexicoguide.com/images/img4.jpg",
+    descripcion: "El bello puerto de San Carlos en Sonora"
+},{
+    id: 1,
+    titulo: "San Carlos",
+    latLng: "15.0002,-14.1511",
+    imagen: "http://www.sancarlosmexicoguide.com/images/img4.jpg",
+    descripcion: "El bello puerto de San Carlos en Sonora"
+},{
+    id: 2,
+    titulo: "San Carlos",
+    latLng: "15.0002,-14.1511",
+    imagen: "http://www.sancarlosmexicoguide.com/images/img4.jpg",
+    descripcion: "El bello puerto de San Carlos en Sonora"
+},{
+    id: 3,
+    titulo: "San Carlos",
+    latLng: "15.0002,-14.1511",
+    imagen: "http://www.sancarlosmexicoguide.com/images/img4.jpg",
+    descripcion: "El bello puerto de San Carlos en Sonora"
+},{
+    id: 4,
+    titulo: "San Carlos",
+    latLng: "15.0002,-14.1511",
+    imagen: "http://www.sancarlosmexicoguide.com/images/img4.jpg",
+    descripcion: "El bello puerto de San Carlos en Sonora"
+},{
+    id: 5,
+    titulo: "San Carlos",
+    latLng: "15.0002,-14.1511",
+    imagen: "http://www.sancarlosmexicoguide.com/images/img4.jpg",
+    descripcion: "El bello puerto de San Carlos en Sonora"
+},{
+    id: 6,
+    titulo: "San Carlos",
+    latLng: "15.0002,-14.1511",
+    imagen: "http://www.sancarlosmexicoguide.com/images/img4.jpg",
+    descripcion: "El bello puerto de San Carlos en Sonora"
+},{
+    id: 7,
+    titulo: "San Carlos",
+    latLng: "15.0002,-14.1511",
+    imagen: "http://www.sancarlosmexicoguide.com/images/img4.jpg",
+    descripcion: "El bello puerto de San Carlos en Sonora"
+},{
+    id: 8,
+    titulo: "San Carlos",
+    latLng: "15.0002,-14.1511",
+    imagen: "http://www.sancarlosmexicoguide.com/images/img4.jpg",
+    descripcion: "El bello puerto de San Carlos en Sonora"
+},{
+    id: 9,
+    titulo: "San Carlos",
+    latLng: "15.0002,-14.1511",
+    imagen: "http://www.sancarlosmexicoguide.com/images/img4.jpg",
+    descripcion: "El bello puerto de San Carlos en Sonora"
+},{
+    id: 10,
+    titulo: "San Carlos",
+    latLng: "15.0002,-14.1511",
+    imagen: "http://www.sancarlosmexicoguide.com/images/img4.jpg",
+    descripcion: "El bello puerto de San Carlos en Sonora"
+},{
+    id: 11,
+    titulo: "San Carlos",
+    latLng: "15.0002,-14.1511",
+    imagen: "http://www.sancarlosmexicoguide.com/images/img4.jpg",
+    descripcion: "El bello puerto de San Carlos en Sonora"
+},{
+    id: 12,
+    titulo: "San Carlos",
+    latLng: "15.0002,-14.1511",
+    imagen: "http://www.sancarlosmexicoguide.com/images/img4.jpg",
+    descripcion: "El bello puerto de San Carlos en Sonora"
+},{
+    id: 13,
+    titulo: "San Carlos",
+    latLng: "15.0002,-14.1511",
+    imagen: "http://www.sancarlosmexicoguide.com/images/img4.jpg",
+    descripcion: "El bello puerto de San Carlos en Sonora"
+},{
+    id: 14,
+    titulo: "San Carlos",
+    latLng: "15.0002,-14.1511",
+    imagen: "http://www.sancarlosmexicoguide.com/images/img4.jpg",
+    descripcion: "El bello puerto de San Carlos en Sonora"
+},{
+    id: 15,
+    titulo: "San Carlos",
+    latLng: "15.0002,-14.1511",
+    imagen: "http://www.sancarlosmexicoguide.com/images/img4.jpg",
+    descripcion: "El bello puerto de San Carlos en Sonora"
+},{
+    id: 16,
+    titulo: "San Carlos",
+    latLng: "15.0002,-14.1511",
+    imagen: "http://www.sancarlosmexicoguide.com/images/img4.jpg",
+    descripcion: "El bello puerto de San Carlos en Sonora"
+},{
+    id: 17,
+    titulo: "San Carlos",
+    latLng: "15.0002,-14.1511",
+    imagen: "http://www.sancarlosmexicoguide.com/images/img4.jpg",
+    descripcion: "El bello puerto de San Carlos en Sonora"
+},{
+    id: 18,
+    titulo: "San Carlos",
+    latLng: "15.0002,-14.1511",
+    imagen: "http://www.sancarlosmexicoguide.com/images/img4.jpg",
+    descripcion: "El bello puerto de San Carlos en Sonora"
+},{
+    id: 19,
+    titulo: "San Carlos",
+    latLng: "15.0002,-14.1511",
+    imagen: "http://www.sancarlosmexicoguide.com/images/img4.jpg",
+    descripcion: "El bello puerto de San Carlos en Sonora"
+},{
+    id: 20,
+    titulo: "San Carlos",
+    latLng: "15.0002,-14.1511",
+    imagen: "http://www.sancarlosmexicoguide.com/images/img4.jpg",
+    descripcion: "El bello puerto de San Carlos en Sonora"
+},{
+    id: 21,
+    titulo: "San Carlos",
+    latLng: "15.0002,-14.1511",
+    imagen: "http://www.sancarlosmexicoguide.com/images/img4.jpg",
+    descripcion: "El bello puerto de San Carlos en Sonora"
+},{
+    id: 22,
+    titulo: "San Carlos",
+    latLng: "15.0002,-14.1511",
+    imagen: "http://www.sancarlosmexicoguide.com/images/img4.jpg",
+    descripcion: "El bello puerto de San Carlos en Sonora"
 },{
     titulo: "San Carlos",
     latLng: "15.0002,-14.1511",
-    imagen: "#",
-    descripcion: "Descripcion"
+    imagen: "http://www.sancarlosmexicoguide.com/images/img4.jpg",
+    descripcion: "El bello puerto de San Carlos en Sonora"
+},{
+    id: 23,
+    titulo: "San Carlos",
+    latLng: "15.0002,-14.1511",
+    imagen: "http://www.sancarlosmexicoguide.com/images/img4.jpg",
+    descripcion: "El bello puerto de San Carlos en Sonora"
+},{
+    id: 24,
+    titulo: "San Carlos",
+    latLng: "15.0002,-14.1511",
+    imagen: "http://www.sancarlosmexicoguide.com/images/img4.jpg",
+    descripcion: "El bello puerto de San Carlos en Sonora"
+},{
+    id: 25,
+    titulo: "San Carlos",
+    latLng: "15.0002,-14.1511",
+    imagen: "http://www.sancarlosmexicoguide.com/images/img4.jpg",
+    descripcion: "El bello puerto de San Carlos en Sonora"
+},{
+    id: 26,
+    titulo: "San Carlos",
+    latLng: "15.0002,-14.1511",
+    imagen: "http://www.sancarlosmexicoguide.com/images/img4.jpg",
+    descripcion: "El bello puerto de San Carlos en Sonora"
+},{
+    id: 27,
+    titulo: "San Carlos",
+    latLng: "15.0002,-14.1511",
+    imagen: "http://www.sancarlosmexicoguide.com/images/img4.jpg",
+    descripcion: "El bello puerto de San Carlos en Sonora"
+},{
+    id: 28,
+    titulo: "San Carlos",
+    latLng: "15.0002,-14.1511",
+    imagen: "http://www.sancarlosmexicoguide.com/images/img4.jpg",
+    descripcion: "El bello puerto de San Carlos en Sonora"
+},{
+    id: 29,
+    titulo: "San Carlos",
+    latLng: "15.0002,-14.1511",
+    imagen: "http://www.sancarlosmexicoguide.com/images/img4.jpg",
+    descripcion: "El bello puerto de San Carlos en Sonora"
+},{
+    id: 30,
+    titulo: "San Carlos",
+    latLng: "15.0002,-14.1511",
+    imagen: "http://www.sancarlosmexicoguide.com/images/img4.jpg",
+    descripcion: "El bello puerto de San Carlos en Sonora"
+},{
+    id: 31,
+    titulo: "San Carlos",
+    latLng: "15.0002,-14.1511",
+    imagen: "http://www.sancarlosmexicoguide.com/images/img4.jpg",
+    descripcion: "El bello puerto de San Carlos en Sonora"
+},{
+    id: 32,
+    titulo: "San Carlos",
+    latLng: "15.0002,-14.1511",
+    imagen: "http://www.sancarlosmexicoguide.com/images/img4.jpg",
+    descripcion: "El bello puerto de San Carlos en Sonora"
+},{
+    id: 33,
+    titulo: "San Carlos",
+    latLng: "15.0002,-14.1511",
+    imagen: "http://www.sancarlosmexicoguide.com/images/img4.jpg",
+    descripcion: "El bello puerto de San Carlos en Sonora"
+},{
+    id: 34,
+    titulo: "San Carlos",
+    latLng: "15.0002,-14.1511",
+    imagen: "http://www.sancarlosmexicoguide.com/images/img4.jpg",
+    descripcion: "El bello puerto de San Carlos en Sonora"
 }];
 // Routing
 app.get('/', function(req, res) {
@@ -56,7 +261,7 @@ app.get('/', function(req, res) {
             res.render('layout', {
                 title: 'Mapa en tiempo real',
                 description: 'Mi primer mapa',
-                lugares : lugares
+                lugares : lugares_temporales
             });
         });
     } else {
