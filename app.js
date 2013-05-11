@@ -9,7 +9,8 @@ var server = require('http').createServer(app);
 var io = require('socket.io').listen(server);
 var TwitterStrategy = require('passport-twitter').Strategy;
 var FacebookStrategy = require('passport-facebook').Strategy;
-
+// Base de datos
+var bbdd = require('./config/database.js').database;
 // Datos de coneccion a Facebook
 var FACEBOOK_APP_ID = "422463831183129";
 var FACEBOOK_APP_SECRET = "b58d71edfe29e6feae82388230e2d055";

@@ -21,6 +21,11 @@ html(lang="es")
             h2 Agregar sitio turistico
             form(action="#", method="post")
                 a(id="cerrar", href="#cerrar") x
+                if(usuario)
+                    p
+                        img(src="#{usuario[0].imagen}", alt="#{usuario[0].usuario}")
+                        | #{usuario[0].usuario}
+                        input(type="hidden", name="id_usuario", id="id_usuario", value="#{usuario[0].id}")
                 p
                     label(for="lugar") nombre:
                     br
