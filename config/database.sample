@@ -1,6 +1,6 @@
 exports.database = {
     host     : 'localhost',//cambiar por el host de la base de datos
     user     : 'root',//usuario de la base de datos
-    password : '',//password del usuario
+    password : 'root',//password del usuario
     database : 'mapaturistico'//nombre de la base de datos
 };
