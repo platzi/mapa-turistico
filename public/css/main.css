@@ -1,4 +1,4 @@
--moz-background-size cover,box-shadow(arguments){-webkit-box-shadow:arguments;-moz-box-shadow:arguments;-o-box-shadow:arguments;-ms-box-shadow:arguments;box-shadow:arguments}
+-moz-background-size cover,-o-background-size cover,box-shadow(arguments){-webkit-box-shadow:arguments;-moz-box-shadow:arguments;-o-box-shadow:arguments;-ms-box-shadow:arguments;box-shadow:arguments}
 body{background:#222;color:#333;font-family:Helvetica,Arial;font-size:16px}
 label{color:#ccc;font-size:.65em;text-shadow:3px 3px 5px rgba(0,0,0,0.7);text-transform:uppercase}
 input,textarea{border-bottom:3px solid rgba(72,118,255,0.8);border-left:0;border-right:0;border-top:0;padding:.3em;width:95%}
