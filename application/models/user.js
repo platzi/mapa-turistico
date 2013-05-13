@@ -6,18 +6,20 @@ var User = sequelize.define('User', {
     imagen: Sequelize.STRING
 });
 
-module.exports = {
-    getAll: function() {
-        var query = sequelize.query("SELECT * FROM usuarios");
+module.exports = User;
 
-        query.success(function(rows) {
-            console.log(rows);
-        });
-    },
-    get: function(id) {
+// module.exports = {
+//     getAll: function() {
+//         var query = sequelize.query("SELECT * FROM usuarios");
 
-    },
-    create: function(user) {
+//         query.success(function(rows) {
+//             console.log(rows);
+//         });
+//     },
+//     get: function(id) {
+
+//     },
+//     create: function(user) {
         
-    }
-};
+//     }
+// };
