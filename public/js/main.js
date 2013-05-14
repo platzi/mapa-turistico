@@ -68,6 +68,18 @@ function onDocumentReady() {
 		geosearch.geosearch($('#ubicacion').val());
 		$form.fadeOut();
 	}
+	
+	function clickLugar(){
+		var id = $(this).attr('id');			
+		var latlng = $(this).attr('data-latlng').split(','); 
+		var marker = L.marker([latlng[0],latlng[1]]);
+		map.addLayer(marker);
+		map.panTo(new L.LatLng(latlng[0],latlng[1]));
+		marker.bindPopup('Aqui es');
+
+	}
+
+	$("#places a").on('click', clickLugar);
 }
 
 $(document).on('ready', onDocumentReady);
