@@ -1,3 +1,7 @@
+/*
+	NOTA: Ejecutando este archivo se crearan registros en la base de datos, muy útil para desarrollo
+*/
+
 var Sequelize = require("sequelize");
 var sequelize = require('./connect');
 
@@ -9,7 +13,7 @@ User
 		usuario: 'desarrollador'
 	})
 	.success(function() {
-		console.log('\n ===== \n Usuario creado correctamente \n ===== \n');
+		console.log('\n Usuario creado correctamente');
 	})
 	.error(function(errors) {
 		console.log(errors);
