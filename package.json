@@ -5,10 +5,13 @@
 	"dependencies": {
 		"express": "*",
 		"jade": "*",
+		"stylus": "*",
+		"nib": "*",
 		"socket.io": "*",
-		"passport":"*",
-		"passport-twitter":"*",
-		"passport-facebook":"*",
-		"mysql":"*"
+		"sequelize": "*",
+		"mysql": "*",
+		"passport": "*",
+		"passport-twitter": "*",
+		"passport-facebook": "*"
 	}
 }

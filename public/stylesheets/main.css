@@ -1,3 +1,4 @@
+-moz-background-size cover,box-shadow(arguments){-webkit-box-shadow:arguments;-moz-box-shadow:arguments;-o-box-shadow:arguments;-ms-box-shadow:arguments;box-shadow:arguments}
 body{background:#222;color:#333;font-family:Helvetica,Arial;font-size:16px}
 label{color:#ccc;font-size:.65em;text-shadow:3px 3px 5px rgba(0,0,0,0.7);text-transform:uppercase}
 input,textarea{border-bottom:3px solid rgba(72,118,255,0.8);border-left:0;border-right:0;border-top:0;padding:.3em;width:95%}
@@ -20,27 +21,26 @@ input[type="submit"]{background:#4876ff;box-shadow:rgba(72,118,255,0.5) 0 .4em;c
 #places li a > div > .center{display:table-cell;vertical-align:middle}
 #places li a h3{font-size:.9em;margin:.2em 0}
 #places li a p{font-size:.7em;margin:0}
-#place{position:absolute;left:350px;margin:50px auto 50px auto;margin-bottom:1.9em;padding:1em;width:950px;height:550px;border-radius:0 7px 7px 7px;background-image:url("/../images/toronto.jpg");background-position:center;background-size:cover;background-repeat:no-repeat;box-shadow:rgba(0,0,0,0.5) 5px 5px 7px;-webkit-background-size:cover;-moz-background-size:cover;}
+#place{position:absolute;left:350px;margin:50px auto 50px auto;margin-bottom:1.9em;padding:1em;width:950px;height:550px;border-radius:0 7px 7px 7px;background-image:url("/../images/toronto.jpg");background-position:center;-webkit-background-size:cover;background-repeat:no-repeat;box-shadow:rgba(0,0,0,0.5) 5px 5px 7px;-webkit-background-size:cover;}
 #place h1{margin:0 0;padding:.5em 2em .5em .6em;background:#2980b9;box-shadow:rgba(52,152,219,0.5) 0 .4em;color:#fff;text-align:left;text-transform:uppercase;text-shadow:3px 3px 5px rgba(0,0,0,0.5);font-size:1.5em}
 #place p{background:rgba(0,0,0,0.4);box-shadow:rgba(0,0,0,0.3) 5px 5px 7px;color:#fff;padding:1em}
 #place abbr{color:#fff;font-size:.8em;margin:0 1.4em;position:absolute;right:0;text-shadow:2px 2px 5px rgba(0,0,0,0.5)}
 #place a{text-decoration:none}
+<<<<<<< HEAD:public/css/main.css
 #sidebar{background:#f4f5f3;-webkit-box-shadow:0 0 10px -2px rgba(0,0,0,0.5);-moz-box-shadow:0 0 10px -2px rgba(0,0,0,0.5);-o-box-shadow:0 0 10px -2px rgba(0,0,0,0.5);-ms-box-shadow:0 0 10px -2px rgba(0,0,0,0.5);box-shadow:0 0 10px -2px rgba(0,0,0,0.5);bottom:0;left:0;overflow:auto;position:absolute;top:40px;width:320px;z-index:1;}
+=======
+#sidebar{background:#f4f5f3;box-shadow:0 0 10px -2px rgba(0,0,0,0.5);bottom:0;left:0;position:absolute;top:40px;width:320px;z-index:1;}
+>>>>>>> mvc:public/stylesheets/main.css
 #sidebar h2{background:#dc2833;color:#fff;font-size:1.2em;margin:0;padding:.5em;text-align:center;text-shadow:1px 2px 5px #000;filter:dropshadow(#000,1,1)}
 .leaflet-top.leaflet-center{display:none}
-@media screen and (max-width:1200px){header{background:#f00}
-#formulario{left:140px}
+@media screen and (max-width:1200px){#formulario{left:140px}
 #sidebar{width:290px}
 #main{left:290px}
-}@media screen and (max-width:1024px){header{background:#008000}
-#formulario{left:100px}
+}@media screen and (max-width:1024px){#formulario{left:100px}
 #sidebar{width:280px}
 #main{left:280px}
-}@media screen and (max-width:768px){header{background:#00f}
-#formulario{left:140px}
-}@media screen and (max-width:600px){header{background:#0ff}
-#formulario{left:0}
+}@media screen and (max-width:768px){#formulario{left:140px}
+}@media screen and (max-width:600px){#formulario{left:0}
 #sidebar{height:100%;top:650px;width:100%}
 #main{left:0;height:620px;width:100%}
-}@media screen and (max-width:480px){header{background:#f0f}
 }
