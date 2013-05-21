@@ -12,30 +12,20 @@ var app = express();
 // Configuración
 var config = require('./config/environments');
 
-function compileStylus(str. path) {
+function compileStylus(str, path) {
 	return stylus(str)
 		.set('filename', path)
 		.set('compress', true)
 		.use(nib());
 }
 
-app.configure(function() {
-	app.set('views', __dirname + '/application/views');
-	app.set('view engine', 'jade');
-	app.use(express.favicon());
-	app.use(express.bodyParser());
-	app.use(express.methodOverride());
-	app.use(app.router);
+// Desarrollo
+app.configure('development', function() {
 	app.use(stylus.middleware({
 		src: __dirname + '/application/assets', // poner los archivos .styl en `application/assets/stylesheets`
 		dest: __dirname + '/public', // ruta donde se compilará stylus `public/stylesheets/*.css`
 		compile: compileStylus
 	}));
-	app.use(express.static(__dirname + '/public'));
-});
-
-// Desarrollo
-app.configure('development', function() {
 	app.set('port', config.development.port);
 	app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
 });
@@ -44,6 +34,18 @@ app.configure('development', function() {
 app.configure('production', function() {
 	app.set('port', config.production.port);
 	app.use(express.errorHandler());
+});
+
+// Ambos (producción y desarrollo)
+app.configure(function() {
+	app.set('views', __dirname + '/application/views');
+	app.set('view engine', 'jade');
+	app.use(express.favicon());
+	app.use(express.bodyParser());
+	app.use(express.methodOverride());
+	app.use(app.router);
+	
+	app.use(express.static(__dirname + '/public'));
 });
 
 // Routing
