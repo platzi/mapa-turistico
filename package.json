@@ -10,7 +10,8 @@
     "jade": "~0.30.0",
     "mongoose": "~3.6.11",
     "passport": "~0.1.17",
-    "passport-twitter": "~0.1.4"
+    "passport-twitter": "~0.1.4",
+    "passport-facebook": "~0.1.5"
   },
   "devDependencies": {
     "should": "~1.2.2",

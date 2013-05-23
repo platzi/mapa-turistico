@@ -19,7 +19,15 @@ findOrCreateTwitter = function (token, tokenSecret, profile, done) {
 };
 
 findUserById = function (id, done) {
-    User.findById(id, done);
+    User.findById(id, function (err, user) {
+        if (err) {return done(err);}
+
+        done(null, {
+            id      : user._id,
+            username: user.username,
+            provider: user.provider
+        });
+    });
 };
 
 module.exports = function () {
