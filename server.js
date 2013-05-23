@@ -1,22 +1,15 @@
-// Dependecias de Node Js
-var http = require('http');
-var socketIO = require('socket.io');
+'use strict';
 
-// Importamos la aplicación
-var app = require('./app');
+var app      = require('./app'),
+    server   = require('http').createServer(app),
+    io       = require('socket.io').listen(server),
+    config   = require('./app/config').cfg,
+    mongoose = require('mongoose');
 
-// Servidor HTTP
-var server = http.createServer(app);
+mongoose.connect(config.db.getUrl());
 
-server.listen(app.get('port'), function() {
-    console.log("Servidor Node Js en http://localhost:" + app.get('port'));
-});
+require('./app/handleIO').init(io);
 
-// Socket IO
-var io = socketIO.listen(server); // Socket IO
-
-io.sockets.on('connection', function(socket) {
-    socket.on('coords:me', function(data) {
-        socket.broadcast.emit('coords:user', data);
-    });
+server.listen(Number(app.get('port')), function () {
+    console.log('Server startup on port ->', app.get('port'));
 });

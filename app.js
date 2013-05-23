@@ -1,55 +1,33 @@
-// Cargamos módulos Node Js
-var express = require('express');
-var stylus = require('stylus');
-var nib = require('nib');
-// var passport = require('passport');
-// var passportTwitter = require('passport-twitter');
-// var passportFacebook = require('passport-facebook');
+'use strict';
 
-// Creamos la aplicación
-var app = express();
+var express      = require('express'),
+    path         = require('path'),
+    cfg       = require('./app/config').cfg,
+    passport     = require('passport'),
+    sessionStore = require('./app/sessionStore').create(express);
 
-// Configuración
-var config = require('./config/environments');
+var app = module.exports = express();
 
-function compileStylus(str, path) {
-	return stylus(str)
-		.set('filename', path)
-		.set('compress', true)
-		.use(nib());
-}
-
-// Desarrollo
-app.configure('development', function() {
-	app.use(stylus.middleware({
-		src: __dirname + '/application/assets', // poner los archivos .styl en `application/assets/stylesheets`
-		dest: __dirname + '/public', // ruta donde se compilará stylus `public/stylesheets/*.css`
-		compile: compileStylus
-	}));
-	app.set('port', config.development.port);
-	app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
-});
-
-// Producción
-app.configure('production', function() {
-	app.set('port', config.production.port);
-	app.use(express.errorHandler());
-});
-
-// Ambos (producción y desarrollo)
 app.configure(function() {
-	app.set('views', __dirname + '/application/views');
-	app.set('view engine', 'jade');
-	app.use(express.favicon());
-	app.use(express.bodyParser());
-	app.use(express.methodOverride());
-	app.use(app.router);
-	
-	app.use(express.static(__dirname + '/public'));
+    app.set('port', cfg.PORT);
+    app.set('views', path.join(__dirname, 'app/views'));
+    app.set('view engine', 'jade');
+    app.use(express.logger('dev'));
+    app.use(express.favicon());
+    app.use(express.cookieParser());
+    app.use(express.bodyParser());
+    app.use(express.methodOverride());
+    app.use(express.session({
+        key   : cfg.session.key,
+        secret: cfg.session.secret,
+        store : sessionStore
+    }));
+    app.use(passport.initialize());
+    app.use(passport.session());
+    app.use(app.router);
+
+    app.use(express.static(path.join(__dirname, 'public')));
 });
 
-// Routing
-require('./config/routes')(app);
-
-// Return
-module.exports = app;
+require('./app/auth/twitter')();
+require('./app/routers')(app);
