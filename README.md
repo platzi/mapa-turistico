@@ -1,5 +1,19 @@
 ![Mapa](http://www.digitalsurgeons.com/wp-content/uploads/2010/12/geolocation.png)
 
+# Cómo empezar
+
+Recuerden que deben tener **instalado Node Js**.
+
+Antes de arrancar por primera vez la aplicación debemos instalar primero las librerías:
+
+	npm install
+	
+Y para iniciar la aplicación podemos hacerlo simplemente tecleando:
+
+	node server
+	
+Si teneís dudas podeís revisar las instrucciones de [mapa-tiempo-real](https://github.com/davidsingal/mapa-tiempo-real), escribirnos o abrir un ticket en el apartado de Issues de Github (preferentemente).
+
 # Mapa turístico
 
 Proyecto creado para y por los alumnos de Mejorandola. El objetivo de este proyecto es crear una aplicación donde todos los que deseemos participemos para crear una aplicación. Una aplicación creada para demostrar qué hemos aprendido y ganar una nueva experiencia colaborando en equipo. Si no sabes o piensas que tienes poco que aportar no te preocupes, otro de los objetivos es que todos aprendamos y nos apoyemos los alumnos.
@@ -48,20 +62,6 @@ En esta fase vamos a hacer el formulario para agregar lugares, imágenes y un pe
 ### Fase 3 - Maquetación de la aplicación y adaptación a dispositivos móviles
 
 Puliremos nuestra aplicación para hacerlo más hermosa y además que se vea bien incluso desde un cepillo de dientes con pantalla y conexión a internet.
-
-## Cómo empezar
-
-Recuerden que deben tener **instalado Node Js**.
-
-Antes de arrancar por primera vez la aplicación debemos instalar primero las librerías:
-
-	npm install
-	
-Y para iniciar la aplicación podemos hacerlo simplemente tecleando:
-
-	node server
-	
-Si teneís dudas podeís revisar las instrucciones de [mapa-tiempo-real](https://github.com/davidsingal/mapa-tiempo-real), escribirnos o abrir un ticket en el apartado de Issues de Github (preferentemente).
 
 
 ## Recursos
