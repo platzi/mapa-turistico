@@ -1,0 +1,36 @@
+{
+  "name": "map-turistico",
+  "version": "0.0.1",
+  "description": "Proyecto colaborativo de los alumnos de Mejorandola",
+  "main": "Gruntfile.js",
+  "dependencies": {
+    "express": "~3.2.5",
+    "grunt": "~0.4.1",
+    "socket.io": "~0.9.14",
+    "jade": "~0.30.0",
+    "mongoose": "~3.6.11",
+    "passport": "~0.1.17",
+    "passport-twitter": "~0.1.4",
+    "passport-facebook": "~0.1.5",
+    "connect-redis": "~1.4.5",
+    "cookie": "~0.1.0",
+    "connect": "~2.7.10"
+  },
+  "devDependencies": {
+    "should": "~1.2.2",
+    "matchdep": "~0.1.2",
+    "grunt-contrib-watch": "~0.4.3",
+    "grunt-mocha-cli": "~1.0.6",
+    "grunt-contrib-jshint": "~0.5.4",
+    "fluidity": "~0.1.5",
+    "stylus": "~0.32.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": "",
+  "author": "",
+  "license": "BSD",
+  "readmeFilename": "README.md"
+}
