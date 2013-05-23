@@ -2,16 +2,25 @@
 
 var cfg = require('./config').cfg,
     RedisStore,
+    newSessionStore,
+    getSessionStore,
     sessionStore;
 
-sessionStore = function () {
+newSessionStore = function () {
     return new RedisStore({
         host: cfg.sessionStore.host,
         port: cfg.sessionStore.port
     });
 };
 
-module.exports = function (app) {
-    RedisStore = require('connect-redis')(app);
-    return sessionStore();
+getSessionStore = function () {
+    return sessionStore;
 };
+
+exports.create = function (app) {
+    RedisStore   = require('connect-redis')(app);
+    sessionStore = newSessionStore();
+    return sessionStore;
+};
+
+exports.get = getSessionStore;

@@ -4,7 +4,7 @@ var express      = require('express'),
     path         = require('path'),
     config       = require('./app/config').cfg,
     passport     = require('passport'),
-    sessionStore = require('./app/sessionStore')(express);
+    sessionStore = require('./app/sessionStore').create(express);
 
 var app = module.exports = express();
 
