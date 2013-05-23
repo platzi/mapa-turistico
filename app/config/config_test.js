@@ -5,7 +5,7 @@ module.exports = {
     TWITTER_CONSUMER_KEY    : '',
     TWITTER_CONSUMER_SECRET : '',
     db: {
-        name   : process.env.MONGO_DB   || 'mapaturistico',
+        name   : process.env.MONGO_DB   || 'mapatest',
         port   : process.env.MONGO_PORT || 27017,
         host   : process.env.MONGO_HOST || 'localhost',
         getUrl : function () {
