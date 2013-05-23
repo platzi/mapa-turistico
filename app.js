@@ -1,11 +1,12 @@
 'use strict';
 
-var express  = require('express'),
-    path     = require('path'),
-    config   = require('./app/config').cfg,
-    passport = require('passport');
+var express      = require('express'),
+    path         = require('path'),
+    config       = require('./app/config').cfg,
+    passport     = require('passport'),
+    sessionStore = require('./app/sessionStore')(express);
 
-var app     = module.exports = express();
+var app = module.exports = express();
 
 app.configure(function() {
     app.set('port', config.PORT);
@@ -16,7 +17,10 @@ app.configure(function() {
     app.use(express.cookieParser());
     app.use(express.bodyParser());
     app.use(express.methodOverride());
-    app.use(express.session({secret: 'Hello!!'}));
+    app.use(express.session({
+        secret: 'Hello!!',
+        store : sessionStore
+    }));
     app.use(passport.initialize());
     app.use(passport.session());
     app.use(app.router);

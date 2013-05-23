@@ -12,5 +12,9 @@ module.exports = {
             var self = this;
             return ['mongodb', ':', '//', self.host, ':', self.port, '/', self.name].join('');
         }
+    },
+    sessionStore: {
+        host: process.env.SESSION_HOST || 'localhost',
+        port: process.env.SESSION_PORT || 6379
     }
 };
