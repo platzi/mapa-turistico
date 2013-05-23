@@ -1,0 +1,45 @@
+// Desarrollo
+module.exports.development = {
+    host: 'http://localhost',
+    port: 3000,
+    database: {
+        host     : 'localhost',//cambiar por el host de la base de datos
+        user     : 'root',//usuario de la base de datos
+        password : 'root',//password del usuario
+        database : 'mapaturistico'//nombre de la base de datos
+    },
+    facebook: {
+        clientID: '422463831183129',
+        clientSecret: 'b58d71edfe29e6feae82388230e2d055',
+        callbackURL: '',
+        profileFields: ['id', 'username', 'photos']
+    },
+    twitter: {
+        consumerKey: 'sVWLivQC1afK6ULcUqWjg',
+        consumerSecret: 'uGpUX34oJ8h7Hp5jiETk1hK1lgFykS6qXNM5vvf7QC0',
+        callbackURL: ''
+    }
+};
+
+// Producción
+module.exports.production = {
+    host: 'http://proudplaces.com',
+    port: 3000,
+    database: {
+        host     : 'localhost',//cambiar por el host de la base de datos
+        user     : 'root',//usuario de la base de datos
+        password : 'root',//password del usuario
+        database : 'mapaturistico'//nombre de la base de datos
+    },
+    facebook: {
+        clientID: '422463831183129',
+        clientSecret: 'b58d71edfe29e6feae82388230e2d055',
+        callbackURL: '',
+        profileFields: ['id', 'username', 'photos']
+    },
+    twitter: {
+        consumerKey: 'sVWLivQC1afK6ULcUqWjg',
+        consumerSecret: 'uGpUX34oJ8h7Hp5jiETk1hK1lgFykS6qXNM5vvf7QC0',
+        callbackURL: ''
+    }
+};

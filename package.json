@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
 	"name": "mapa-turistico",
 	"description": "Proyecto colaborativo de los alumnos de Mejorandola",
@@ -10,4 +11,22 @@
 		"passport-twitter":"*",
 		"mysql":"*"
 	}
+=======
+{
+	"name": "mapa-turistico",
+	"description": "Proyecto colaborativo de los alumnos de Mejorandola",
+	"version": "0.0.1",
+	"dependencies": {
+		"express": "*",
+		"jade": "*",
+		"stylus": "*",
+		"nib": "*",
+		"socket.io": "*",
+		"sequelize": "*",
+		"mysql": "*",
+		"passport": "*",
+		"passport-twitter": "*",
+		"passport-facebook": "*"
+	}
+>>>>>>> mapa-turistico/master
 }
