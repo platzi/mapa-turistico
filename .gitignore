@@ -1,4 +1,4 @@
 .DS_Store
 node_modules
-config/environments.js
-material
+public/vendor/*
+app/config/config.js

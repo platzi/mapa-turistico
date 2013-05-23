@@ -1,0 +1,9 @@
+{
+  "name": "map-turistico",
+  "version": "0.0.1",
+  "dependencies": {
+    "jquery": "~2.0.0",
+    "modernizr": "~2.6.2",
+    "socket.io-client": "~0.9.11"
+  }
+}
