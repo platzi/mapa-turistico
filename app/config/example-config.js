@@ -13,6 +13,10 @@ module.exports = {
             return ['mongodb', ':', '//', self.host, ':', self.port, '/', self.name].join('');
         }
     },
+    session: {
+        key   : 'proudplace.sid',
+        secret: 'HelloWorld!!!'
+    },
     sessionStore: {
         host: process.env.SESSION_HOST || 'localhost',
         port: process.env.SESSION_PORT || 6379

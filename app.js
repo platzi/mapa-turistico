@@ -2,14 +2,14 @@
 
 var express      = require('express'),
     path         = require('path'),
-    config       = require('./app/config').cfg,
+    cfg       = require('./app/config').cfg,
     passport     = require('passport'),
     sessionStore = require('./app/sessionStore').create(express);
 
 var app = module.exports = express();
 
 app.configure(function() {
-    app.set('port', config.PORT);
+    app.set('port', cfg.PORT);
     app.set('views', path.join(__dirname, 'app/views'));
     app.set('view engine', 'jade');
     app.use(express.logger('dev'));
@@ -18,7 +18,8 @@ app.configure(function() {
     app.use(express.bodyParser());
     app.use(express.methodOverride());
     app.use(express.session({
-        secret: 'Hello!!',
+        key   : cfg.session.key,
+        secret: cfg.session.secret,
         store : sessionStore
     }));
     app.use(passport.initialize());
