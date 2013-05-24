@@ -1,0 +1,26 @@
+[
+	// Doy
+	{
+		"id": "1",
+		"name": "Nombre lugar",
+		"city": "Ciudad",
+		"country": "País",
+		"description": "Lorem Ipsum",
+		"lat": 0,
+		"long": 0,
+		"image": "imagen"
+	},
+	// Recibo
+	{
+		"id": "1",
+		"name": "Nombre lugar",
+		"city": "Ciudad",
+		"country": "País",
+		"description": "Lorem Ipsum",
+		"lat": 0,
+		"long": 0,
+		"image": ["imagen", "imagen", "imagen"],
+		"user": 35,		
+		"url": "nombre-lugar"
+	},
+]
