@@ -2,15 +2,51 @@
 
 # Cómo empezar
 
-Recuerden que deben tener **instalado Node Js**.
+Configuracion:
 
-Antes de arrancar por primera vez la aplicación debemos instalar primero las librerías:
+    Primero deben instalarse Node.js (http://nodejs.org/download/).
 
-	npm install
-	
-Y para iniciar la aplicación podemos hacerlo simplemente tecleando:
+    Instalar mongodb (http://www.mongodb.org/downloads). Detalles de instalacion diferentes OS.
 
-	node server
+        Mac OS + Homebrew -> (http://docs.mongodb.org/manual/tutorial/install-mongodb-on-os-x/)
+
+        Ubuntu -> (http://docs.mongodb.org/manual/tutorial/install-mongodb-on-ubuntu/)
+
+    Instalar redis (http://redis.io/download)
+
+        Mac OS + Homebrew ->
+            brew install redis
+
+        Ubuntu -> Detalles en la pagina de descarga.
+
+    Instalar las dependencias del proyecto:
+
+        Antes de iniciar por primera vez la aplicacion debes instalar las dependencias.
+
+            npm install o (sudo npm install)
+
+    Archivo de configuracion:
+
+        renombramos el archivo example-config por config.js, que se encuentra en la ruta
+        app/config/example-config.js.
+
+        Agregamos nuestras configuraciones a dicho archivo.
+
+        Nota: Se puede utilizar la configuracion por defecto unicamente agregando las Twitter key y Twitter secret, que son necesarias para el inicio de session.
+
+Iniciar aplicacion:
+
+    Iniciamos la base datos mongo:
+
+        mongod
+
+    Iniciamos el Redis Server:
+
+        redis-server
+
+    Iniciamos la aplicacion
+
+        node server.js
 	
 Si teneís dudas podeís revisar las instrucciones de [mapa-tiempo-real](https://github.com/davidsingal/mapa-tiempo-real), escribirnos o abrir un ticket en el apartado de Issues de Github (preferentemente).
 

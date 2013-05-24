@@ -2,8 +2,8 @@
 
 module.exports = {
     PORT                    : (process.env.PORT || 3000),
-    TWITTER_CONSUMER_KEY    : '',
-    TWITTER_CONSUMER_SECRET : '',
+    TWITTER_CONSUMER_KEY    : '', //requeridas
+    TWITTER_CONSUMER_SECRET : '', //requeridas
     db: {
         name   : process.env.MONGO_DB   || 'mapaturistico',
         port   : process.env.MONGO_PORT || 27017,
