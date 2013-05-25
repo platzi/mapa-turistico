@@ -15,6 +15,7 @@ module.exports = function (app) {
 
     //places url
     app.post('/places', placesController.create);
+    app.get('/places', placesController.findAll);
 
     //authentification twitter
     app.get('/auth/twitter', passport.authenticate('twitter'));
