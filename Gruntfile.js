@@ -59,4 +59,5 @@ module.exports = function (grunt) {
     });
 
     grunt.registerTask('test', ['jshint:test', 'mochacli']);
+    grunt.registerTask('stylus', ['stylus']);
 };
