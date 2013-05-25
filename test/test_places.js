@@ -10,7 +10,7 @@ describe('#Places', function (){
         conn.connection.db.dropDatabase();
     });
 
-    describe('#Create API REST', function () {
+    describe('#POST /places', function () {
         it('should return 200', function (done) {
             request(app)
                 .post('/places')
@@ -32,6 +32,16 @@ describe('#Places', function (){
                 .send({})
                 .set('Accept', 'application/json')
                 .expect(400, done);
+        });
+    });
+
+    describe('#GET /places', function () {
+        it('should return 200 and objects json', function (done) {
+            request(app)
+                .get('/places')
+                .set('Accept', 'application/json')
+                .expect('Content-Type', /json/)
+                .expect(200,done);
         });
     });
 });
