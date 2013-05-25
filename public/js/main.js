@@ -8,7 +8,7 @@ function onDocumentReady() {
 	// vistas
 	app.map = new MapView();
 	app.sidebar = new SidebarView();
-
+	app.login = new LoginView();
 	// enrutador
 	app.routes = new Routes();
 	Backbone.history.start({ pushState: true })
