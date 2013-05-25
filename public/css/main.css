@@ -7,13 +7,19 @@ body{background:#222;color:#333;font-family:Helvetica,Arial;font-size:16px}
 #header a#acerca{margin-left:2em}
 #header a#addButton{background:#008000;margin-right:4em;}
 #header a#addButton:hover{background-image:radial-gradient(circle,#1aff1a 0%,#008000 100%)}
-#header a#colabora,#header a#acerca{color:#666;float:left;font-size:13px;font-weight:bold;margin-top:1em;margin-right:.8em;text-decoration:none}
-#logintt,#agregar-sitio{position:absolute;background:#fafafa;border-radius:0 7px 7px 7px;box-shadow:rgba(0,0,0,0.5) 5px 5px 7px;display:none;left:88%;text-align:center;margin-left:-125px;padding:1em;width:250px;top:10%;z-index:999;}
+#header a#colabora,#header a#acerca{color:#666;float:left;font-size:13px;font-weight:bold;margin-right:.8em;margin-top:1em;text-decoration:none}
+#logintt,#agregar-sitio{background:#fafafa;border-radius:0 7px 7px 7px;box-shadow:rgba(0,0,0,0.5) 5px 5px 7px;display:none;left:88%;margin-left:-125px;padding:1em;position:absolute;text-align:center;top:10%;width:250px;z-index:999;}
 #logintt h2,#agregar-sitio h2{color:#1a1a1a;font-size:17px}
 #logintt a,#agregar-sitio a{background-color:#1bb2e9;color:#fff;display:block;font-weight:bold;margin:1em auto;padding:.5em .1em;text-align:center;text-decoration:none}
 #logintt input[type='text'],#agregar-sitio input[type='text']{border:thin solid #ccc;border-radius:.2em;margin-bottom:.5em}
 #logintt input[type='button'],#agregar-sitio input[type='button']{background:#238c00;color:#fff;font-size:.8em;height:40px;width:70%}
-#agregar-sitio{background:#fafafa;display:none;top:10%;left:50%;position:absolute;width:250px;z-index:999}
+#agregar-sitio{background:#fafafa;display:none;font-size:13px;left:50%;position:absolute;text-align:left;top:10%;width:250px;z-index:999;}
+#agregar-sitio .radios{display:inline;vertical-align:top;font-size:12px}
+#agregar-sitio h2{background-color:#008000;color:#fff;font-weight:normal;margin-top:0;padding:10px 0 10px 0;text-align:center}
+#agregar-sitio input[type="text"],#agregar-sitio textarea{color:#222;font-size:15px;padding:5px;width:97%}
+#agregar-sitio #positionPlace{width:60%;}
+#agregar-sitio #positionPlace span{background-color:#222}
+#agregar-sitio p{margin:5px;padding:0}
 #main{position:absolute;bottom:0;left:320px;right:0;top:40px}
 #mimapa{height:100%;left:0;position:absolute;top:0;width:100%}
 #places{list-style:none;padding:0;}

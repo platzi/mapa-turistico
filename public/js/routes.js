@@ -10,13 +10,13 @@ var Routes = Backbone.Router.extend({
 		});
 
 		// app.place = new Place({
-		// 	name: "Nombre lugar",
-		// 	city: "Ciudad",
-		// 	country: "País",
-		// 	description: "Lorem Ipsum",
-		// 	lat: 0,
-		// 	lng: 0,
-		// 	image: "imagen"
+		// 	name: "Hackaton @proudplaces",
+		// 	city: "Martinez de la Torre",
+		// 	country: "Mexico",
+		// 	description: "Siguiendo el hackaton de @proudplaces.",
+		// 	lat: 24.523938,
+		// 	lng: -54.92828,
+		// 	image: "http://placekitten.com/100/100"
 		// });
 
 		// app.place.save();
