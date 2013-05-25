@@ -1,4 +1,3 @@
-
 var appDir  = ['server.js',
                 'app.js',
                 'app/{,*/}*.js'],
@@ -34,6 +33,10 @@ module.exports = function (grunt) {
             all: {
                 files: allDir,
                 tasks: ['jshint:app', 'jshint:test', 'mochacli']
+            },
+            stylus: {
+                files: ['app/assets/stylesheets/{,*/}*.styl'],
+                tasks: ['stylus']
             }
         },
         mochacli: {
