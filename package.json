@@ -24,7 +24,8 @@
     "grunt-contrib-jshint": "~0.5.4",
     "fluidity": "~0.1.5",
     "stylus": "~0.32.1",
-    "supertest": "~0.6.0"
+    "supertest": "~0.6.0",
+    "grunt-contrib-stylus": "~0.5.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

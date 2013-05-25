@@ -1,4 +1,3 @@
-
 var appDir  = ['server.js',
                 'app.js',
                 'app/{,*/}*.js'],
@@ -50,14 +49,13 @@ module.exports = function (grunt) {
                 options: {
                     compress: true,
                     use: [require('fluidity')]
-                },
-                files: {
-                    'public/css/main.css': 'app/assets/stylesheets/main.styl'
                 }
+            },
+            files: {
+                'public/css/main.css': 'app/assets/stylesheets/main.styl'
             }
         }
     });
 
     grunt.registerTask('test', ['jshint:test', 'mochacli']);
-    grunt.registerTask('stylus', ['stylus']);
 };
