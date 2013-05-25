@@ -11,7 +11,7 @@ function onDocumentReady() {
 
 	// enrutador
 	app.routes = new Routes();
-	Backbone.history.start({pushState: true})
+	Backbone.history.start({ pushState: true })
 }
 
 $(document).on('ready', onDocumentReady);
