@@ -26,7 +26,14 @@ input[type="submit"]{background:#4876ff;box-shadow:rgba(72,118,255,0.5) 0 .4em;c
 #place p{background:rgba(0,0,0,0.4);box-shadow:rgba(0,0,0,0.3) 5px 5px 7px;color:#fff;padding:1em}
 #place abbr{color:#fff;font-size:.8em;margin:0 1.4em;position:absolute;right:0;text-shadow:2px 2px 5px rgba(0,0,0,0.5)}
 #place a{text-decoration:none}
-#sidebar{background:#f4f5f3;box-shadow:0 0 10px -2px rgba(0,0,0,0.5);bottom:0;left:0;position:absolute;top:40px;width:320px;z-index:1;}
+#sidebar{background:#f6f6f6;bottom:0;box-shadow:0 0 10px -2px rgba(0,0,0,0.5);left:0;overflow:auto;position:absolute;top:40px;width:320px;z-index:1;}
+#sidebar .elemList{background:#fff;color:#222;cursor:pointer;margin:.5em auto;overflow:hidden;padding:5px;}
+#sidebar .elemList .name{font-size:15px;font-weight:bold;margin:0}
+#sidebar .elemList .description{font-size:15px;margin:.3em 0}
+#sidebar .elemList .caption{padding-left:100px}
+#sidebar .elemList .thumb{border-radius:100%;overflow:hidden;float:left}
+#sidebar .elemList .thumb img{display:block;height:90px;width:90px}
+#sidebar .elemList:hover{background:#d9d9d9;transition:all .8s ease-out}
 #sidebar h2{background:#dc2833;color:#fff;font-size:1.2em;margin:0;padding:.5em;text-align:center;text-shadow:1px 2px 5px #000;filter:dropshadow(#000,1,1)}
 .leaflet-top.leaflet-center{display:none}
 @media screen and (max-width:1200px){#formulario{left:140px}

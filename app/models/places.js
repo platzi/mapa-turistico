@@ -6,6 +6,7 @@ var placesSchema = new Schema({
     city        : {type: String, required: true},
     country     : {type: String, required: true},
     name  : {type: String, required: true},
+    image  : {type: String, required: true},
     point : {
         lat : {type: Number, required: true},
         lng: {type: Number, required: true}
