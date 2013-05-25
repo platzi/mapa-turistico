@@ -1,6 +1,7 @@
 var app = {};
 
 function onDocumentReady() {
+
 	// modelos
 	app.users = new UsersCollection();
 	app.places = new PlacesCollection();
@@ -11,7 +12,7 @@ function onDocumentReady() {
 	app.login = new LoginView();
 	// enrutador
 	app.routes = new Routes();
-	Backbone.history.start({ pushState: true })
+	Backbone.history.start({ pushState: true });
 }
 
 $(document).on('ready', onDocumentReady);
