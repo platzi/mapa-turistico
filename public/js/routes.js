@@ -3,11 +3,11 @@ var Routes = Backbone.Router.extend({
 		"": "homepage"
 	},
 	homepage: function(){
-		// app.places.fetch({
-		// 	success: function(collection, data){
-		// 		app.sidebar.addPlaces(collection);
-		// 	}
-		// });
+		app.places.fetch({
+			success: function(collection, data){
+				app.sidebar.addPlaces(collection);
+			}
+		});
 
 		// app.place = new Place({
 		// 	name: "Nombre lugar",
