@@ -110,23 +110,23 @@ body
 		float left
 		font-size 13px
 		font-weight bold
-		margin-top 1em
 		margin-right .8em
+		margin-top 1em
 		text-decoration none
 
 #logintt, #agregar-sitio
-	position absolute
 	//background rgba(0, 0, 0, .8)
 	background darken(blanco, 2%)
 	border-radius 0 7px 7px 7px
 	box-shadow rgba(0, 0, 0, .5) 5px 5px 7px
 	display none
 	left 88%
-	text-align center
 	margin-left -125px
 	padding 1em
-	width 250px
+	position absolute
+	text-align center
 	top 10%
+	width 250px
 	z-index 999
 
 	h2
@@ -155,11 +155,44 @@ body
 #agregar-sitio
 	background darken(blanco, 2%)
 	display none
-	top 10%
+	font-size 13px
 	left 50%
 	position absolute
+	text-align left
+	top 10%
 	width 250px
 	z-index 999
+
+	.radios
+		display inline
+		vertical-align top
+		font-size 12px
+
+	h2
+		background-color verde
+		color blanco
+		font-weight normal
+		margin-top 0
+		padding 10px 0 10px 0
+		text-align center
+
+	input[type="text"], textarea
+		color gris
+		font-size 15px
+		padding 5px
+		width 97%
+
+	#positionPlace
+		width 60%
+
+		span
+			background-color gris
+
+	p
+		margin 5px
+		padding 0
+
+
 
 #main
 	position absolute
