@@ -7,6 +7,7 @@ function onDocumentReady() {
 
 	// vistas
 	app.map = new MapView();
+	app.sidebar = new SidebarView();
 
 	// enrutador
 	app.routes = new Routes();
