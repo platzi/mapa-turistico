@@ -35,17 +35,23 @@ block main
 	section(id="agregar-sitio")
 		h2 Agregar sitio turistico
 		form(id="form-agregar-sitio", method="post", action="")
-			input(type="text", id="namePlace", name="namePlace", placeholder="Nombre del lugar")
-			label Estoy en el lugar
+			p
+				input(type="text", id="namePlace", name="namePlace", placeholder="Nombre del lugar")
+			p(class="radios")
 				input(type="radio", name="lugar", value="estoyAqui")
-			label No estoy aqui
+				span  Estoy en el lugar
+			p(class="radios")
 				input(type="radio", name="lugar", value="noAqui")
-			label
-				span Mi posicion
-				input(type="text", id="positionPlace", name="positionPlace")
-			input(type="file")
-			textarea(id="descriptionPlace", name="descriptionPlace", placeholder="Descripcion")
-			input(type="submit", value="Agregar")
+				span  No estoy en el lugar
+			p
+				input(type="text", id="positionPlace", name="positionPlace", placeholder="Localizacion")
+				span Posicion
+			p
+				input(type="file")
+			p
+				textarea(id="descriptionPlace", name="descriptionPlace", placeholder="Descripcion")
+			p
+				input(type="submit", value="Agregar")
 
 
 block javascripts
