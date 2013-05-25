@@ -1,16 +1,19 @@
 extends layout
 
 block stylesheets
-	link(rel="stylesheet", href="/stylesheets/normalize.css")
+	link(rel="stylesheet", href="/css/normalize.css")
 	link(rel="stylesheet", href="http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.css")
-	link(rel="stylesheet", href="/stylesheets/main.css")
+	link(rel="stylesheet", href="/css/main.css")
 
 block main
 	header(id="header")
 		h1 Mapa turístico
+		a(href="/login/", id="loginButton") Ingresar
+		a(href="/registro/", id="registro") Registrar
 
 	section(id="sidebar")
 		h2 Últimos sitios agregados
+		div(id="placeList")
 		//include partials/places_list
 
 	section(id="main")
@@ -19,13 +22,20 @@ block main
 	section(id="logintt")
 		h2 ProudPlaces
 		a(id="tt", href="/auth/twitter", title="Conéctate con Twitter") Conéctate con Twitter
-		a(id="fb", href="/auth/facebook", title="Conéctate con Facebook") Conéctate con Facebook
+		//a(id="fb", href="/auth/facebook", title="Conéctate con Facebook") Conéctate con Facebook
+		
+		
 
 block javascripts
-	script(src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js")
-	script(src="//code.jquery.com/ui/1.10.2/jquery-ui.js")
+	script(src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js")	
 	script(src="http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.js")
-	script(src="/js/l.control.geosearch.js")
-	script(src="/js/l.geosearch.provider.google.js")
 	script(src="/socket.io/socket.io.js")
+	script(src="/js/vendor/underscore.js")
+	script(src="/js/vendor/backbone.js")
+	script(src="/js/models/user.js")
+	script(src="/js/models/place.js")
+	script(src="/js/views/map.js")
+	script(src="/js/views/sidebar.js")
+	script(src="/js/views/login.js")
+	script(src="/js/routes.js")
 	script(src="/js/main.js")

@@ -33,6 +33,10 @@ module.exports = function (grunt) {
             all: {
                 files: allDir,
                 tasks: ['jshint:app', 'jshint:test', 'mochacli']
+            },
+            stylus: {
+                files: ['app/assets/stylesheets/{,*/}*.styl'],
+                tasks: ['stylus']
             }
         },
         mochacli: {
@@ -49,10 +53,10 @@ module.exports = function (grunt) {
                 options: {
                     compress: true,
                     use: [require('fluidity')]
+                },
+                files: {
+                    'public/css/main.css': 'app/assets/stylesheets/main.styl'
                 }
-            },
-            files: {
-                'public/css/main.css': 'app/assets/stylesheets/main.styl'
             }
         }
     });

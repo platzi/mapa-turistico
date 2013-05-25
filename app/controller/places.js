@@ -20,6 +20,7 @@ exports.create = function (req, res) {
             country: req.param('country'),
             description: req.param('description'),
             name : req.param('name'),
+            image : req.param('image'),
             point: {
                 lat: req.param('lat'),
                 lng: req.param('lng')

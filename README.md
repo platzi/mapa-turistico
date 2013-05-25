@@ -1,5 +1,55 @@
 ![Mapa](http://www.digitalsurgeons.com/wp-content/uploads/2010/12/geolocation.png)
 
+# Cómo empezar
+
+Configuracion:
+
+    Primero deben instalarse Node.js (http://nodejs.org/download/).
+
+    Instalar mongodb (http://www.mongodb.org/downloads). Detalles de instalacion diferentes OS.
+
+        Mac OS + Homebrew -> (http://docs.mongodb.org/manual/tutorial/install-mongodb-on-os-x/)
+
+        Ubuntu -> (http://docs.mongodb.org/manual/tutorial/install-mongodb-on-ubuntu/)
+
+    Instalar redis (http://redis.io/download)
+
+        Mac OS + Homebrew ->
+            brew install redis
+
+        Ubuntu -> Detalles en la pagina de descarga.
+
+    Instalar las dependencias del proyecto:
+
+        Antes de iniciar por primera vez la aplicacion debes instalar las dependencias.
+
+            npm install o (sudo npm install)
+
+    Archivo de configuracion:
+
+        renombramos el archivo example-config por config.js, que se encuentra en la ruta
+        app/config/example-config.js.
+
+        Agregamos nuestras configuraciones a dicho archivo.
+
+        Nota: Se puede utilizar la configuracion por defecto unicamente agregando las Twitter key y Twitter secret, que son necesarias para el inicio de session.
+
+Iniciar aplicacion:
+
+    Iniciamos la base datos mongo:
+
+        mongod
+
+    Iniciamos el Redis Server:
+
+        redis-server
+
+    Iniciamos la aplicacion
+
+        node server.js
+	
+Si teneís dudas podeís revisar las instrucciones de [mapa-tiempo-real](https://github.com/davidsingal/mapa-tiempo-real), escribirnos o abrir un ticket en el apartado de Issues de Github (preferentemente).
+
 # Mapa turístico
 
 Proyecto creado para y por los alumnos de Mejorandola. El objetivo de este proyecto es crear una aplicación donde todos los que deseemos participemos para crear una aplicación. Una aplicación creada para demostrar qué hemos aprendido y ganar una nueva experiencia colaborando en equipo. Si no sabes o piensas que tienes poco que aportar no te preocupes, otro de los objetivos es que todos aprendamos y nos apoyemos los alumnos.
@@ -49,68 +99,6 @@ En esta fase vamos a hacer el formulario para agregar lugares, imágenes y un pe
 
 Puliremos nuestra aplicación para hacerlo más hermosa y además que se vea bien incluso desde un cepillo de dientes con pantalla y conexión a internet.
 
-## Cómo empezar
-
-Recuerden que deben tener **instalado Node Js**.
-
-Antes de arrancar por primera vez la aplicación debemos instalar primero las librerías:
-
-	npm install
-
-Y para iniciar la aplicación podemos hacerlo simplemente tecleando:
-
-	node server
-
-Si teneís dudas podeís revisar las instrucciones de [mapa-tiempo-real](https://github.com/davidsingal/mapa-tiempo-real), escribirnos o abrir un ticket en el apartado de Issues de Github (preferentemente).
-
-
-##How to start
-
-Configuracion:
-
-    Primero deben instalarse Node.js (http://nodejs.org/download/).
-
-    Instalar mongodb (http://www.mongodb.org/downloads). Detalles de instalacion diferentes OS.
-
-        Mac OS + Homebrew -> (http://docs.mongodb.org/manual/tutorial/install-mongodb-on-os-x/)
-
-        Ubuntu -> (http://docs.mongodb.org/manual/tutorial/install-mongodb-on-ubuntu/)
-
-    Instalar redis (http://redis.io/download)
-
-        Mac OS + Homebrew ->
-            brew install redis
-
-        Ubuntu -> Detalles en la pagina de descarga.
-
-    Instalar las dependencias del proyecto:
-
-        Antes de iniciar por primera vez la aplicacion debes instalar las dependencias.
-
-            npm install o (sudo npm install)
-
-    Archivo de configuracion:
-
-        renombramos el archivo example-config por config.js, que se encuentra en la ruta
-        app/config/example-config.js.
-
-        Agregamos nuestras configuraciones a dicho archivo.
-
-        Nota: Se puede utilizar la configuracion por defecto unicamente agregando las Twitter key y Twitter secret, que son necesarias para el inicio de session.
-
-Iniciar aplicacion:
-
-    Iniciamos la base datos mongo:
-
-        mongod
-
-    Iniciamos el Redis Server:
-
-        redis-server
-
-    Iniciamos la aplicacion
-
-        node server.js
 
 ## Recursos
 

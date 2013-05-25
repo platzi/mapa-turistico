@@ -60,7 +60,7 @@ input[type="submit"]
 	left 100px
 	left 140px
 	left 0
-	
+
 	h2
 		background rgba(98, 165, 58, 1)
 		box-shadow rgba(98, 165, 58, .5) 0 .4em
@@ -75,43 +75,76 @@ input[type="submit"]
 #header
 	h1
 		color #fff
+		cursor pointer
+		float left
 		font-size 1.2em
 		line-height 40px
-		margin 0
-		text-align center
+		margin 0 1.8em 0 1.8em
+		//text-align center
+	a#loginButton, a#registro
+		background azul
+		color blanco
+		display inline-block
+		float right
+		font-size 15px
+		font-weight bold
+		margin-top .4em
+		margin-left .8em
+		padding .3em .6em
+		text-decoration none
+		vertical-align top
+		&:hover
+			background-image radial-gradient(circle,  lighten(azul, 40%) 0%, azul 100%)
+	a#loginButton
+		margin-right 1em
+	a#acerca
+		margin-left 2em
+	a#colabora, a#acerca
+		color darken(blanco, 60%)
+		float left
+		font-size 13px
+		font-weight bold
+		margin-top 1em
+		margin-right .8em
+		text-decoration none
 
 #logintt
 	position absolute
-	background rgba(0, 0, 0, .8)
+	//background rgba(0, 0, 0, .8)
+	background darken(blanco, 2%)
 	border-radius 0 7px 7px 7px
 	box-shadow rgba(0, 0, 0, .5) 5px 5px 7px
-	left 50%
+	display none
+	left 88%
+	text-align center
 	margin-left -125px
 	padding 1em
 	width 250px
-	top 25%
+	top 10%
 	z-index 999
-	
+
 	h2
-		background rgba(98, 165, 58, 1)
-		box-shadow rgba(98, 165, 58, .5) 0 .4em
-		color rgba(255, 255, 255, 1)
-		font-size .8em
-		margin 1em 0
-		padding 1.5em 0
-		text-align center
-		text-shadow 3px 3px 5px rgba(0, 0, 0, .5)
-		text-transform uppercase
-	
+		color darken(blanco, 90%)
+		font-size 17px
 	a
 		background-color #1bb2e9
 		color #fff
 		display block
 		font-weight bold
-		margin 2em auto
-		padding 0.5em 0.2em
+		margin 1em auto
+		padding 0.5em 0.1em
 		text-align center
 		text-decoration none
+	input[type='text']
+		border thin solid darken(blanco, 20%)
+		border-radius .2em
+		margin-bottom .5em
+	input[type='button']
+		background #238C00
+		color blanco
+		font-size .8em
+		height 40px
+		width 70%
 
 #main
 	position absolute
@@ -130,7 +163,7 @@ input[type="submit"]
 #places
 	list-style none
 	padding 0
-	
+
 	li
 		padding 0
 		margin-bottom .5em
@@ -145,7 +178,7 @@ input[type="submit"]
 			img
 				border-radius 5em
 				float left
-			
+
 			& > div
 				display table
 				height 100px
@@ -154,11 +187,11 @@ input[type="submit"]
 				& > .center
 					display table-cell
 					vertical-align middle
-			
+
 			h3
 				font-size .9em
 				margin .2em 0
-			
+
 			p
 				font-size .7em
 				margin 0
@@ -195,7 +228,7 @@ input[type="submit"]
 		box-shadow rgba(0, 0, 0, .3) 5px 5px 7px
 		color rgba(255,255,255,1)
 		padding 1em
-	
+
 	abbr
 		color rgba(255,255,255,1)
 		font-size .8em
@@ -207,15 +240,50 @@ input[type="submit"]
 		text-decoration none
 
 #sidebar
-	background #f4f5f3
-	box-shadow 0 0 10px -2px rgba(0, 0, 0, .5)
+	background #f6f6f6
 	bottom 0
+	box-shadow 0 0 10px -2px rgba(0, 0, 0, .5)
 	left 0
+	overflow auto
 	position absolute
 	top 40px
 	width 320px
 	z-index 1
-	
+
+	.elemList
+		background blanco
+		color gris
+		cursor pointer
+		margin 0.5em auto
+		overflow hidden
+		padding 5px
+
+		.name
+			font-size 15px
+			font-weight bold
+			margin 0
+
+		.description
+			font-size 15px
+			margin 0.3em 0
+
+		.caption
+			padding-left 100px
+
+		.thumb
+			border-radius 100%
+			overflow hidden
+			float left
+
+		.thumb img
+			display block
+			height 90px
+			width 90px
+
+		&:hover
+			background darken(blanco, 15%)
+			transition all 0.8s ease-out
+
 	h2
 		background rojizo
 		color blanco
@@ -230,42 +298,42 @@ input[type="submit"]
 	&.leaflet-center
 		display none
 
-@media screen and (max-width:1200px) 
-	#formulario 
+@media screen and (max-width:1200px)
+	#formulario
 		left 140px
-	
-	#sidebar 
+
+	#sidebar
 		width 290px
-	
-	#main 
+
+	#main
 		left 290px
-	
-@media screen and (max-width:1024px) 
-	#formulario 
+
+@media screen and (max-width:1024px)
+	#formulario
 		left 100px
-	
-	#sidebar 
+
+	#sidebar
 		width 280px
-	
-	#main 
+
+	#main
 		left 280px
-	
 
 
-@media screen and (max-width:768px) 
-	#formulario 
+
+@media screen and (max-width:768px)
+	#formulario
 		left 140px
 
-@media screen and (max-width:600px) 
-	#formulario 
+@media screen and (max-width:600px)
+	#formulario
 		left 0
-	
-	#sidebar 
+
+	#sidebar
 		height 100%
 		top 650px
 		width 100%
-	
-	#main 
+
+	#main
 		left 0
 		height 620px
 		width  100%
