@@ -6,10 +6,17 @@ input[type="submit"]{background:#4876ff;box-shadow:rgba(72,118,255,0.5) 0 .4em;c
 #cerrar{background:rgba(255,0,0,0.8);border-radius:90% 90%;box-shadow:0 0 3px rgba(0,0,0,0.5);color:#fff;height:2.2em;line-height:2.2em;position:absolute;right:-15px;text-align:center;text-decoration:none;top:-20px;width:2.2em}
 #formulario{position:absolute;background:rgba(0,0,0,0.8);border-radius:0 7px 7px 7px;box-shadow:rgba(0,0,0,0.5) 5px 5px 7px;left:50%;margin-left:-125px;padding:1em;width:250px;top:15%;z-index:999;left:140px;left:100px;left:140px;left:0;}
 #formulario h2{background:#62a53a;box-shadow:rgba(98,165,58,0.5) 0 .4em;color:#fff;font-size:.8em;margin:1em 0;padding:1.5em 0;text-align:center;text-shadow:3px 3px 5px rgba(0,0,0,0.5);text-transform:uppercase}
-#header h1{color:#fff;float:left;font-size:1.2em;line-height:40px;margin:0}
-#logintt{position:absolute;background:rgba(0,0,0,0.8);border-radius:0 7px 7px 7px;box-shadow:rgba(0,0,0,0.5) 5px 5px 7px;display:none;left:50%;margin-left:-125px;padding:1em;width:250px;top:25%;z-index:999;}
-#logintt h2{background:#62a53a;box-shadow:rgba(98,165,58,0.5) 0 .4em;color:#fff;font-size:.8em;margin:1em 0;padding:1.5em 0;text-align:center;text-shadow:3px 3px 5px rgba(0,0,0,0.5);text-transform:uppercase}
-#logintt a{background-color:#1bb2e9;color:#fff;display:block;font-weight:bold;margin:2em auto;padding:.5em .2em;text-align:center;text-decoration:none}
+#header h1{color:#fff;cursor:pointer;float:left;font-size:1.2em;line-height:40px;margin:0 1.8em 0 1.8em}
+#header a#loginButton,#header a#registro{background:#006cd8;color:#fff;display:inline-block;float:right;font-size:15px;font-weight:bold;margin-top:.4em;margin-left:.8em;padding:.3em .6em;text-decoration:none;vertical-align:top;}
+#header a#loginButton:hover,#header a#registro:hover{background-image:radial-gradient(circle,#4fa7ff 0%,#006cd8 100%)}
+#header a#loginButton{margin-right:1em}
+#header a#acerca{margin-left:2em}
+#header a#colabora,#header a#acerca{color:#666;float:left;font-size:13px;font-weight:bold;margin-top:1em;margin-right:.8em;text-decoration:none}
+#logintt{position:absolute;background:#fafafa;border-radius:0 7px 7px 7px;box-shadow:rgba(0,0,0,0.5) 5px 5px 7px;display:none;left:88%;text-align:center;margin-left:-125px;padding:1em;width:250px;top:10%;z-index:999;}
+#logintt h2{color:#1a1a1a;font-size:17px}
+#logintt a{background-color:#1bb2e9;color:#fff;display:block;font-weight:bold;margin:1em auto;padding:.5em .1em;text-align:center;text-decoration:none}
+#logintt input[type='text']{border:thin solid #ccc;border-radius:.2em;margin-bottom:.5em}
+#logintt input[type='button']{background:#238c00;color:#fff;font-size:.8em;height:40px;width:70%}
 #main{position:absolute;bottom:0;left:320px;right:0;top:40px}
 #mimapa{height:100%;left:0;position:absolute;top:0;width:100%}
 #places{list-style:none;padding:0;}
