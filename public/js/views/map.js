@@ -10,7 +10,6 @@ var MapView = Backbone.View.extend({
 	    });
 
 		var tiles = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
-
-		this.map.addLayer(tiles);
+		this.map.addLayer(tiles);		
 	}
 });
