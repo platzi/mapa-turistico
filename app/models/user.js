@@ -1,8 +1,9 @@
 'use strict';
 
-var mongoose = require('mongoose'),
-    Schema   = mongoose.Schema,
-    User     = {};
+var mongoose     = require('mongoose'),
+    Schema       = mongoose.Schema,
+    PlacesSchema = require('./places').placesSchema,
+    User         = {};
 
 var userSchema = new Schema({
     createAt    : {type: Date, 'default': Date.now},
@@ -11,7 +12,8 @@ var userSchema = new Schema({
     provider_id : {type: String, unique: true},
     username    : {type: String, unique: true, required: true},
     token       : {type: String},
-    tokenSecret : {type: String}
+    tokenSecret : {type: String},
+    places      : [PlacesSchema]
 });
 
 userSchema.statics.findOrCreate = function (profile, done) {

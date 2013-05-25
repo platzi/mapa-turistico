@@ -1,7 +1,8 @@
 'use strict';
 
-var indexController = require('./controller/index'),
-    passport        = require('passport');
+var indexController  = require('./controller/index'),
+    placesController = require('./controller/places'),
+    passport         = require('passport');
 
 var logoutController = function (req, res) {
     req.logout();
@@ -11,6 +12,9 @@ var logoutController = function (req, res) {
 module.exports = function (app) {
     app.get('/', indexController);
     app.get('/logout', logoutController);
+
+    //places url
+    app.post('/places', placesController.create);
 
     //authentification twitter
     app.get('/auth/twitter', passport.authenticate('twitter'));
