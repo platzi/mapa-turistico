@@ -23,7 +23,8 @@
     "grunt-mocha-cli": "~1.0.6",
     "grunt-contrib-jshint": "~0.5.4",
     "fluidity": "~0.1.5",
-    "stylus": "~0.32.1"
+    "stylus": "~0.32.1",
+    "supertest": "~0.6.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
