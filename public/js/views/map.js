@@ -15,6 +15,10 @@ var MapView = Backbone.View.extend({
 
 	    function onLocationFound(position) {
 	    	self.map.setView(new L.LatLng(position.latlng.lat, position.latlng.lng), 12);
+	    	self.userLocation = {
+	    		lat: position.latlng.lat,
+	    		lng: position.latlng.lng
+	    	};
 	    }
 
 	    this.map.addLayer(tiles);
