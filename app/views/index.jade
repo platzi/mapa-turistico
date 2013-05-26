@@ -18,8 +18,8 @@ block main
 				a(href="/sitio/", id="addButton") Agregar lugar
 				a(href="/logout", id="logoutButton") Salir
 			else
-				a(href="/login/", id="loginButton") Ingresar
-				a(href="/registro/", id="registro") Registrar
+				a(href="/login/", id="loginButton") Ingresar o registrarme
+				//- a(href="/registro/", id="registro") Registrar
 
 		if profile
 			div(class="user_area clearfix")
@@ -37,13 +37,13 @@ block main
 		div(id="mimapa")
 
 	section(id="logintt")
-		h2 Iniciar Sesión
-		form(id="sendData", method="post", action="")
-			input(id="", type="text", placeHolder="Usuario")
-			input(id="", type="text", placeHolder="Contraseña")
-			input(id="", type="button", value="Entrar")
+		h2 Iniciar Sesión o registrarme
+		//- form(id="sendData", method="post", action="")
+		//- 	input(id="", type="text", placeHolder="Usuario")
+		//- 	input(id="", type="text", placeHolder="Contraseña")
+		//- 	input(id="", type="button", value="Entrar")
 		
-		p O puedes usar:
+		//- p O puedes usar:
 		a(id="tt", href="/auth/twitter", title="Conéctate con Twitter") 
 			img(src="/img/assets/twitter.png", alt="") 
 			span Conéctate con Twitter 
@@ -54,7 +54,7 @@ block main
 		//	a(href="#", target="_blank") Regístrate
 
 	section(id="agregar-sitio")
-		a(href="/", title="Cerrar", class="close") X 
+		a(href="#", title="Cerrar", id="closeButton", class="close") X 
 		h2 Agregar sitio turistico
 		form(id="form-agregar-sitio", method="post", action="")
 			p
@@ -68,21 +68,19 @@ block main
 			p
 				input(type="text", id="positionPlace", name="positionPlace", placeholder="Localizacion")
 				span(id="pos") Posición
-
-			p(id="selectFile")
+			p
 				input(id="upload_value", value="")
 				span(class="upload")
 					input(type="file")
 				span(id="fileImage") Imagen
-				
 			p
 				textarea(id="descriptionPlace", name="descriptionPlace", placeholder="Descripcion", rows="8")
-			p
+			p(class="clearfix")
 				input(type="submit", value="Agregar")
 
 block javascripts
-	script(src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js")
-	script(src="http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.js")
+	script(src="/js/vendor/jquery.js")
+	script(src="/js/vendor/leaflet.js")
 	script(src="/socket.io/socket.io.js")
 	script(src="/js/vendor/underscore.js")
 	script(src="/js/vendor/backbone.js")

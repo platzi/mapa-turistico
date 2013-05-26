@@ -126,32 +126,23 @@ a
 	#logoutButton:hover
 		text-decoration underline
 
-	a#colabora, a#acerca
-		color darken(blanco, 60%)
-		float left
-		font-size 13px
-		font-weight bold
-		margin-right .8em
-		margin-top 1em
-		text-decoration none
-
 #logintt
 	//background rgba(0, 0, 0, .8)
 	background darken(blanco, 2%)
-	border-radius 0 7px 7px 7px
-	box-shadow rgba(0, 0, 0, .5) 5px 5px 7px
+	border-radius 4px
+	box-shadow 0 0 10px rgba(0, 0, 0, .3)
 	display none
-	left 90%
-	margin-left -125px
-	padding 1em
+	right 15px
+	padding 15px
 	position absolute
 	text-align center
-	top 10%
+	top 60px
 	width 220px
 	z-index 999
 
 	h2
 		color darken(blanco, 90%)
+		margin 0 0 10px 0
 		font-size 17px
 	a#tt, a#fb
 		background azul_tt
@@ -159,12 +150,13 @@ a
 		display block
 		font-size 13px
 		font-weight bold
-		margin 1em .7em
-		padding 0.9em 0.4em
+		margin 10px 0 0 0
+		line-height 32px
+		padding 5px
 		text-align center
 		text-decoration none
 		img 
-			margin -2.5% auto  0 auto
+			display block
 			float left
 	a#fb 
 		background azul_fb
@@ -198,19 +190,19 @@ a
 
 #agregar-sitio
 	background darken(blanco, 2%)
-	border-radius 0 7px 7px 7px
-	box-shadow rgba(0, 0, 0, .5) 5px 5px 7px
+	border-radius 4px
+	box-shadow 0 0 10px rgba(0, 0, 0, .3)
 	display none
 	font-size 13px
 	left 50%
-	margin-left -125px
-	padding 1.3em
+	margin-left -182px
+	padding 15px
 	position absolute
 	text-align left
-	top 10%
+	top 70px
 	width 350px
-	z-index 999
-	a.close 
+	z-index 1003
+	.close 
 		background rojizo
 		border-radius 100%
 		color blanco 
@@ -268,30 +260,29 @@ a
 			
 		input[type="submit"]
 			background azul
+			border 0
+			border-radius 4px
 			color blanco
+			float right
 			font-size 15px
-			font-weight bold
-			height 40px
-			margin 2% 30%
+			height 36px
+			margin 0
 			width 40%
 			&:hover 
 				background-image radial-gradient(circle,  lighten(azul, 40%) 0%, azul 100%)
 	h2
-		background-color verde
-		color blanco
-		font-size 15px
-		font-weight bold
-		margin-top 0
-		padding 8px 0 8px 0
+		color darken(blanco, 90%)
+		margin 0 0 10px 0
+		font-size 17px
 		text-align center
 	
-
 	input[type="text"], textarea
+		border 1px solid #ddd
 		color gris
 		font-size 15px
 		padding 5px
 		resize none
-		width 97%
+		width 338px
 
 	#positionPlace
 		width 70%
@@ -300,7 +291,7 @@ a
 			background-color gris
 
 	p
-		margin 5px
+		margin 10px 0 0 0
 		padding 0
 
 
