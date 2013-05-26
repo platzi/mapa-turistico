@@ -16,13 +16,17 @@ block main
 		div(class="actions_area")
 			if profile
 				a(href="/sitio/", id="addButton") Agregar lugar
-				p profile[0]
+				a(href="/logout", id="logoutButton") Salir
 			else
 				a(href="/login/", id="loginButton") Ingresar
 				a(href="/registro/", id="registro") Registrar
 
 		if profile
-			div(class="user_area")
+			div(class="user_area clearfix")
+				div(class="avatar")
+					img(src="#{profile.avatar}", height="34", width="34")
+				div(class="name") Hola 
+					strong #{profile.username}
 
 	section(id="sidebar")
 		h2 Últimos sitios agregados
