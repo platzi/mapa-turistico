@@ -25,7 +25,8 @@ findUserById = function (id, done) {
         done(null, {
             id      : user._id,
             username: user.username,
-            provider: user.provider
+            provider: user.provider,
+            avatar  : user.photo
         });
     });
 };

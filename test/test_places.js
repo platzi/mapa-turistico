@@ -18,7 +18,7 @@ describe('#Places', function (){
                     'lng'       : 40
                 })
                 .set('Accept', 'application/json')
-                .expect(200, done);
+                .expect(201, done);
         });
 
         it('should returnar 400 because the post is wrong', function (done) {

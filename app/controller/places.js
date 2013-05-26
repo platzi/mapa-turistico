@@ -10,7 +10,7 @@ handleResponse = function (err, res) {
         return res.send(500);
     }
 
-    return res.send(200);
+    return res.send(201);
 };
 
 

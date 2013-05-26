@@ -9,13 +9,8 @@ module.exports = {
         port   : process.env.MONGO_PORT || 27017,
         host   : process.env.MONGO_HOST || 'localhost',
         getUrl : function () {
-            //Nota: nunca hacer esto.
-            if (process.env.MONGOHQ_URL) {
-                return process.env.MONGOHQ_URL;
-            } else {
-                var self = this;
-                return ['mongodb', ':', '//', self.host, ':', self.port, '/', self.name].join('');
-            }
+            var self = this;
+            return ['mongodb', ':', '//', self.host, ':', self.port, '/', self.name].join('');
         }
     },
     session: {
