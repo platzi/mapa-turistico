@@ -9,10 +9,5 @@ var LoginView = Backbone.View.extend({
 			self.$el.fadeToggle();
 		}
 		loginButton.on('click', onLoginClick);
-	},
-	loginSuccess: function(){
-		console.log("Entra");
-		var profile = $.get("/profile");
-		console.log(profile);
 	}
 });

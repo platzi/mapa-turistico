@@ -9,7 +9,7 @@ function onDocumentReady() {
 	// vistas
 	app.map = new MapView();
 	app.sidebar = new SidebarView();
-	app.login = new LoginView();
+	//app.login = new LoginView();
 	//app.addPlace = new AddPlaceView();
 	app.widget = new Widget();
 	// enrutador
