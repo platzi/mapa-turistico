@@ -209,19 +209,41 @@ AddPlaceView = Backbone.View.extend({
         htmlCountries = '';
         countryPlace = $('#countryPlace');
         geolocationOption = $('#geolocationOption');
+        $close = $('#closeButton');
 
         function getUserGeolocation() {
-            $latInput.val(app.map.userLocation.lat);
-            $lgnInput.val(app.map.userLocation.lng);
+            if (app.map.userLocation) {
+                $latInput.val(app.map.userLocation.lat);
+                $lgnInput.val(app.map.userLocation.lng);
+            } else {
+                app.map.map.locate({
+                    enableHighAccuracy: true
+                });
+                app.map.map.on('locationfound', function() {
+                    $latInput.val(app.map.userLocation.lat);
+                    $lgnInput.val(app.map.userLocation.lng);
+                });
+            }
         }
 
         function onSubmitForm(e) {
             e.preventDefault();
             $(this).ajaxSubmit({
                 success: function(data) {
-                    console.log(data);
+                    app.places.fetch({
+                        success: function(collection, data){
+                            console.log('yeah!');
+                            app.sidebar.addPlaces(collection);
+                        }
+                    });
                 }
             });
+            self.$el.fadeOut('fast');
+        }
+
+        function onClickClose(e) {
+            e.preventDefault();
+            self.$el.fadeOut('fast');
         }
         
         _.each(countries, function(country) {
@@ -233,5 +255,7 @@ AddPlaceView = Backbone.View.extend({
         geolocationOption.on('click', getUserGeolocation);
 
         $form.on('submit', onSubmitForm);
+
+        $close.on('click', onClickClose);
     }
 });

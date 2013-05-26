@@ -24,7 +24,7 @@ var MapView = Backbone.View.extend({
 	    this.map.addLayer(tiles);
 
 		this.map.locate({
-			enableHighAccuracy: false
+			enableHighAccuracy: true
 		});
 
 		this.map.on('locationfound', onLocationFound);
@@ -34,7 +34,7 @@ var MapView = Backbone.View.extend({
 
 		this.map.addLayer(marker);
 
-		this.map.setView(new L.LatLng(lat,lng), 6);
+		this.map.setView(new L.LatLng(lat,lng), 14);
 
 		marker.bindPopup(name);
 	}
