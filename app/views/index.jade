@@ -7,12 +7,13 @@ block stylesheets
 
 block main
 	header(id="header")
-		h1 
+		h1
 			img(src="/img/logo.png", alt="")
 		a(href="/acerca/", id="acerca") |   Acerca del proyecto
 		a(href="/colabora/", id="colabora") Colabora con nosotros
 		a(href="/login/", id="loginButton") Ingresar
 		a(href="/registro/", id="registro") Registrar
+		a(href="/sitio/", id="addButton") Agregar lugar
 
 	section(id="sidebar")
 		h2 Últimos sitios agregados
@@ -30,19 +31,45 @@ block main
 			input(id="", type="button", value="Entrar")
 		a(id="tt", href="/auth/twitter", title="Conéctate con Twitter") Conéctate con Twitter
 		//a(id="fb", href="/auth/facebook", title="Conéctate con Facebook") Conéctate con Facebook
-		
-		
+
+	section(id="agregar-sitio")
+		h2 Agregar sitio turistico
+		form(id="form-agregar-sitio", method="post", action="")
+			p
+				input(type="text", id="namePlace", name="namePlace", placeholder="Nombre del lugar")
+			p(class="radios")
+				input(type="radio", name="lugar", value="estoyAqui")
+				span  Estoy en el lugar
+			p(class="radios")
+				input(type="radio", name="lugar", value="noAqui")
+				span  No estoy en el lugar
+			p
+				input(type="text", id="positionPlace", name="positionPlace", placeholder="Localizacion")
+				span Posicion
+			p
+				input(type="file")
+			p
+				textarea(id="descriptionPlace", name="descriptionPlace", placeholder="Descripcion")
+			p
+				input(type="submit", value="Agregar")
+
 
 block javascripts
-	script(src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js")	
+	//- Libs
+	script(src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js")
 	script(src="http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.js")
 	script(src="/socket.io/socket.io.js")
 	script(src="/js/vendor/underscore.js")
 	script(src="/js/vendor/backbone.js")
+	//- Modelos
 	script(src="/js/models/user.js")
 	script(src="/js/models/place.js")
+	//- Vistas
 	script(src="/js/views/map.js")
 	script(src="/js/views/sidebar.js")
-	script(src="/js/views/login.js")
+	script(src="/js/views/headerView.js")
+
+	//- Router
 	script(src="/js/routes.js")
+	//- App
 	script(src="/js/main.js")
