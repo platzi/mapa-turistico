@@ -17,10 +17,10 @@ var MapView = Backbone.View.extend({
 	    	self.map.setView(new L.LatLng(position.latlng.lat, position.latlng.lng), 12);
 	    }
 
-		this.map.addLayer(tiles);
+	    this.map.addLayer(tiles);
 
 		this.map.locate({
-			enableHighAccuracy: true
+			enableHighAccuracy: false
 		});
 
 		this.map.on('locationfound', onLocationFound);
