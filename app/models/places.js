@@ -1,17 +1,34 @@
-var mongoose = require('mongoose'),
-    Schema   = mongoose.Schema;
+var mongoose    = require('mongoose'),
+    Schema      = mongoose.Schema,
+    placesSchema;
 
-var placesSchema = new Schema({
-    description : {type: String},
-    city        : {type: String, required: true},
-    country     : {type: String, required: true},
-    name  : {type: String, required: true},
-    image  : {type: String, required: true},
-    point : {
-        lat : {type: Number, required: true},
-        lng: {type: Number, required: true}
+placesSchema = new Schema({
+    description : {
+        type: String
     },
-    url   : {type: String}
+    city : {
+        type    : String,
+        required: true
+    },
+    country     : {
+        type    : String,
+        required: true
+    },
+    name : {
+        type    : String,
+        required: true
+    },
+    point : {
+        lat : {
+            type: Number,
+            required: true
+        },
+        lng : {
+            type: Number,
+            required: true
+        }
+    },
+    photo : [String]
 });
 
 module.exports = {

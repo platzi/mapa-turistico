@@ -7,7 +7,7 @@ var MapView = Backbone.View.extend({
 		this.map = L.map('mimapa', {
 	    	center: [0, -28],
 	    	zoom: 3,
-	    	worldCopyJump: true	    	
+	    	worldCopyJump: true
 	    });
 
 		var tiles = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
@@ -22,7 +22,7 @@ var MapView = Backbone.View.extend({
 
 		marker.bindPopup(name);
 		//this.map.zoomOut(3);
-		
+
 		//this.map.panInsideBounds(new L.LatLng(lat,lng));
 
 	}

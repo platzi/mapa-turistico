@@ -1,14 +1,9 @@
 var app      = require('../app'),
-    mongoose = require('mongoose'),
     request  = require('supertest');
 
 
 describe('#Places', function (){
     'use strict';
-    before(function () {
-        var conn = mongoose.connect('mongodb://127.0.0.1:27017/map-test');
-        conn.connection.db.dropDatabase();
-    });
 
     describe('#POST /places', function () {
         it('should return 200', function (done) {
