@@ -1,6 +1,8 @@
 -moz-background-size cover,box-shadow(arguments){-webkit-box-shadow:arguments;-moz-box-shadow:arguments;-o-box-shadow:arguments;-ms-box-shadow:arguments;box-shadow:arguments}
-body{background:#222;color:#333;font-family:Helvetica,Arial;font-size:16px}
-#header h1{color:#fff;cursor:pointer;float:left;font-size:1.2em;line-height:40px;margin:0 1.8em 0 1.8em}
+body{background:#222;color:#333;font-family:'Open Sans',Helvetica,Arial,sans-serif;font-size:16px}
+#header{background:#222;height:44px;}
+#header .brand_area{color:#fff;cursor:pointer;float:left;font-size:1.2em;line-height:40px;margin:2px 10px;}
+#header .brand_area img{display:block}
 #header a#loginButton,#header a#registro,#header a#addButton{background:#006cd8;color:#fff;display:inline-block;float:right;font-size:15px;font-weight:bold;margin-top:.4em;margin-left:.8em;padding:.3em .6em;text-decoration:none;vertical-align:top;}
 #header a#loginButton:hover,#header a#registro:hover,#header a#addButton:hover{background-image:radial-gradient(circle,#4fa7ff 0%,#006cd8 100%)}
 #header a#loginButton{margin-right:1em}
@@ -37,7 +39,7 @@ body{background:#222;color:#333;font-family:Helvetica,Arial;font-size:16px}
 #agregar-sitio #positionPlace{width:70%;}
 #agregar-sitio #positionPlace span{background-color:#222}
 #agregar-sitio p{margin:5px;padding:0}
-#main{position:absolute;bottom:0;left:320px;right:0;top:40px}
+#main{position:absolute;bottom:0;left:320px;right:0;top:45px}
 #mimapa{height:100%;left:0;position:absolute;top:0;width:100%}
 #places{list-style:none;padding:0;}
 #places li{padding:0;margin-bottom:.5em;}
@@ -53,7 +55,7 @@ body{background:#222;color:#333;font-family:Helvetica,Arial;font-size:16px}
 #place p{background:rgba(0,0,0,0.4);box-shadow:rgba(0,0,0,0.3) 5px 5px 7px;color:#fff;padding:1em}
 #place abbr{color:#fff;font-size:.8em;margin:0 1.4em;position:absolute;right:0;text-shadow:2px 2px 5px rgba(0,0,0,0.5)}
 #place a{text-decoration:none}
-#sidebar{background:#f6f6f6;bottom:0;box-shadow:0 0 10px -2px rgba(0,0,0,0.5);left:0;overflow:auto;position:absolute;top:40px;width:320px;z-index:1;}
+#sidebar{background:#f6f6f6;bottom:0;box-shadow:0 0 10px -2px rgba(0,0,0,0.5);left:0;overflow:auto;position:absolute;top:44px;width:320px;z-index:1;}
 #sidebar .elemList{background:#fff;color:#222;cursor:pointer;margin:.5em auto;overflow:hidden;padding:5px;}
 #sidebar .elemList .name{font-size:15px;font-weight:bold;margin:0}
 #sidebar .elemList .description{font-size:15px;margin:.3em 0}
