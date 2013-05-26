@@ -1,7 +1,7 @@
 -moz-background-size cover,box-shadow(arguments){-webkit-box-shadow:arguments;-moz-box-shadow:arguments;-o-box-shadow:arguments;-ms-box-shadow:arguments;box-shadow:arguments}
 body{background:#222;color:#333;font-family:'Open Sans',Helvetica,Arial,sans-serif;font-size:16px}
 a{text-decoration:none}
-#header{background:linear-gradient(to bottom,#fcfcfc 0%,#eee 100%);border-bottom:1px solid #ccc;box-shadow:0 0 5px rgba(0,0,0,0.3);height:44px;position:absolute;width:100%;z-index:1002;}
+#header{background:linear-gradient(to bottom,#fff 0%,#eee 100%);border-bottom:1px solid #ccc;box-shadow:0 0 5px rgba(0,0,0,0.3);height:44px;position:absolute;width:100%;z-index:1002;}
 #header .brand_area{float:left;margin:4px 10px;}
 #header .brand_area img{display:block}
 #header .actions_area,#header .user_area{float:right;border-left:1px solid #ddd;padding:5px 10px}

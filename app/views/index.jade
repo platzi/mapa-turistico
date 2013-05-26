@@ -12,11 +12,16 @@ block main
 			img(src="/img/assets/logo-proudplaces.png", alt="Proud Places")
 		//- a(href="/acerca/", id="acerca") Acerca del proyecto
 		//- a(href="/colabora/", id="colabora") Colabora con nosotros
+
 		div(class="actions_area")
-			a(href="/login/", id="loginButton") Ingresar
-			a(href="/registro/", id="registro") Registrar
-			a(href="/sitio/", id="addButton") Agregar lugar
-		div(class="user_area")
+			if profile
+				a(href="/sitio/", id="addButton") Agregar lugar
+			else
+				a(href="/login/", id="loginButton") Ingresar
+				a(href="/registro/", id="registro") Registrar
+
+		if profile
+			div(class="user_area")
 
 	section(id="sidebar")
 		h2 Últimos sitios agregados
