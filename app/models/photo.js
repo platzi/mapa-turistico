@@ -22,7 +22,7 @@ var methods = {
 
         fs.rename(path_file, path_upload, function (err) {
             if (err) { return alternate_upload(path_file, path_upload); }
-            next(err);
+            next(null);
         });
     }
 };

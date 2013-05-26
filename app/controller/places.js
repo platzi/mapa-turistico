@@ -12,7 +12,6 @@ handleResponse = function (err, res) {
         }
         return res.send(500);
     }
-
     return res.send(201);
 };
 
@@ -28,8 +27,8 @@ exports.create = function (req, res) {
             name : req.param('name'),
             image : req.param('image'),
             point: {
-                lat: req.param('lat'),
-                lng: req.param('lng')
+                lat: Number(req.param('lat')),
+                lng: Number(req.param('lng'))
             }
         };
 
@@ -47,8 +46,6 @@ exports.create = function (req, res) {
     ], function (err) {
         handleResponse(err, res);
     });
-
-
 };
 
 exports.findAll = function (req, res) {
