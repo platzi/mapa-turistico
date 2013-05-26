@@ -2,7 +2,7 @@
 
 var express      = require('express'),
     path         = require('path'),
-    cfg       = require('./app/config').cfg,
+    cfg          = require('./app/config').cfg,
     passport     = require('passport'),
     sessionStore = require('./app/sessionStore').create(express);
 

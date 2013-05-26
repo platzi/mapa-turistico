@@ -29,10 +29,19 @@ block main
 			input(id="", type="text", placeHolder="Usuario")
 			input(id="", type="text", placeHolder="Contraseña")
 			input(id="", type="button", value="Entrar")
-		a(id="tt", href="/auth/twitter", title="Conéctate con Twitter") Conéctate con Twitter
-		//a(id="fb", href="/auth/facebook", title="Conéctate con Facebook") Conéctate con Facebook
+		
+		p O puedes usar:
+		a(id="tt", href="/auth/twitter", title="Conéctate con Twitter") 
+			img(src="/img/assets/twitter.png", alt="") 
+			span Conéctate con Twitter 
+		a(id="fb", href="/auth/facebook", title="Conéctate con Facebook") 
+			img(src="/img/assets/facebook.png", alt="") 
+			span Conéctate con Facebook
+		//p ¿No tienes cuenta? 
+		//	a(href="#", target="_blank") Regístrate
 
 	section(id="agregar-sitio")
+		a(href="/", title="Cerrar", class="close") X 
 		h2 Agregar sitio turistico
 		form(id="form-agregar-sitio", method="post", action="")
 			p
@@ -45,17 +54,20 @@ block main
 				span  No estoy en el lugar
 			p
 				input(type="text", id="positionPlace", name="positionPlace", placeholder="Localizacion")
-				span Posicion
+				span(id="pos") Posición
+
+			p(id="selectFile")
+				input(id="upload_value", value="")
+				span(class="upload")
+					input(type="file")
+				span(id="fileImage") Imagen
+				
 			p
-				input(type="file")
-			p
-				textarea(id="descriptionPlace", name="descriptionPlace", placeholder="Descripcion")
+				textarea(id="descriptionPlace", name="descriptionPlace", placeholder="Descripcion", rows="8")
 			p
 				input(type="submit", value="Agregar")
 
-
 block javascripts
-	//- Libs
 	script(src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js")
 	script(src="http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.js")
 	script(src="/socket.io/socket.io.js")

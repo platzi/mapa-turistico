@@ -1,8 +1,9 @@
 'use strict';
 
-var indexController  = require('./controller/index'),
-    placesController = require('./controller/places'),
-    passport         = require('passport');
+var indexController   = require('./controller/index'),
+    placesController  = require('./controller/places'),
+    profileController = require('./controller/profile'),
+    passport          = require('passport');
 
 var logoutController = function (req, res) {
     req.logout();
@@ -16,6 +17,9 @@ module.exports = function (app) {
     //places url
     app.post('/places', placesController.create);
     app.get('/places', placesController.findAll);
+
+    //get profile
+    app.get('/profile', profileController.getProfile);
 
     //authentification twitter
     app.get('/auth/twitter', passport.authenticate('twitter'));

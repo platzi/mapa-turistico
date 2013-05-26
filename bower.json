@@ -4,6 +4,7 @@
   "dependencies": {
     "jquery": "~2.0.0",
     "modernizr": "~2.6.2",
-    "socket.io-client": "~0.9.11"
+    "socket.io-client": "~0.9.11",
+    "handlebars": "~1.0.0-rc.4"
   }
 }
