@@ -1,0 +1,29 @@
+'use strict';
+
+module.exports = {
+    PORT                    : (process.env.PORT || 3000),
+    TWITTER_CONSUMER_KEY    : 'mZ3vccBOe1CEjyM715nQ',
+    TWITTER_CONSUMER_SECRET : 'WgOvuGkHh0FkA7Ebkrox5Qcb7tJ5GjS8Ug9N7rrq4',
+    db: {
+        name   : process.env.MONGO_DB   || 'mapaturistico',
+        port   : process.env.MONGO_PORT || 27017,
+        host   : process.env.MONGO_HOST || 'localhost',
+        getUrl : function () {
+            //Nota: nunca hacer esto.
+            if (process.env.MONGOHQ_URL) {
+                return process.env.MONGOHQ_URL;
+            } else {
+                var self = this;
+                return ['mongodb', ':', '//', self.host, ':', self.port, '/', self.name].join('');
+            }
+        }
+    },
+    session: {
+        key   : 'proudplace.sid',
+        secret: 'HelloWorld!!!'
+    },
+    sessionStore: {
+        host: process.env.SESSION_HOST || 'localhost',
+        port: process.env.SESSION_PORT || 6379
+    }
+};
