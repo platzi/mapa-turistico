@@ -36,5 +36,9 @@
   "repository": "",
   "author": "",
   "license": "BSD",
-  "readmeFilename": "README.md"
+  "readmeFilename": "README.md",
+  "subdomain": "eduardodiaz-map-turistico",
+  "engines": {
+    "node": "0.8.x"
+  }
 }
