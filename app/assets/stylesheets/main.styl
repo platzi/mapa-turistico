@@ -81,7 +81,7 @@ body
 		line-height 40px
 		margin 0 1.8em 0 1.8em
 		//text-align center
-	a#loginButton, a#registro, a#addButton
+	a#loginButton, a#registro, a#addButton, a#logoutButton 
 		background azul
 		color blanco
 		display inline-block
@@ -95,6 +95,8 @@ body
 		vertical-align top
 		&:hover
 			background-image radial-gradient(circle,  lighten(azul, 40%) 0%, azul 100%)
+	a#logoutButton
+		display: none
 	a#loginButton
 		margin-right 1em
 	a#acerca
