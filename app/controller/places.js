@@ -1,5 +1,8 @@
 'use strict';
-var Places = require('../models/places').Places,
+var Places          = require('../models/places').Places,
+    photoController = require('../controller/photo'),
+    async           = require('async'),
+    helpers         = require('../lib/helpers'),
     handleResponse;
 
 handleResponse = function (err, res) {
@@ -9,27 +12,39 @@ handleResponse = function (err, res) {
         }
         return res.send(500);
     }
-
     return res.send(201);
 };
 
-
 exports.create = function (req, res) {
-    var selfRes = res,
-        place   = {
+    if (!req.files) {return res.send(400);}
+
+    var file     = req.files.file,
+        file_ext = helpers.image.extensions[file.type],
+        place    = {
             city: req.param('city'),
             country: req.param('country'),
             description: req.param('description'),
             name : req.param('name'),
             image : req.param('image'),
             point: {
-                lat: req.param('lat'),
-                lng: req.param('lng')
+                lat: Number(req.param('lat')),
+                lng: Number(req.param('lng'))
             }
         };
 
-    Places.create(place, function (err) {
-        handleResponse(err, selfRes);
+    async.series([
+        function (callback) {
+            photoController.savePhoto({
+                name: file.name,
+                ext : file_ext,
+                path: file.path
+            }, callback);
+        },
+        function (callback) {
+            Places.create(place, callback);
+        }
+    ], function (err) {
+        handleResponse(err, res);
     });
 };
 
