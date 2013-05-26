@@ -1,6 +1,6 @@
 'use strict';
 
-var config          = require('../config').cfg,
+var cfg          = require('../config').cfg,
     passport        = require('passport'),
     TwitterStrategy = require('passport-twitter').Strategy,
     User            = require('../models/user'),
@@ -25,7 +25,8 @@ findUserById = function (id, done) {
         done(null, {
             id      : user._id,
             username: user.username,
-            provider: user.provider
+            provider: user.provider,
+            avatar  : user.photo
         });
     });
 };
@@ -38,8 +39,8 @@ module.exports = function () {
     passport.deserializeUser(findUserById);
 
     passport.use(new TwitterStrategy({
-        consumerKey: config.TWITTER_CONSUMER_KEY,
-        consumerSecret: config.TWITTER_CONSUMER_SECRET,
+        consumerKey: cfg.TWITTER_CONSUMER_KEY,
+        consumerSecret: cfg.TWITTER_CONSUMER_SECRET,
         callbackURL: '/auth/twitter/callback'
     }, findOrCreateTwitter));
 };

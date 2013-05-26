@@ -8,5 +8,5 @@ var LoginView = Backbone.View.extend({
 			self.$el.fadeToggle();
 		}
 		loginButton.on('click', onLoginClick);
-	} 
+	}
 });
