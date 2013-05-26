@@ -14,7 +14,9 @@
     "passport-facebook": "~0.1.5",
     "connect-redis": "~1.4.5",
     "cookie": "~0.1.0",
-    "connect": "~2.7.10"
+    "connect": "~2.7.10",
+    "invoke": "~0.1.2",
+    "async": "~0.2.8"
   },
   "devDependencies": {
     "should": "~1.2.2",
