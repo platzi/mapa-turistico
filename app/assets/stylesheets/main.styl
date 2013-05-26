@@ -4,8 +4,11 @@
 body
 	background gris
 	color gris2
-	font-family Helvetica, Arial
+	font-family 'Open Sans', Helvetica, Arial, sans-serif
 	font-size 16px
+
+a
+	text-decoration none
 
 // label
 // 	color #ccc
@@ -73,39 +76,37 @@ body
 // 		text-transform uppercase
 
 #header
-	h1
-		color #fff
-		cursor pointer
+	background linear-gradient(to bottom, #fcfcfc 0%,#eee 100%)
+	border-bottom 1px solid #ccc
+	box-shadow 0 0 5px rgba(0, 0, 0, .3)
+	height 44px
+	position absolute
+	width 100%
+	z-index 1002
+	.brand_area
 		float left
-		font-size 1.2em
-		line-height 40px
-		margin 0 1.8em 0 1.8em
-		//text-align center
-	a#loginButton, a#registro, a#addButton, a#logoutButton 
+		margin 4px 10px
+		img
+			display block
+	.actions_area, .user_area
+		float right
+		border-left 1px solid #ddd
+		padding 5px 10px
+	#loginButton, #registro, #addButton
 		background azul
+		border-radius 4px
 		color blanco
 		display inline-block
-		float right
 		font-size 15px
-		font-weight bold
-		margin-top .4em
-		margin-left .8em
-		padding .3em .6em
-		text-decoration none
-		vertical-align top
+		line-height 34px
+		margin 0 0 0 5px
+		padding 0 15px
 		&:hover
-			background-image radial-gradient(circle,  lighten(azul, 40%) 0%, azul 100%)
-	a#logoutButton
-		display: none
-	a#loginButton
-		margin-right 1em
-	a#acerca
-		margin-left 2em
-	a#addButton
+			background-image radial-gradient(circle,  lighten(azul, 20%) 0%, azul 100%)
+	#addButton
 		background verde
-		margin-right 4em
 		&:hover
-			background-image radial-gradient(circle, lighten(verde, 40%) 0%, verde 100%)
+			background-image radial-gradient(circle, lighten(verde, 20%) 0%, verde 100%)
 
 	a#colabora, a#acerca
 		color darken(blanco, 60%)
@@ -291,7 +292,7 @@ body
 	bottom 0
 	left 320px
 	right 0
-	top 40px
+	top 45px
 
 #mimapa
 	height 100%
@@ -386,9 +387,9 @@ body
 	left 0
 	overflow auto
 	position absolute
-	top 40px
+	top 45px
 	width 320px
-	z-index 1
+	z-index 1001
 
 	.elemList
 		background blanco
@@ -425,13 +426,12 @@ body
 			transition all 0.8s ease-out
 
 	h2
-		background rojizo
+		background #666
 		color blanco
-		font-size 1.2em
+		font-size 15px
+		font-weight normal
 		margin 0
-		padding .5em
-		text-align center
-		text-shadow 1px 2px 5px #000
+		padding 5px 10px
 		filter dropshadow(color=#000, offx=1, offy=1)
 
 .leaflet-top

@@ -7,17 +7,16 @@ describe('#Places', function (){
 
     describe('#POST /places', function () {
         it('should return 200', function (done) {
+            var path = (__dirname + '/fixtures/bosque.jpg');
             request(app)
                 .post('/places')
-                .send({
-                    description : 'Este es un lugar bonito',
-                    city        : 'Santo Domingo',
-                    country     : 'Republica Domicana',
-                    name        : 'Bahia de las aguilas',
-                    lat         : 40,
-                    'lng'       : 40
-                })
-                .set('Accept', 'application/json')
+                .field('description' ,'Este es un lugar bonito')
+                .field('city' ,'Santo Domingo')
+                .field('country' ,'Republica Dominica')
+                .field('name' ,'Faro colon')
+                .field('lat' , '40')
+                .field('lng' , '40')
+                .attach('file', path)
                 .expect(201, done);
         });
 
