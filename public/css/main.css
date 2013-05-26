@@ -5,19 +5,36 @@ body{background:#222;color:#333;font-family:Helvetica,Arial;font-size:16px}
 #header a#loginButton:hover,#header a#registro:hover,#header a#addButton:hover{background-image:radial-gradient(circle,#4fa7ff 0%,#006cd8 100%)}
 #header a#loginButton{margin-right:1em}
 #header a#acerca{margin-left:2em}
-#header a#addButton{background:#008000;margin-right:4em;}
-#header a#addButton:hover{background-image:radial-gradient(circle,#1aff1a 0%,#008000 100%)}
+#header a#addButton{background:#238c00;margin-right:4em;}
+#header a#addButton:hover{background-image:radial-gradient(circle,#58ff21 0%,#238c00 100%)}
 #header a#colabora,#header a#acerca{color:#666;float:left;font-size:13px;font-weight:bold;margin-right:.8em;margin-top:1em;text-decoration:none}
-#logintt,#agregar-sitio{background:#fafafa;border-radius:0 7px 7px 7px;box-shadow:rgba(0,0,0,0.5) 5px 5px 7px;display:none;left:88%;margin-left:-125px;padding:1em;position:absolute;text-align:center;top:10%;width:250px;z-index:999;}
-#logintt h2,#agregar-sitio h2{color:#1a1a1a;font-size:17px}
-#logintt a,#agregar-sitio a{background-color:#1bb2e9;color:#fff;display:block;font-weight:bold;margin:1em auto;padding:.5em .1em;text-align:center;text-decoration:none}
-#logintt input[type='text'],#agregar-sitio input[type='text']{border:thin solid #ccc;border-radius:.2em;margin-bottom:.5em}
-#logintt input[type='button'],#agregar-sitio input[type='button']{background:#238c00;color:#fff;font-size:.8em;height:40px;width:70%}
-#agregar-sitio{background:#fafafa;display:none;font-size:13px;left:50%;position:absolute;text-align:left;top:10%;width:250px;z-index:999;}
-#agregar-sitio .radios{display:inline;vertical-align:top;font-size:12px}
-#agregar-sitio h2{background-color:#008000;color:#fff;font-weight:normal;margin-top:0;padding:10px 0 10px 0;text-align:center}
-#agregar-sitio input[type="text"],#agregar-sitio textarea{color:#222;font-size:15px;padding:5px;width:97%}
-#agregar-sitio #positionPlace{width:60%;}
+#logintt{background:#fafafa;border-radius:0 7px 7px 7px;box-shadow:rgba(0,0,0,0.5) 5px 5px 7px;display:none;left:90%;margin-left:-125px;padding:1em;position:absolute;text-align:center;top:10%;width:220px;z-index:999;}
+#logintt h2{color:#1a1a1a;font-size:17px}
+#logintt a#tt,#logintt a#fb{background:#1bb2e9;color:#fff;display:block;font-size:13px;font-weight:bold;margin:1em .7em;padding:.9em .4em;text-align:center;text-decoration:none;}
+#logintt a#tt img,#logintt a#fb img{margin:-2.5% auto 0 auto;float:left}
+#logintt a#fb{background:#1e62a9}
+#logintt input[type='text']{border:thin solid #ccc;border-radius:.2em;font-size:15px;height:20px;margin-bottom:1em;padding:5px;width:200px}
+#logintt input[type='button']{background:#238c00;color:#fff;font-size:15px;font-weight:bold;height:40px;width:40%;}
+#logintt input[type='button']:hover{background-image:radial-gradient(circle,#58ff21 0%,#238c00 100%)}
+#logintt p{color:#333;font-size:13px;font-weight:bold;margin-left:15px;margin-bottom:1em;text-align:left;}
+#logintt p a{color:#006cd8;text-decoration:none}
+#agregar-sitio{background:#fafafa;border-radius:0 7px 7px 7px;box-shadow:rgba(0,0,0,0.5) 5px 5px 7px;display:none;font-size:13px;left:50%;margin-left:-125px;padding:1.3em;position:absolute;text-align:left;top:10%;width:350px;z-index:999;}
+#agregar-sitio a.close{background:#dc2833;border-radius:100%;color:#fff;font-weight:bold;line-height:29px;position:absolute;right:-12px;text-align:center;text-decoration:none;top:-10px;width:28px;}
+#agregar-sitio a.close:hover{background-image:radial-gradient(circle,#ea7e85 0%,#dc2833 100%)}
+#agregar-sitio form#form-agregar-sitio p.radios{color:#666;display:inline;font-size:12px;vertical-align:top;}
+#agregar-sitio form#form-agregar-sitio p.radios input[type="radio"]{margin-top:.5em;margin-bottom:.5em}
+#agregar-sitio form#form-agregar-sitio span#pos{background:#a7a7a7;color:#fff;font-weight:bold;padding:.65em 1.4em .5em 1.2em}
+#agregar-sitio form#form-agregar-sitio p#selectFile{margin-top:1em;}
+#agregar-sitio form#form-agregar-sitio p#selectFile input#upload_value,#agregar-sitio form#form-agregar-sitio p#selectFile span.upload{display:inline-block;padding:5px;vertical-align:top;width:70%}
+#agregar-sitio form#form-agregar-sitio p#selectFile input#upload_value{padding:6px}
+#agregar-sitio form#form-agregar-sitio p#selectFile span.upload{background:#a7a7a7;cursor:pointer;width:22%;}
+#agregar-sitio form#form-agregar-sitio p#selectFile span.upload input{cursor:pointer;opacity:0;width:22%}
+#agregar-sitio form#form-agregar-sitio p#selectFile span#fileImage{color:#fff;cursor:pointer;position:relative;left:270px;font-weight:bold;top:-25px;z-index:99999}
+#agregar-sitio form#form-agregar-sitio input[type="submit"]{background:#006cd8;color:#fff;font-size:15px;font-weight:bold;height:40px;margin:2% 30%;width:40%;}
+#agregar-sitio form#form-agregar-sitio input[type="submit"]:hover{background-image:radial-gradient(circle,#4fa7ff 0%,#006cd8 100%)}
+#agregar-sitio h2{background-color:#238c00;color:#fff;font-size:15px;font-weight:bold;margin-top:0;padding:8px 0 8px 0;text-align:center}
+#agregar-sitio input[type="text"],#agregar-sitio textarea{color:#222;font-size:15px;padding:5px;resize:none;width:97%}
+#agregar-sitio #positionPlace{width:70%;}
 #agregar-sitio #positionPlace span{background-color:#222}
 #agregar-sitio p{margin:5px;padding:0}
 #main{position:absolute;bottom:0;left:320px;right:0;top:40px}
