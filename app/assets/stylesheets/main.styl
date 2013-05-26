@@ -91,22 +91,40 @@ a
 	.actions_area, .user_area
 		float right
 		border-left 1px solid #ddd
+		border-right 1px solid #fff
 		padding 5px 10px
+		a
+			color gris2
+			line-height 34px
+	.user_area
+		line-height 34px
+		.avatar
+			border-radius 4px
+			float left
+			margin-right 5px
+			overflow hidden
+			img
+				display block
+		.name
+			float left
+
 	#loginButton, #registro, #addButton
 		background azul
 		border-radius 4px
 		color blanco
 		display inline-block
-		font-size 15px
-		line-height 34px
+		font-size 15px		
 		margin 0 0 0 5px
 		padding 0 15px
 		&:hover
 			background-image radial-gradient(circle,  lighten(azul, 20%) 0%, azul 100%)
 	#addButton
 		background verde
+		margin-right 10px
 		&:hover
 			background-image radial-gradient(circle, lighten(verde, 20%) 0%, verde 100%)
+	#logoutButton:hover
+		text-decoration underline
 
 	a#colabora, a#acerca
 		color darken(blanco, 60%)
@@ -437,6 +455,13 @@ a
 .leaflet-top
 	&.leaflet-center
 		display none
+
+
+.clearfix:after, .clearfix:before
+	content " "
+	display table
+.clearfix:after
+	clear both
 
 @media screen and (max-width:1200px)
 	#formulario

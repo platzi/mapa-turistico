@@ -4,11 +4,17 @@ a{text-decoration:none}
 #header{background:linear-gradient(to bottom,#fff 0%,#eee 100%);border-bottom:1px solid #ccc;box-shadow:0 0 5px rgba(0,0,0,0.3);height:44px;position:absolute;width:100%;z-index:1002;}
 #header .brand_area{float:left;margin:4px 10px;}
 #header .brand_area img{display:block}
-#header .actions_area,#header .user_area{float:right;border-left:1px solid #ddd;padding:5px 10px}
-#header #loginButton,#header #registro,#header #addButton{background:#006cd8;border-radius:4px;color:#fff;display:inline-block;font-size:15px;line-height:34px;margin:0 0 0 5px;padding:0 15px;}
+#header .actions_area,#header .user_area{float:right;border-left:1px solid #ddd;border-right:1px solid #fff;padding:5px 10px;}
+#header .actions_area a,#header .user_area a{color:#333;line-height:34px}
+#header .user_area{line-height:34px;}
+#header .user_area .avatar{border-radius:4px;float:left;margin-right:5px;overflow:hidden;}
+#header .user_area .avatar img{display:block}
+#header .user_area .name{float:left}
+#header #loginButton,#header #registro,#header #addButton{background:#006cd8;border-radius:4px;color:#fff;display:inline-block;font-size:15px;margin:0 0 0 5px;padding:0 15px;}
 #header #loginButton:hover,#header #registro:hover,#header #addButton:hover{background-image:radial-gradient(circle,#1489ff 0%,#006cd8 100%)}
-#header #addButton{background:#238c00;}
+#header #addButton{background:#238c00;margin-right:10px;}
 #header #addButton:hover{background-image:radial-gradient(circle,#35d600 0%,#238c00 100%)}
+#header #logoutButton:hover{text-decoration:underline}
 #header a#colabora,#header a#acerca{color:#666;float:left;font-size:13px;font-weight:bold;margin-right:.8em;margin-top:1em;text-decoration:none}
 #logintt{background:#fafafa;border-radius:0 7px 7px 7px;box-shadow:rgba(0,0,0,0.5) 5px 5px 7px;display:none;left:90%;margin-left:-125px;padding:1em;position:absolute;text-align:center;top:10%;width:220px;z-index:999;}
 #logintt h2{color:#1a1a1a;font-size:17px}
@@ -65,6 +71,8 @@ a{text-decoration:none}
 #sidebar .elemList:hover{background:#d9d9d9;transition:all .8s ease-out}
 #sidebar h2{background:#666;color:#fff;font-size:15px;font-weight:normal;margin:0;padding:5px 10px;filter:dropshadow(#000,1,1)}
 .leaflet-top.leaflet-center{display:none}
+.clearfix:after,.clearfix:before{content:" ";display:table}
+.clearfix:after{clear:both}
 @media screen and (max-width:1200px){#formulario{left:140px}
 #sidebar{width:290px}
 #main{left:290px}
