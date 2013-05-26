@@ -4,8 +4,11 @@
 body
 	background gris
 	color gris2
-	font-family Helvetica, Arial
+	font-family 'Open Sans', Helvetica, Arial, sans-serif
 	font-size 16px
+
+a
+	text-decoration none
 
 // label
 // 	color #ccc
@@ -73,64 +76,73 @@ body
 // 		text-transform uppercase
 
 #header
-	h1
-		color #fff
-		cursor pointer
+	background linear-gradient(to bottom, #fff 0%,#eee 100%)
+	border-bottom 1px solid #ccc
+	box-shadow 0 0 5px rgba(0, 0, 0, .3)
+	height 44px
+	position absolute
+	width 100%
+	z-index 1002
+	.brand_area
 		float left
-		font-size 1.2em
-		line-height 40px
-		margin 0 1.8em 0 1.8em
-		//text-align center
-	a#loginButton, a#registro, a#addButton
+		margin 4px 10px
+		img
+			display block
+	.actions_area, .user_area
+		float right
+		border-left 1px solid #ddd
+		border-right 1px solid #fff
+		padding 5px 10px
+		a
+			color gris2
+			line-height 34px
+	.user_area
+		line-height 34px
+		.avatar
+			border-radius 4px
+			float left
+			margin-right 5px
+			overflow hidden
+			img
+				display block
+		.name
+			float left
+
+	#loginButton, #registro, #addButton
 		background azul
+		border-radius 4px
 		color blanco
 		display inline-block
-		float right
-		font-size 15px
-		font-weight bold
-		margin-top .4em
-		margin-left .8em
-		padding .3em .6em
-		text-decoration none
-		vertical-align top
+		font-size 15px		
+		margin 0 0 0 5px
+		padding 0 15px
 		&:hover
-			background-image radial-gradient(circle,  lighten(azul, 40%) 0%, azul 100%)
-	a#loginButton
-		margin-right 1em
-	a#acerca
-		margin-left 2em
-	a#addButton
+			background-image radial-gradient(circle,  lighten(azul, 20%) 0%, azul 100%)
+	#addButton
 		background verde
-		margin-right 4em
+		margin-right 10px
 		&:hover
-			background-image radial-gradient(circle, lighten(verde, 40%) 0%, verde 100%)
-
-	a#colabora, a#acerca
-		color darken(blanco, 60%)
-		float left
-		font-size 13px
-		font-weight bold
-		margin-right .8em
-		margin-top 1em
-		text-decoration none
+			background-image radial-gradient(circle, lighten(verde, 20%) 0%, verde 100%)
+	#logoutButton:hover
+		text-decoration underline
 
 #logintt
 	//background rgba(0, 0, 0, .8)
 	background darken(blanco, 2%)
-	border-radius 0 7px 7px 7px
-	box-shadow rgba(0, 0, 0, .5) 5px 5px 7px
+	border-radius 4px
+	box-shadow 0 0 10px rgba(0, 0, 0, .3)
 	display none
-	left 90%
-	margin-left -125px
-	padding 1em
+	right 15px
+	padding 15px
 	position absolute
 	text-align center
-	top 10%
+	top 60px
 	width 220px
 	z-index 999
 
 	h2
 		color darken(blanco, 90%)
+		margin 0 0 10px 0
 		font-size 17px
 	a#tt, a#fb
 		background azul_tt
@@ -138,12 +150,13 @@ body
 		display block
 		font-size 13px
 		font-weight bold
-		margin 1em .7em
-		padding 0.9em 0.4em
+		margin 10px 0 0 0
+		line-height 32px
+		padding 5px
 		text-align center
 		text-decoration none
 		img 
-			margin -2.5% auto  0 auto
+			display block
 			float left
 	a#fb 
 		background azul_fb
@@ -177,19 +190,19 @@ body
 
 #agregar-sitio
 	background darken(blanco, 2%)
-	border-radius 0 7px 7px 7px
-	box-shadow rgba(0, 0, 0, .5) 5px 5px 7px
+	border-radius 4px
+	box-shadow 0 0 10px rgba(0, 0, 0, .3)
 	display none
 	font-size 13px
 	left 50%
-	margin-left -125px
-	padding 1.3em
+	margin-left -182px
+	padding 15px
 	position absolute
 	text-align left
-	top 10%
+	top 70px
 	width 350px
-	z-index 999
-	a.close 
+	z-index 1003
+	.close 
 		background rojizo
 		border-radius 100%
 		color blanco 
@@ -247,30 +260,32 @@ body
 			
 		input[type="submit"]
 			background azul
+			border 0
+			border-radius 4px
 			color blanco
+			float right
 			font-size 15px
-			font-weight bold
-			height 40px
-			margin 2% 30%
+			height 36px
+			margin 0
 			width 40%
 			&:hover 
 				background-image radial-gradient(circle,  lighten(azul, 40%) 0%, azul 100%)
 	h2
-		background-color verde
-		color blanco
-		font-size 15px
-		font-weight bold
-		margin-top 0
-		padding 8px 0 8px 0
+		color darken(blanco, 90%)
+		margin 0 0 10px 0
+		font-size 17px
 		text-align center
 	
-
 	input[type="text"], textarea
+		border 1px solid #ddd
 		color gris
 		font-size 15px
 		padding 5px
+		width 338px
+
+	textarea
 		resize none
-		width 97%
+		height 100px
 
 	#positionPlace
 		width 70%
@@ -279,7 +294,7 @@ body
 			background-color gris
 
 	p
-		margin 5px
+		margin 10px 0 0 0
 		padding 0
 
 
@@ -289,7 +304,7 @@ body
 	bottom 0
 	left 320px
 	right 0
-	top 40px
+	top 45px
 
 #mimapa
 	height 100%
@@ -384,9 +399,9 @@ body
 	left 0
 	overflow auto
 	position absolute
-	top 40px
+	top 45px
 	width 320px
-	z-index 1
+	z-index 1001
 
 	.elemList
 		background blanco
@@ -423,18 +438,24 @@ body
 			transition all 0.8s ease-out
 
 	h2
-		background rojizo
+		background #666
 		color blanco
-		font-size 1.2em
+		font-size 15px
+		font-weight normal
 		margin 0
-		padding .5em
-		text-align center
-		text-shadow 1px 2px 5px #000
+		padding 5px 10px
 		filter dropshadow(color=#000, offx=1, offy=1)
 
 .leaflet-top
 	&.leaflet-center
 		display none
+
+
+.clearfix:after, .clearfix:before
+	content " "
+	display table
+.clearfix:after
+	clear both
 
 @media screen and (max-width:1200px)
 	#formulario

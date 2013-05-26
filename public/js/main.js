@@ -10,8 +10,8 @@ function onDocumentReady() {
 	app.map = new MapView();
 	app.sidebar = new SidebarView();
 	//app.login = new LoginView();
-	//app.addPlace = new AddPlaceView();
-	app.widget = new Widget();
+	app.addPlace = new AddPlaceView();
+	app.header = new HeaderView();
 	// enrutador
 	app.routes = new Routes();
 	Backbone.history.start({ pushState: true });

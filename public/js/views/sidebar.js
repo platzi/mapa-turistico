@@ -2,8 +2,6 @@ var SidebarView = Backbone.View.extend({
 	el: '#placeList',
 
 	addPlaces: function(places) {
-	    console.log(places);
-
 	    var htmlPlaces = "";
 
 	    _.each(places.toJSON(), function(place, index){

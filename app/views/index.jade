@@ -2,18 +2,31 @@ extends layout
 
 block stylesheets
 	link(rel="stylesheet", href="/css/normalize.css")
+	link(rel="stylesheet", href="http://fonts.googleapis.com/css?family=Open+Sans:400,700")
 	link(rel="stylesheet", href="http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.css")
 	link(rel="stylesheet", href="/css/main.css")
 
 block main
 	header(id="header")
-		h1
-			img(src="/img/logo.png", alt="")
-		a(href="/acerca/", id="acerca") |   Acerca del proyecto
-		a(href="/colabora/", id="colabora") Colabora con nosotros
-		a(href="/login/", id="loginButton") Ingresar
-		a(href="/registro/", id="registro") Registrar
-		a(href="/sitio/", id="addButton") Agregar lugar
+		a(href="", class="brand_area")
+			img(src="/img/assets/logo-proudplaces.png", alt="Proud Places")
+		//- a(href="/acerca/", id="acerca") Acerca del proyecto
+		//- a(href="/colabora/", id="colabora") Colabora con nosotros
+
+		div(class="actions_area")
+			if profile
+				a(href="/sitio/", id="addButton") Agregar lugar
+				a(href="/logout", id="logoutButton") Salir
+			else
+				a(href="/login/", id="loginButton") Ingresar o registrarme
+				//- a(href="/registro/", id="registro") Registrar
+
+		if profile
+			div(class="user_area clearfix")
+				div(class="avatar")
+					img(src="#{profile.avatar}", height="34", width="34")
+				div(class="name") Hola 
+					strong #{profile.username}
 
 	section(id="sidebar")
 		h2 Últimos sitios agregados
@@ -24,13 +37,13 @@ block main
 		div(id="mimapa")
 
 	section(id="logintt")
-		h2 Iniciar Sesión
-		form(id="sendData", method="post", action="")
-			input(id="", type="text", placeHolder="Usuario")
-			input(id="", type="text", placeHolder="Contraseña")
-			input(id="", type="button", value="Entrar")
+		h2 Iniciar Sesión o registrarme
+		//- form(id="sendData", method="post", action="")
+		//- 	input(id="", type="text", placeHolder="Usuario")
+		//- 	input(id="", type="text", placeHolder="Contraseña")
+		//- 	input(id="", type="button", value="Entrar")
 		
-		p O puedes usar:
+		//- p O puedes usar:
 		a(id="tt", href="/auth/twitter", title="Conéctate con Twitter") 
 			img(src="/img/assets/twitter.png", alt="") 
 			span Conéctate con Twitter 
@@ -41,45 +54,51 @@ block main
 		//	a(href="#", target="_blank") Regístrate
 
 	section(id="agregar-sitio")
-		a(href="/", title="Cerrar", class="close") X 
+		a(href="#", title="Cerrar", id="closeButton", class="close") X 
 		h2 Agregar sitio turistico
-		form(id="form-agregar-sitio", method="post", action="")
+		form(id="form-agregar-sitio", method="post", action="/places")
 			p
-				input(type="text", id="namePlace", name="namePlace", placeholder="Nombre del lugar")
+				input(type="text", id="namePlace", name="name", placeholder="Nombre del lugar")
+			p
+				select(id="countryPlace", name="country")
+					option(selected) Elige un país
+			p
+				input(type="text", id="cityPlace", name="city", placeholder="Ciudad")
 			p(class="radios")
-				input(type="radio", name="lugar", value="estoyAqui")
+				input(type="radio", id="geolocationOption", name="lugar", value="geolocation")
 				span  Estoy en el lugar
-			p(class="radios")
-				input(type="radio", name="lugar", value="noAqui")
-				span  No estoy en el lugar
+			//- p(class="radios")
+			//- 	input(type="radio", id="manualOption", name="lugar", value="nogeolocation")
+			//- 	span  No estoy en el lugar
+				//- span(id="pos") Posición
 			p
-				input(type="text", id="positionPlace", name="positionPlace", placeholder="Localizacion")
-				span(id="pos") Posición
-
-			p(id="selectFile")
-				input(id="upload_value", value="")
-				span(class="upload")
-					input(type="file")
-				span(id="fileImage") Imagen
-				
+				input(type="file", id="imagePlace", name="file")
+				//- input(id="upload_value", value="")
+				//- span(class="upload")
+				//- 	input(type="file")
+				//- span(id="fileImage") Imagen
 			p
-				textarea(id="descriptionPlace", name="descriptionPlace", placeholder="Descripcion", rows="8")
-			p
+				textarea(id="descriptionPlace", name="description", placeholder="Descripcion", rows="8")
+			input(type="hidden", id="latPlace", name="lat")
+			input(type="hidden", id="lngPlace", name="lng")
+			p(class="clearfix")
 				input(type="submit", value="Agregar")
 
 block javascripts
-	script(src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js")
-	script(src="http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.js")
+	script(src="/js/vendor/jquery.js")
+	script(src="/js/vendor/leaflet.js")
 	script(src="/socket.io/socket.io.js")
 	script(src="/js/vendor/underscore.js")
 	script(src="/js/vendor/backbone.js")
+	script(src="/js/vendor/jquery.form.js")
 	//- Modelos
 	script(src="/js/models/user.js")
 	script(src="/js/models/place.js")
 	//- Vistas
 	script(src="/js/views/map.js")
 	script(src="/js/views/sidebar.js")
-	script(src="/js/views/headerView.js")
+	script(src="/js/views/add_place.js")
+	script(src="/js/views/header.js")
 
 	//- Router
 	script(src="/js/routes.js")

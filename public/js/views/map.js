@@ -4,27 +4,38 @@ var MapView = Backbone.View.extend({
 		this.createMap()
 	},
 	createMap: function() {
+		var self = this;
+
+		var tiles = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png');
+
 		this.map = L.map('mimapa', {
 	    	center: [0, -28],
-	    	zoom: 3,
-	    	worldCopyJump: true
+	    	zoom: 4
 	    });
 
-		var tiles = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
+	    function onLocationFound(position) {
+	    	self.map.setView(new L.LatLng(position.latlng.lat, position.latlng.lng), 12);
+	    	self.userLocation = {
+	    		lat: position.latlng.lat,
+	    		lng: position.latlng.lng
+	    	};
+	    }
 
-		this.map.addLayer(tiles);
+	    this.map.addLayer(tiles);
+
+		this.map.locate({
+			enableHighAccuracy: false
+		});
+
+		this.map.on('locationfound', onLocationFound);
 	},
-	centerMap: function(lat,lng,name) {
+	centerMap: function(lat, lng, name) {
 		var marker = L.marker([lat,lng]);
+
 		this.map.addLayer(marker);
 
 		this.map.setView(new L.LatLng(lat,lng), 6);
 
 		marker.bindPopup(name);
-		//this.map.zoomOut(3);
-
-		//this.map.panInsideBounds(new L.LatLng(lat,lng));
-
 	}
-
 });
