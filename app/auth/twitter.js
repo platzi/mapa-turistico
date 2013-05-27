@@ -41,6 +41,6 @@ module.exports = function () {
     passport.use(new TwitterStrategy({
         consumerKey: cfg.TWITTER_CONSUMER_KEY,
         consumerSecret: cfg.TWITTER_CONSUMER_SECRET,
-        callbackURL: 'http://proudplaces.herokuapp.com/auth/twitter/callback'
+        callbackURL: '/auth/twitter/callback'
     }, findOrCreateTwitter));
 };
