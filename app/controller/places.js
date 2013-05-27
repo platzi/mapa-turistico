@@ -17,8 +17,6 @@ handleResponse = function (err, res) {
 };
 
 exports.create = function (req, res) {
-    console.log('Test llego post');
-
     if (!req.files) {return res.send(400);}
 
     var file     = req.files.file,

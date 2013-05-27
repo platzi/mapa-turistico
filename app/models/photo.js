@@ -8,24 +8,26 @@ var mongoose = require('mongoose'),
     photoSchema,
     alternate_upload;
 
-alternate_upload = function (origin, destination) {
-    console.log(origin);
-    console.log(destination);
+alternate_upload = function (origin, destination, next) {
     var read  = fs.createReadStream(origin),
         write = fs.createWriteStream(destination);
+
     read.pipe(write);
+    write.on('end', function () {
+        fs.unlink(origin, function (err) {
+            next(err);
+        });
+    });
 };
 
 var methods = {
     upload: function (path_file, next) {
-        console.log(path_file);
         var self        = this,
             path_upload = path.join(__dirname, '../../uploads/',
                 (String(self._id) + '.' + self.image.ext));
 
-        fs.move(path_file, path_upload, function (err) {
-            console.log(err);
-            if (err) { return alternate_upload(path_file, path_upload); }
+        fs.rename(path_file, path_upload, function (err) {
+            if (err) { return alternate_upload(path_file, path_upload, next); }
             next(null);
         });
     }
