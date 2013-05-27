@@ -4,7 +4,7 @@ var mongoose = require('mongoose'),
     Schema   = mongoose.Schema,
     ObjectId = Schema.ObjectId,
     path     = require('path'),
-    fs       = require('fs'),
+    fs       = require('fs.extra'),
     photoSchema,
     alternate_upload;
 
@@ -23,7 +23,7 @@ var methods = {
             path_upload = path.join(__dirname, '../../uploads/',
                 (String(self._id) + '.' + self.image.ext));
 
-        fs.rename(path_file, path_upload, function (err) {
+        fs.move(path_file, path_upload, function (err) {
             console.log(err);
             if (err) { return alternate_upload(path_file, path_upload); }
             next(null);
