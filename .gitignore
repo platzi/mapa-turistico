@@ -3,5 +3,4 @@ dump.rdb
 node_modules
 public/vendor/*
 uploads/*.jpg
-uploads/*.png
 test/bosque.jpg
