@@ -9,6 +9,8 @@ var mongoose = require('mongoose'),
     alternate_upload;
 
 alternate_upload = function (origin, destination) {
+    console.log(origin);
+    console.log(destination);
     var read  = fs.createReadStream(origin),
         write = fs.createWriteStream(destination);
     read.pipe(write);
@@ -22,6 +24,7 @@ var methods = {
                 (String(self._id) + '.' + self.image.ext));
 
         fs.rename(path_file, path_upload, function (err) {
+            console.log(err);
             if (err) { return alternate_upload(path_file, path_upload); }
             next(null);
         });
