@@ -1,7 +1,7 @@
 'use strict';
 var url       = require('url'),
     MONGO_URL = (process.env.MONGOHQ_URL || 'mongodb://localhost:27017/mapaturistico'),
-    REDISTOGO = url.parse(process.env.REDISTOGO_URL || 'http://localhost:6379'),
+    REDISTOGO = url.parse(process.env.REDISTOGO_URL), // || 'http://localhost:6379'
     REDISHOST = REDISTOGO.hostname,
     REDISPORT = REDISTOGO.port,
     REDISAUTH = REDISTOGO.auth;
