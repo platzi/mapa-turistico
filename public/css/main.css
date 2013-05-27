@@ -45,8 +45,8 @@ a{text-decoration:none}
 #agregar-sitio #positionPlace{width:70%;}
 #agregar-sitio #positionPlace span{background-color:#222}
 #agregar-sitio p{margin:10px 0 0 0;padding:0}
-#main{position:absolute;bottom:0;left:320px;right:0;top:45px}
-#mimapa{height:100%;left:0;position:absolute;top:0;width:100%}
+#main{left:24px;bottom:0;position:absolute;right:0;top:45px}
+#mimapa{height:100%;width:100%}
 #places{list-style:none;padding:0;}
 #places li{padding:0;margin-bottom:.5em;}
 #places li a{background-color:#fff;color:#666;display:block;padding:1em;}
@@ -61,7 +61,8 @@ a{text-decoration:none}
 #place p{background:rgba(0,0,0,0.4);box-shadow:rgba(0,0,0,0.3) 5px 5px 7px;color:#fff;padding:1em}
 #place abbr{color:#fff;font-size:.8em;margin:0 1.4em;position:absolute;right:0;text-shadow:2px 2px 5px rgba(0,0,0,0.5)}
 #place a{text-decoration:none}
-#sidebar{background:#f6f6f6;bottom:0;box-shadow:0 0 10px -2px rgba(0,0,0,0.5);left:0;overflow:auto;position:absolute;top:45px;width:320px;z-index:1001;}
+#sidebar{background:#f6f6f6;border-right:solid 13px #006cd8;bottom:0;box-shadow:0 0 10px -2px rgba(0,0,0,0.5);left:-310px;overflow:auto;position:absolute;top:45px;width:320px;z-index:1001;transition:all 1s ease;}
+#sidebar:hover{left:0;border:0}
 #sidebar .elemList{background:#fff;color:#222;cursor:pointer;margin:.5em auto;overflow:hidden;padding:5px;}
 #sidebar .elemList .name{font-size:15px;font-weight:bold;margin:0}
 #sidebar .elemList .description{font-size:15px;margin:.3em 0}
@@ -73,14 +74,3 @@ a{text-decoration:none}
 .leaflet-top.leaflet-center{display:none}
 .clearfix:after,.clearfix:before{content:" ";display:table}
 .clearfix:after{clear:both}
-@media screen and (max-width:1200px){#formulario{left:140px}
-#sidebar{width:290px}
-#main{left:290px}
-}@media screen and (max-width:1024px){#formulario{left:100px}
-#sidebar{width:280px}
-#main{left:280px}
-}@media screen and (max-width:768px){#formulario{left:140px}
-}@media screen and (max-width:600px){#formulario{left:0}
-#sidebar{height:100%;top:650px;width:100%}
-#main{left:0;height:620px;width:100%}
-}

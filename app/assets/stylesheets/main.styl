@@ -113,7 +113,7 @@ a
 		border-radius 4px
 		color blanco
 		display inline-block
-		font-size 15px		
+		font-size 15px
 		margin 0 0 0 5px
 		padding 0 15px
 		&:hover
@@ -155,10 +155,10 @@ a
 		padding 5px
 		text-align center
 		text-decoration none
-		img 
+		img
 			display block
 			float left
-	a#fb 
+	a#fb
 		background azul_fb
 	input[type='text']
 		border thin solid darken(blanco, 20%)
@@ -177,16 +177,16 @@ a
 		width 40%
 		&:hover
 			background-image radial-gradient(circle, lighten(verde, 40%) 0%, verde 100%)
-	p 
+	p
 		color darken(blanco, 80%)
-		font-size 13px 
+		font-size 13px
 		font-weight bold
 		margin-left 15px
 		margin-bottom 1em
 		text-align left
-		a 
+		a
 			color azul
-			text-decoration none 
+			text-decoration none
 
 #agregar-sitio
 	background darken(blanco, 2%)
@@ -202,26 +202,26 @@ a
 	top 70px
 	width 350px
 	z-index 1003
-	.close 
+	.close
 		background rojizo
 		border-radius 100%
-		color blanco 
-		font-weight bold 
-		line-height 29px 
+		color blanco
+		font-weight bold
+		line-height 29px
 		position absolute
-		right -12px 
+		right -12px
 		text-shadow(1px 1px 3px #000)
 		text-align center
-		text-decoration none 
-		top -10px 
-		width 28px 
-		&:hover 
+		text-decoration none
+		top -10px
+		width 28px
+		&:hover
 			background-image radial-gradient(circle, lighten(rojizo, 40%) 0%, rojizo 100%)
 	form#form-agregar-sitio
 		p.radios
 			color darken(blanco, 60%)
 			display inline
-			font-size 12px	
+			font-size 12px
 			vertical-align top
 			input[type="radio"]
 				margin-top .5em
@@ -231,17 +231,17 @@ a
 			color blanco
 			font-weight bold
 			padding .65em 1.4em .5em 1.2em
-		
+
 		p#selectFile
 			margin-top 1em
-			input#upload_value, span.upload 
+			input#upload_value, span.upload
 				display inline-block
 				padding 5px
 				vertical-align top
 				width 70%
 			input#upload_value
 				padding 6px
-			span.upload 
+			span.upload
 				background lighten(gris, 60%)
 				cursor pointer
 				width 22%
@@ -249,15 +249,15 @@ a
 					cursor pointer
 					opacity 0
 					width 22%
-			span#fileImage 
+			span#fileImage
 				color blanco
 				cursor pointer
 				position relative
 				left 270px
-				font-weight bold 
-				top -25px 
+				font-weight bold
+				top -25px
 				z-index 99999
-			
+
 		input[type="submit"]
 			background azul
 			border 0
@@ -268,14 +268,14 @@ a
 			height 36px
 			margin 0
 			width 40%
-			&:hover 
+			&:hover
 				background-image radial-gradient(circle,  lighten(azul, 40%) 0%, azul 100%)
 	h2
 		color darken(blanco, 90%)
 		margin 0 0 10px 0
 		font-size 17px
 		text-align center
-	
+
 	input[type="text"], textarea
 		border 1px solid #ddd
 		color gris
@@ -300,17 +300,18 @@ a
 
 
 #main
-	position absolute
+	left 24px
 	bottom 0
-	left 320px
+	// left -100px
+	position absolute
 	right 0
 	top 45px
 
 #mimapa
 	height 100%
-	left 0
-	position absolute
-	top 0
+	// left 0
+	// position absolute
+	// top 0
 	width 100%
 
 #places
@@ -394,14 +395,21 @@ a
 
 #sidebar
 	background #f6f6f6
+	border-right solid 13px azul
 	bottom 0
 	box-shadow 0 0 10px -2px rgba(0, 0, 0, .5)
-	left 0
+	left -310px
 	overflow auto
 	position absolute
 	top 45px
 	width 320px
 	z-index 1001
+	transition all 1s ease
+
+	&:hover
+		left 0
+		border 0
+
 
 	.elemList
 		background blanco
@@ -457,42 +465,42 @@ a
 .clearfix:after
 	clear both
 
-@media screen and (max-width:1200px)
-	#formulario
-		left 140px
+// @media screen and (max-width:1200px)
+// 	// #formulario
+// 	// 	left 140px
 
-	#sidebar
-		width 290px
+// 	// #sidebar
+// 	//  	width 290px
 
-	#main
-		left 290px
+// 	#main
+// 		left 24px
 
-@media screen and (max-width:1024px)
-	#formulario
-		left 100px
+// @media screen and (max-width:1024px)
+// 	#formulario
+// 		left 100px
 
-	#sidebar
-		width 280px
+// 	// #sidebar
+// 	// 	width 280px
 
-	#main
-		left 280px
+// 	#main
+// 		left 280px
 
 
 
-@media screen and (max-width:768px)
-	#formulario
-		left 140px
+// @media screen and (max-width:768px)
+// 	#formulario
+// 		left 140px
 
-@media screen and (max-width:600px)
-	#formulario
-		left 0
+// @media screen and (max-width:600px)
+// 	#formulario
+// 		left 0
 
-	#sidebar
-		height 100%
-		top 650px
-		width 100%
+// 	#sidebar
+// 		height 100%
+// 		top 650px
+// 		width 100%
 
-	#main
-		left 0
-		height 620px
-		width  100%
+// 	#main
+// 		left 0
+// 		height 620px
+// 		width  100%
