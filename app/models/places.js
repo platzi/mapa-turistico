@@ -1,6 +1,5 @@
 var mongoose    = require('mongoose'),
     Schema      = mongoose.Schema,
-    ObjectId    = Schema.ObjectId,
     placesSchema;
 
 placesSchema = new Schema({
@@ -30,8 +29,7 @@ placesSchema = new Schema({
         }
     },
     image: {
-        type: ObjectId,
-        ref : 'photo'
+        type: String
     }
 });
 
