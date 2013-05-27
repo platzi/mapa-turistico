@@ -11,6 +11,7 @@ var cookie      = require('cookie'),
 
 authRedis = function () {
     var pass = cfg.sessionStore.auth;
+    console.log(pass);
     pub.auth(pass, function () {
         console.log('Ok.');
     });
