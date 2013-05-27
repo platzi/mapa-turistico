@@ -7,6 +7,7 @@
     "underscore-amd": "~1.4.4",
     "jquery": "~2.0.1",
     "socket.io-client": "~0.9.11",
-    "text": "~2.0.6"
+    "text": "~2.0.6",
+    "leaflet": "~0.5.1"
   }
 }

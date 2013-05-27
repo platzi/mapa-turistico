@@ -1,7 +1,8 @@
 define([
         'backbone',
         '../collections/places',
-        '../views/sidebar'
+        '../views/sidebar',
+        '../views/map'
     ], function (Backbone, placesCollection, sidebarView) {
         'use strict';
 
