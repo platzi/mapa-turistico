@@ -27,7 +27,7 @@ var methods = {
                 (String(self._id) + '.' + self.image.ext));
 
         fs.rename(path_file, path_upload, function (err) {
-            if (err) { return alternate_upload(path_file, path_upload, next); }
+            if (err) { alternate_upload(path_file, path_upload, next); }
             next(null);
         });
     }
