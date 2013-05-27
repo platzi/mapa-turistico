@@ -2,5 +2,4 @@ dump.rdb
 .DS_Store
 node_modules
 public/vendor/*
-uploads/*
 test/bosque.jpg
