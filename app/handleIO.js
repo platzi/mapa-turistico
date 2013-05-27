@@ -10,8 +10,7 @@ var cookie      = require('cookie'),
     authRedis;
 
 authRedis = function () {
-    var pass = cfg.sessionStore.auth;
-    console.log(pass);
+    var pass = cfg.sessionStore.auth.split(':')[1];
     pub.auth(pass, function () {
         console.log('Ok.');
     });
