@@ -3,12 +3,28 @@ var cookie      = require('cookie'),
     parseCookie = require('connect').utils.parseSignedCookie,
     RedisStore  = require('socket.io/lib/stores/redis'),
     redis       = require('socket.io/node_modules/redis'),
-    pub         = redis.createClient(),
-    sub         = redis.createClient(),
-    client      = redis.createClient(),
-    cfg         = require('./config').cfg;
+    cfg         = require('./config').cfg,
+    pub         = redis.createClient(cfg.sessionStore.port, cfg.sessionStore.host),
+    sub         = redis.createClient(cfg.sessionStore.port, cfg.sessionStore.host),
+    client      = redis.createClient(cfg.sessionStore.port, cfg.sessionStore.host),
+    authRedis;
+
+authRedis = function () {
+    var pass = cfg.sessionStore.auth;
+    pub.auth(pass, function () {
+        console.log('Ok.');
+    });
+    sub.auth(pass, function () {
+        console.log('Ok.');
+    });
+    client.auth(pass, function () {
+        console.log('Ok.');
+    });
+};
 
 exports.init = function (io) {
+
+    if (cfg.sessionStore.auth) { authRedis(); }
 
     var sessionStore = require('./sessionStore').get();
 

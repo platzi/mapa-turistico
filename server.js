@@ -6,7 +6,7 @@ var app      = require('./app'),
     config   = require('./app/config').cfg,
     mongoose = require('mongoose');
 
-mongoose.connect(config.db.getUrl());
+mongoose.connect(config.MONGO_URL);
 
 require('./app/handleIO').init(io);
 

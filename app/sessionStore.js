@@ -9,7 +9,8 @@ var cfg = require('./config').cfg,
 newSessionStore = function () {
     return new RedisStore({
         host: cfg.sessionStore.host,
-        port: cfg.sessionStore.port
+        port: cfg.sessionStore.port,
+        pass: cfg.sessionStore.auth
     });
 };
 
