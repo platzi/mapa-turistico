@@ -21,7 +21,8 @@ describe('#Photo', function () {
         it('should return true when the data is correct', function (done) {
             var photo = new Photo({
                 user: new ObjectId(),
-                name: 'Parque enriquillo'
+                name: 'Parque enriquillo',
+                place: new ObjectId()
             });
 
             photo.save(done);
