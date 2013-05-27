@@ -17,6 +17,8 @@ handleResponse = function (err, res) {
 };
 
 exports.create = function (req, res) {
+    console.log('Test llego post');
+
     if (!req.files) {return res.send(400);}
 
     var file     = req.files.file,
@@ -42,6 +44,7 @@ exports.create = function (req, res) {
             }, callback);
         },
         function (photo, callback) {
+            console.log(photo);
             place.image = photo._id;
             Places.create(place, callback);
         }

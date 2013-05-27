@@ -16,6 +16,7 @@ alternate_upload = function (origin, destination) {
 
 var methods = {
     upload: function (path_file, next) {
+        console.log(path_file);
         var self        = this,
             path_upload = path.join(__dirname, '../../uploads/',
                 (String(self._id) + '.' + self.image.ext));
