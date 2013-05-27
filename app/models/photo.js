@@ -28,17 +28,16 @@ var methods = {
 };
 
 photoSchema = new Schema({
-    user: {
-        type    : ObjectId
-    },
-    name: {
-        type    : String
-    },
-    url: {
-        type: String
-    },
+    user: {type: ObjectId},
+    name: {type: String},
+    url : {type: String},
     image: {
         ext: String
+    },
+    place: {
+        type    : ObjectId,
+        ref     : 'user',
+        required: false
     }
 });
 
