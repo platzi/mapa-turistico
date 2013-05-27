@@ -41,6 +41,6 @@ module.exports = function () {
     passport.use(new TwitterStrategy({
         consumerKey: cfg.TWITTER_CONSUMER_KEY,
         consumerSecret: cfg.TWITTER_CONSUMER_SECRET,
-        callbackURL: '/auth/twitter/callback'
+        callbackURL: 'http://127.0.0.1:3000/auth/twitter/callback'
     }, findOrCreateTwitter));
 };

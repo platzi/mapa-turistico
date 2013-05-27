@@ -4,7 +4,7 @@ var url       = require('url'),
     REDISTOGO = url.parse(process.env.REDISTOGO_URL || 'http://localhost:6379'), //
     REDISHOST = REDISTOGO.hostname,
     REDISPORT = REDISTOGO.port,
-    REDISAUTH = REDISTOGO.auth;
+    REDISAUTH = REDISTOGO.auth.split(':')[1];
 
 module.exports = {
     PORT                    : (process.env.PORT || 3000),
