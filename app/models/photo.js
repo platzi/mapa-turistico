@@ -4,7 +4,7 @@ var mongoose = require('mongoose'),
     Schema   = mongoose.Schema,
     ObjectId = Schema.ObjectId,
     path     = require('path'),
-    fs       = require('fs.extra'),
+    fs       = require('fs'),
     photoSchema,
     alternate_upload;
 
@@ -12,9 +12,12 @@ alternate_upload = function (origin, destination, next) {
     var read  = fs.createReadStream(origin),
         write = fs.createWriteStream(destination);
 
+    console.log('entre aqui');
+
     read.pipe(write);
-    write.on('end', function () {
+    write.on('close', function () {
         fs.unlink(origin, function (err) {
+            console.log('estoy saliendo');
             next(err);
         });
     });

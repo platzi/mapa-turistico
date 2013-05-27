@@ -42,7 +42,6 @@ exports.create = function (req, res) {
             }, callback);
         },
         function (photo, callback) {
-            console.log(photo);
             place.image = photo._id;
             Places.create(place, callback);
         }
