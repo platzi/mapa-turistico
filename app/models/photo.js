@@ -12,12 +12,9 @@ alternate_upload = function (origin, destination, next) {
     var read  = fs.createReadStream(origin),
         write = fs.createWriteStream(destination);
 
-    console.log('entre aqui');
-
     read.pipe(write);
     write.on('close', function () {
         fs.unlink(origin, function (err) {
-            console.log('estoy saliendo');
             next(err);
         });
     });
@@ -30,7 +27,7 @@ var methods = {
                 (String(self._id) + '.' + self.image.ext));
 
         fs.rename(path_file, path_upload, function (err) {
-            if (err) { alternate_upload(path_file, path_upload, next); }
+            if (err) { return alternate_upload(path_file, path_upload, next); }
             next(null);
         });
     }
@@ -45,7 +42,7 @@ photoSchema = new Schema({
     },
     place: {
         type    : ObjectId,
-        ref     : 'user',
+        ref     : 'place',
         required: false
     }
 });

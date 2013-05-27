@@ -16,8 +16,7 @@
     "cookie": "~0.1.0",
     "connect": "~2.7.10",
     "invoke": "~0.1.2",
-    "async": "~0.2.8",
-    "fs.extra": "~1.2.0"
+    "async": "~0.2.8"
   },
   "devDependencies": {
     "should": "~1.2.2",
