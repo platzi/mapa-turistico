@@ -45,7 +45,7 @@ a{text-decoration:none}
 #agregar-sitio #positionPlace{width:70%;}
 #agregar-sitio #positionPlace span{background-color:#222}
 #agregar-sitio p{margin:10px 0 0 0;padding:0}
-#main{left:24px;bottom:0;position:absolute;right:0;top:45px}
+#main{left:15px;bottom:0;position:absolute;right:0;top:45px}
 #mimapa{height:100%;width:100%}
 #places{list-style:none;padding:0;}
 #places li{padding:0;margin-bottom:.5em;}
