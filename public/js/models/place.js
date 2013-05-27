@@ -10,7 +10,7 @@ var Place = Backbone.Model.extend({
 		image: "imagen"
 	},
 	validate: function(attributes, options) {
-		
+
 	}
 });
 
