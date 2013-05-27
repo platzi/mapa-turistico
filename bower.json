@@ -2,9 +2,11 @@
   "name": "map-turistico",
   "version": "0.0.1",
   "dependencies": {
-    "jquery": "~2.0.0",
-    "modernizr": "~2.6.2",
+    "requirejs": "~2.1.6",
+    "backbone-amd": "~1.0.0",
+    "underscore-amd": "~1.4.4",
+    "jquery": "~2.0.1",
     "socket.io-client": "~0.9.11",
-    "handlebars": "~1.0.0-rc.4"
+    "text": "~2.0.6"
   }
 }

@@ -58,8 +58,35 @@ module.exports = function (grunt) {
                     'public/css/main.css': 'app/assets/stylesheets/main.styl'
                 }
             }
+        },
+        requirejs: {
+            dist: {
+                options: {
+                    baseUrl: 'public/app/scripts',
+                    dir: 'public/dist',
+                    mainConfigFile: 'public/app/scripts/main.js',
+                    name: 'main'
+                }
+            }
+        },
+        clean: {
+            dist: {
+                files: [{
+                    dot: true,
+                    src: ['public/dist']
+                }]
+            },
+            rjs: {
+                files: [{
+                    dot: true,
+                    src: ['public/dist/vendor',
+                          'public/dist/views',
+                          'public/dist/build.txt']
+                }]
+            }
         }
     });
 
     grunt.registerTask('test', ['jshint:test', 'mochacli']);
+    grunt.registerTask('build', ['requirejs', 'clean:rjs']);
 };

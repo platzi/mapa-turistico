@@ -1,17 +1,15 @@
 extends layout
 
 block stylesheets
-	link(rel="stylesheet", href="/css/normalize.css")
+	link(rel="stylesheet", href="/app/css/normalize.css")
 	link(rel="stylesheet", href="http://fonts.googleapis.com/css?family=Open+Sans:400,700")
 	link(rel="stylesheet", href="http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.css")
-	link(rel="stylesheet", href="/css/main.css")
+	link(rel="stylesheet", href="/app/css/main.css")
 
 block main
 	header(id="header")
 		a(href="", class="brand_area")
-			img(src="/img/assets/logo-proudplaces.png", alt="Proud Places")
-		//- a(href="/acerca/", id="acerca") Acerca del proyecto
-		//- a(href="/colabora/", id="colabora") Colabora con nosotros
+			img(src="/app/img/assets/logo-proudplaces.png", alt="Proud Places")
 
 		div(class="actions_area")
 			if profile
@@ -19,42 +17,33 @@ block main
 				a(href="/logout", id="logoutButton") Salir
 			else
 				a(href="/login/", id="loginButton") Ingresar o registrarme
-				//- a(href="/registro/", id="registro") Registrar
 
 		if profile
 			div(class="user_area clearfix")
 				div(class="avatar")
 					img(src="#{profile.avatar}", height="34", width="34")
-				div(class="name") Hola 
+				div(class="name") Hola
 					strong #{profile.username}
 
 	section(id="sidebar")
 		h2 Últimos sitios agregados
 		div(id="placeList")
-		//include partials/places_list
 
 	section(id="main")
 		div(id="mimapa")
 
 	section(id="logintt")
 		h2 Iniciar Sesión o registrarme
-		//- form(id="sendData", method="post", action="")
-		//- 	input(id="", type="text", placeHolder="Usuario")
-		//- 	input(id="", type="text", placeHolder="Contraseña")
-		//- 	input(id="", type="button", value="Entrar")
-		
-		//- p O puedes usar:
-		a(id="tt", href="/auth/twitter", title="Conéctate con Twitter") 
-			img(src="/img/assets/twitter.png", alt="") 
-			span Conéctate con Twitter 
-		a(id="fb", href="/auth/facebook", title="Conéctate con Facebook") 
-			img(src="/img/assets/facebook.png", alt="") 
+
+		a(id="tt", href="/auth/twitter", title="Conéctate con Twitter")
+			img(src="/app/img/assets/twitter.png", alt="")
+			span Conéctate con Twitter
+		a(id="fb", href="/auth/facebook", title="Conéctate con Facebook")
+			img(src="/app/img/assets/facebook.png", alt="")
 			span Conéctate con Facebook
-		//p ¿No tienes cuenta? 
-		//	a(href="#", target="_blank") Regístrate
 
 	section(id="agregar-sitio")
-		a(href="#", title="Cerrar", id="closeButton", class="close") X 
+		a(href="#", title="Cerrar", id="closeButton", class="close") X
 		h2 Agregar sitio turistico
 		form(id="form-agregar-sitio", method="post", action="/places")
 			p
@@ -67,16 +56,8 @@ block main
 			p(class="radios")
 				input(type="radio", id="geolocationOption", name="lugar", value="geolocation")
 				span  Estoy en el lugar
-			//- p(class="radios")
-			//- 	input(type="radio", id="manualOption", name="lugar", value="nogeolocation")
-			//- 	span  No estoy en el lugar
-				//- span(id="pos") Posición
 			p
 				input(type="file", id="imagePlace", name="file")
-				//- input(id="upload_value", value="")
-				//- span(class="upload")
-				//- 	input(type="file")
-				//- span(id="fileImage") Imagen
 			p
 				textarea(id="descriptionPlace", name="description", placeholder="Descripcion", rows="8")
 			input(type="hidden", id="latPlace", name="lat")
@@ -85,22 +66,4 @@ block main
 				input(type="submit", value="Agregar")
 
 block javascripts
-	script(src="/js/vendor/jquery.js")
-	script(src="/js/vendor/leaflet.js")
-	script(src="/socket.io/socket.io.js")
-	script(src="/js/vendor/underscore.js")
-	script(src="/js/vendor/backbone.js")
-	script(src="/js/vendor/jquery.form.js")
-	//- Modelos
-	script(src="/js/models/user.js")
-	script(src="/js/models/place.js")
-	//- Vistas
-	script(src="/js/views/map.js")
-	script(src="/js/views/sidebar.js")
-	script(src="/js/views/add_place.js")
-	script(src="/js/views/header.js")
-
-	//- Router
-	script(src="/js/routes.js")
-	//- App
-	script(src="/js/main.js")
+	script(data-main="/app/scripts/main.js", src="/app/scripts/vendor/requirejs/require.js")
