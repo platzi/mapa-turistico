@@ -1,6 +1,6 @@
 {
   "name": "map-turistico",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Proyecto colaborativo de los alumnos de Mejorandola",
   "main": "Gruntfile.js",
   "dependencies": {
