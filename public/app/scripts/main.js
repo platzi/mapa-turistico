@@ -4,11 +4,16 @@ require.config({
         'underscore': 'vendor/underscore-amd/underscore',
         'backbone'  : 'vendor/backbone-amd/backbone',
         'text'      : 'vendor/text/text',
-        'Leaflet'   : 'vendor/leaflet/dist/leaflet'
+        'Leaflet'   : 'vendor/leaflet/dist/leaflet',
+        'jqueryform': 'vendor/jquery.form/jquery.form'
     },
     shim: {
         'Leaflet': {
             exports: 'L'
+        },
+        'jqueryform': {
+            deps: ['jquery'],
+            exports: 'jquery'
         }
     }
 });
