@@ -1,13 +1,14 @@
 define([
         'backbone',
         'underscore',
-        'text!../templates/sidebarTemplate.html'
-    ], function (Backbone, _, sidebarTemplate) {
+        'text!../templates/sidebarTemplate.html',
+        'Handlebars'
+    ], function (Backbone, _, sidebarTemplate, Handlebars) {
         'use strict';
 
         var Sidebar = Backbone.View.extend({
             el: '#placeList',
-            template: _.template(sidebarTemplate),
+            template: Handlebars.compile(sidebarTemplate),
 
             render: function (place) {
                 this.$el.append(this.template(place));

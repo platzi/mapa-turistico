@@ -5,7 +5,8 @@ require.config({
         'backbone'  : 'vendor/backbone-amd/backbone',
         'text'      : 'vendor/text/text',
         'Leaflet'   : 'vendor/leaflet/dist/leaflet',
-        'jqueryform': 'vendor/jquery.form/jquery.form'
+        'jqueryform': 'vendor/jquery.form/jquery.form',
+        'Handlebars': 'vendor/handlebars/handlebars'
     },
     shim: {
         'Leaflet': {
@@ -13,6 +14,9 @@ require.config({
         },
         'jqueryform': {
             deps: ['jquery']
+        },
+        'Handlebars': {
+            exports: 'Handlebars'
         }
     }
 });

@@ -9,6 +9,7 @@
     "socket.io-client": "~0.9.11",
     "text": "~2.0.6",
     "leaflet": "~0.5.1",
-    "jquery.form": "~3.18.0"
+    "jquery.form": "~3.18.0",
+    "handlebars": "~1.0.0-rc.4"
   }
 }
