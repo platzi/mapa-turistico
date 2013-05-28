@@ -12,8 +12,7 @@ require.config({
             exports: 'L'
         },
         'jqueryform': {
-            deps: ['jquery'],
-            exports: 'jquery'
+            deps: ['jquery']
         }
     }
 });

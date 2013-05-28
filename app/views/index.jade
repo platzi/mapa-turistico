@@ -45,7 +45,7 @@ block main
 	section(id="agregar-sitio")
 		a(href="#", title="Cerrar", id="closeButton", class="close") X
 		h2 Agregar sitio turistico
-		form(id="form-agregar-sitio", method="post", action="/places")
+		form(id="form-agregar-sitio", method="POST", action="/places", enctype="multipart/form-data")
 			p
 				input(type="text", id="namePlace", name="name", placeholder="Nombre del lugar")
 			p
