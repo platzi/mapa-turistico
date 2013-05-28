@@ -260,9 +260,9 @@ AddPlaceView = Backbone.View.extend({
 
         nogeolocationOption.on('click', function() {
             app.map.map.on('click', app.map.onClickLatLng);
+
+            alertify.alert('Pincha en el mapa para agregar la locacion del sitio.');
             self.$el.fadeOut('fast');
-
-
         });
 
         $form.on('submit', onSubmitForm);
