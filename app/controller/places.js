@@ -43,13 +43,14 @@ exports.create = function (req, res) {
         },
         function (photo, callback) {
             place.image = photo._id + '.' + photo.image.ext;
-            Places.create(place, function (err, doc) {
+            Places.create(place, function (err) {
                 if (err) { callback(err); }
-                if (!doc) {return callback(new Error('Not found doc'));}
+                // if (!doc) {return callback(new Error('Not found'));}
 
-                photoController.updatePhoto(photo._id, {
-                    place: doc._id
-                }, callback);
+                // photoController.updatePhoto(photo._id, {
+                //     place: doc._id
+                // }, callback);
+                callback(err);
             });
         }
     ], function (err) {
