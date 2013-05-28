@@ -21,7 +21,7 @@ findOrCreateTwitter = function (token, tokenSecret, profile, done) {
 findUserById = function (id, done) {
     User.findById(id, function (err, user) {
         if (err) {return done(err);}
-        if (!user) {return done(null);}
+        if (!user) {return done(null, {});}
 
         done(null, {
             id      : user._id || undefined,
