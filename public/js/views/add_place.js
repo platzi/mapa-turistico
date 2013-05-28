@@ -245,7 +245,7 @@ AddPlaceView = Backbone.View.extend({
             e.preventDefault();
             self.$el.fadeOut('fast');
         }
-        
+
         _.each(countries, function(country) {
             htmlCountries += '<option value="' + country + '">' + country + '</option>';
         });

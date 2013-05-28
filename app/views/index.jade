@@ -25,8 +25,8 @@ block main
 			div(class="user_area clearfix")
 				div(class="avatar")
 					img(src="#{profile.avatar}", height="34", width="34")
-				div(class="name") Hola 
-					strong #{profile.username}
+				div(class="name") Hola
+					strong  #{profile.username}
 
 	section(id="sidebar")
 		h2 Últimos sitios agregados
@@ -42,19 +42,19 @@ block main
 		//- 	input(id="", type="text", placeHolder="Usuario")
 		//- 	input(id="", type="text", placeHolder="Contraseña")
 		//- 	input(id="", type="button", value="Entrar")
-		
+
 		//- p O puedes usar:
-		a(id="tt", href="/auth/twitter", title="Conéctate con Twitter") 
-			img(src="/img/assets/twitter.png", alt="") 
-			span Conéctate con Twitter 
-		a(id="fb", href="/auth/facebook", title="Conéctate con Facebook") 
-			img(src="/img/assets/facebook.png", alt="") 
+		a(id="tt", href="/auth/twitter", title="Conéctate con Twitter")
+			img(src="/img/assets/twitter.png", alt="")
+			span Conéctate con Twitter
+		a(id="fb", href="/auth/facebook", title="Conéctate con Facebook")
+			img(src="/img/assets/facebook.png", alt="")
 			span Conéctate con Facebook
-		//p ¿No tienes cuenta? 
+		//p ¿No tienes cuenta?
 		//	a(href="#", target="_blank") Regístrate
 
 	section(id="agregar-sitio")
-		a(href="#", title="Cerrar", id="closeButton", class="close") X 
+		a(href="#", title="Cerrar", id="closeButton", class="close") X
 		h2 Agregar sitio turistico
 		form(id="form-agregar-sitio", method="post", action="/places")
 			p
