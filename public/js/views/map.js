@@ -2,8 +2,6 @@ var MapView = Backbone.View.extend({
 	el: '#mimapa',
 	initialize: function() {
 		this.createMap();
-		this.map.on('click', this.onClickLatLng);
-
 	},
 	createMap: function() {
 		var self = this;
@@ -50,5 +48,10 @@ var MapView = Backbone.View.extend({
 		console.log(e.latlng.toString());
 		$('#manualOption').attr('checked', 'checked')
 		$('#coordsLtnLng').val(e.latlng.toString().slice(7, -1));
+		$('#agregar-sitio').show();
+		var coords = $('#coordsLtnLng').val().split(',');
+		$('#latPlace').val(coords[0]);
+		$('#lngPlace').val(coords[1]);
+        console.log(coords);
 	}
 });
