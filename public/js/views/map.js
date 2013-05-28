@@ -29,13 +29,27 @@ var MapView = Backbone.View.extend({
 
 		this.map.on('locationfound', onLocationFound);
 	},
-	centerMap: function(lat, lng, name) {
-		var marker = L.marker([lat,lng]);
+	centerMap: function(lat, lng, name, image, description) {    
+		var Icon = L.icon({
+		    iconUrl: '../../'+image,		    
+		    iconSize:     [40, 30], 
+		    iconAnchor:   [50, 50], 
+		    popupAnchor:  [-60, -50] 
+		});
 
-		this.map.addLayer(marker);
+		var marker = L.marker([lat,lng],{icon: Icon}); 
+
+		this.map.addLayer(marker);	
 
 		this.map.setView(new L.LatLng(lat,lng), 14);
 
-		marker.bindPopup(name);
+		var popupOptions =
+	    {
+	        'minWidth': '300px',
+	        'maxWidth': '200px',
+	        'closeButton': true
+	    }
+	    var htmlPopup='<p>'+name+'<br />'+description+'</p><br/><img src=../../'+image+' witdh=80 height=80 />';
+		marker.bindPopup(htmlPopup,popupOptions);
 	}
 });

@@ -22,7 +22,9 @@ var SidebarView = Backbone.View.extend({
 		var placeLat = $("#" + placeId).attr("data-lat");
 		var placeLng = $("#" + placeId).attr("data-lng");
 		var placeName = $("#" + placeId + " .name").text();
+		var image = $("#" +placeId+" .thumb img").attr("src");
+		var description = $("#" +placeId+" .description").text();
 
-		app.map.centerMap(placeLat, placeLng, placeName);
+		app.map.centerMap(placeLat, placeLng, placeName, image, description);
 	}
 });
