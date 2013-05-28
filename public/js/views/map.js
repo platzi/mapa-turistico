@@ -41,7 +41,7 @@ var MapView = Backbone.View.extend({
 	        'maxWidth': '200px',
 	        'closeButton': true
 	    }
-	    var htmlPopup='<p>'+name+'<br />'+description+'</p><br/><img src=../../uploads/'+image+' witdh=80 height=80 />';
+	    var htmlPopup='<p>'+name+'<br />'+description+'</p><br/><img src=../../'+image+' witdh=80 height=80 />';
 		marker.bindPopup(htmlPopup,popupOptions);
 	},
 	onClickLatLng: function(e) {
