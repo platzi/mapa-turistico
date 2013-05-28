@@ -29,3 +29,33 @@ define([
 
         return Routes;
     });
+
+
+
+// define([
+//         'backbone',
+//         '../views/sidebarView',
+//         '../collections/placesCollection'
+//     ], function (Backbone, SidebarView, PlacesCollection) {
+//         'use strict';
+
+//         var Routes = Backbone.Router.extend({
+//             routes: {
+//                 '': 'homepage'
+//             },
+
+//             initialize: function () {
+//                 this.placesCollection = new PlacesCollection();
+//                 this.placesCollection.fetch();
+//             },
+
+//             homepage: function () {
+//                 var sidebarView = new SidebarView({
+//                     collection: this.placesCollection
+//                 });
+//                 sidebarView.render();
+//             }
+//         });
+
+//         return Routes;
+//     });
