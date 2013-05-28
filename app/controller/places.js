@@ -45,6 +45,7 @@ exports.create = function (req, res) {
             place.image = photo._id + '.' + photo.image.ext;
             Places.create(place, function (err, doc) {
                 if (err) { callback(err); }
+                if (!doc) {return callback(new Error('Not found doc'));}
 
                 photoController.updatePhoto(photo._id, {
                     place: doc._id
