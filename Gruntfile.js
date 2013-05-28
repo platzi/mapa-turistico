@@ -65,7 +65,8 @@ module.exports = function (grunt) {
                     baseUrl: 'public/app/scripts',
                     dir: 'public/dist',
                     mainConfigFile: 'public/app/scripts/main.js',
-                    name: 'main'
+                    name: 'main',
+                    optimize: 'uglify'
                 }
             }
         },
@@ -81,7 +82,9 @@ module.exports = function (grunt) {
                     dot: true,
                     src: ['public/dist/vendor',
                           'public/dist/views',
-                          'public/dist/build.txt']
+                          'public/dist/build.txt',
+                          'public/dist/collections',
+                          'public/dist/model']
                 }]
             }
         }
