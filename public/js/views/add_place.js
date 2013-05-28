@@ -239,6 +239,7 @@ AddPlaceView = Backbone.View.extend({
                 }
             });
             self.$el.fadeOut('fast');
+            this.reset();
         }
 
         function onClickClose(e) {
