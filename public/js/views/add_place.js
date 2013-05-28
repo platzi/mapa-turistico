@@ -201,14 +201,18 @@ AddPlaceView = Backbone.View.extend({
     initialize: function(){
         var self, countryPlace, htmlCountries, geolocationOption;
 
+
+
         var $latInput = $('#latPlace');
         var $lgnInput = $('#lngPlace');
+
 
         self = this;
         $form = $('#form-agregar-sitio');
         htmlCountries = '';
         countryPlace = $('#countryPlace');
         geolocationOption = $('#geolocationOption');
+        nogeolocationOption = $('#manualOption');
         $close = $('#closeButton');
 
         function getUserGeolocation() {
@@ -245,7 +249,7 @@ AddPlaceView = Backbone.View.extend({
             e.preventDefault();
             self.$el.fadeOut('fast');
         }
-        
+
         _.each(countries, function(country) {
             htmlCountries += '<option value="' + country + '">' + country + '</option>';
         });
@@ -253,6 +257,13 @@ AddPlaceView = Backbone.View.extend({
         countryPlace.append(htmlCountries);
 
         geolocationOption.on('click', getUserGeolocation);
+
+        nogeolocationOption.on('click', function() {
+            app.map.map.on('click', app.map.onClickLatLng);
+            self.$el.fadeOut('fast');
+
+
+        });
 
         $form.on('submit', onSubmitForm);
 
