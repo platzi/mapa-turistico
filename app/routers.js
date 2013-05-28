@@ -25,4 +25,9 @@ module.exports = function (app) {
     app.get('/auth/twitter', passport.authenticate('twitter'));
     app.get('/auth/twitter/callback', passport.authenticate('twitter',
         {successReturnToOrRedirect: '/', failureRedirect: '/login'}));
+
+    //autentification facebook
+    app.get('/auth/facebook', passport.authenticate('facebook'));
+    app.get('/auth/facebook/callback', passport.authenticate('facebook',
+        {successReturnToOrRedirect: '/', failureRedirect: '/login'}));
 };

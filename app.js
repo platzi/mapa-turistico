@@ -30,4 +30,5 @@ app.configure(function() {
 });
 
 require('./app/auth/twitter')();
+require('./app/auth/facebook')();
 require('./app/routers')(app);
