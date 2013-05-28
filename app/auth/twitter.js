@@ -1,6 +1,6 @@
 'use strict';
 
-var cfg          = require('../config').cfg,
+var cfg             = require('../config').cfg,
     passport        = require('passport'),
     TwitterStrategy = require('passport-twitter').Strategy,
     User            = require('../models/user'),
@@ -21,9 +21,10 @@ findOrCreateTwitter = function (token, tokenSecret, profile, done) {
 findUserById = function (id, done) {
     User.findById(id, function (err, user) {
         if (err) {return done(err);}
+        if (!user) {return done(null);}
 
         done(null, {
-            id      : user._id,
+            id      : user._id || undefined,
             username: user.username,
             provider: user.provider,
             avatar  : user.photo
