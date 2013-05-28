@@ -3,6 +3,7 @@ var SidebarView = Backbone.View.extend({
 
 	addPlaces: function(places) {
 	    var htmlPlaces = "";
+	    var marker;
 
 	    _.each(places.toJSON(), function(place, index){
 
@@ -11,6 +12,7 @@ var SidebarView = Backbone.View.extend({
 	    	htmlPlaces += '<figcaption class="caption"><p class="name">' + place.name + '</p>';
 	    	htmlPlaces += '<p class="description">' + place.description.substring(0,80) + '...</p></figcaption></figure>';
 	    	htmlPlaces += '</article>';
+	    	app.map.addMarker(place.point.lat,place.point.lng);
 	    });
 
 	    this.$el.html(htmlPlaces);

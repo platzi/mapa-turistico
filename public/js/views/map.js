@@ -29,15 +29,9 @@ var MapView = Backbone.View.extend({
 
 		this.map.on('locationfound', onLocationFound);
 	},
-	centerMap: function(lat, lng, name, image, description) {    
-		var Icon = L.icon({
-		    iconUrl: '../../'+image,		    
-		    iconSize:     [40, 30], 
-		    iconAnchor:   [50, 50], 
-		    popupAnchor:  [-60, -50] 
-		});
+	centerMap: function(lat, lng, name, image, description) {
 
-		var marker = L.marker([lat,lng],{icon: Icon}); 
+		var marker = L.marker([lat,lng]); 
 
 		this.map.addLayer(marker);	
 
@@ -51,5 +45,9 @@ var MapView = Backbone.View.extend({
 	    }
 	    var htmlPopup='<p>'+name+'<br />'+description+'</p><br/><img src=../../'+image+' witdh=80 height=80 />';
 		marker.bindPopup(htmlPopup,popupOptions);
+	},
+	addMarker: function(lat,lng){
+		var marker = L.marker([lat,lng]); 
+		this.map.addLayer(marker);
 	}
 });
