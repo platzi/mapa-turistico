@@ -4,10 +4,10 @@ var app      = require('../app'),
 
 describe('#Places', function (){
     'use strict';
+    var path = (__dirname + '/fixtures/bosque.jpg');
 
     describe('#POST /places', function () {
         it('should return 200', function (done) {
-            var path = (__dirname + '/fixtures/bosque.jpg');
             request(app)
                 .post('/places')
                 .field('description' ,'Este es un lugar bonito')
@@ -25,6 +25,16 @@ describe('#Places', function (){
                 .post('/places')
                 .send({})
                 .set('Accept', 'application/json')
+                .expect(400, done);
+        });
+    });
+
+    describe('#POST /places', function () {
+        it('should return 400 because the post wrong', function (done) {
+            request(app)
+                .post('/places')
+                .field('name', '<script>alert(Eduardo Diaz)</script>')
+                .attach('file', path)
                 .expect(400, done);
         });
     });

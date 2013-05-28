@@ -28,8 +28,8 @@ exports.create = function (req, res) {
             name : req.param('name'),
             image : req.param('image'),
             point: {
-                lat: Number(req.param('lat')),
-                lng: Number(req.param('lng'))
+                lat: Number(req.param('lat') || 0),
+                lng: Number(req.param('lng') || 0)
             }
         };
 
@@ -43,13 +43,12 @@ exports.create = function (req, res) {
         },
         function (photo, callback) {
             place.image = photo._id + '.' + photo.image.ext;
-            Places.create(place, function (err) {
-                if (err) { callback(err); }
-                // if (!doc) {return callback(new Error('Not found'));}
+            Places.create(place, function (err, doc) {
+                if (err) { return callback(err); }
 
-                // photoController.updatePhoto(photo._id, {
-                //     place: doc._id
-                // }, callback);
+                photoController.updatePhoto(photo._id, {
+                    place: doc._id
+                }, callback);
                 callback(err);
             });
         }
