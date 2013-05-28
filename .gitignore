@@ -4,3 +4,4 @@ node_modules
 public/vendor/*
 uploads/*.jpg
 test/bosque.jpg
+app/config/config.js
