@@ -34,8 +34,8 @@ define([
                 function onSubmitForm(e) {
                     e.preventDefault();
                     $(this).ajaxSubmit({
-                        success: function(data) {
-                            console.log(data);
+                        success: function() {
+                            self.hide();
                         }
                     });
                 }
@@ -49,6 +49,10 @@ define([
                 geolocationOption.on('click', getUserGeolocation);
 
                 $form.on('submit', onSubmitForm);
+            },
+
+            hide: function () {
+                $('#agregar-sitio').fadeToggle();
             }
         });
 
