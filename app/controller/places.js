@@ -1,4 +1,5 @@
 'use strict';
+
 var Places          = require('../models/places').Places,
     photoController = require('../controller/photo'),
     async           = require('async'),
@@ -32,7 +33,7 @@ exports.create = function (req, res) {
             }
         };
 
-    async.series([
+    async.waterfall([
         function (callback) {
             photoController.savePhoto({
                 name: file.name,
@@ -40,8 +41,15 @@ exports.create = function (req, res) {
                 path: file.path
             }, callback);
         },
-        function (callback) {
-            Places.create(place, callback);
+        function (photo, callback) {
+            place.image = photo._id + '.' + photo.image.ext;
+            Places.create(place, function (err, doc) {
+                if (err) { callback(err); }
+
+                photoController.updatePhoto(photo._id, {
+                    place: doc._id
+                }, callback);
+            });
         }
     ], function (err) {
         handleResponse(err, res);

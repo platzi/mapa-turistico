@@ -40,7 +40,8 @@ a{text-decoration:none}
 #agregar-sitio form#form-agregar-sitio input[type="submit"]{background:#006cd8;border:0;border-radius:4px;color:#fff;float:right;font-size:15px;height:36px;margin:0;width:40%;}
 #agregar-sitio form#form-agregar-sitio input[type="submit"]:hover{background-image:radial-gradient(circle,#4fa7ff 0%,#006cd8 100%)}
 #agregar-sitio h2{color:#1a1a1a;margin:0 0 10px 0;font-size:17px;text-align:center}
-#agregar-sitio input[type="text"],#agregar-sitio textarea{border:1px solid #ddd;color:#222;font-size:15px;padding:5px;resize:none;width:338px}
+#agregar-sitio input[type="text"],#agregar-sitio textarea{border:1px solid #ddd;color:#222;font-size:15px;padding:5px;width:338px}
+#agregar-sitio textarea{resize:none;height:100px}
 #agregar-sitio #positionPlace{width:70%;}
 #agregar-sitio #positionPlace span{background-color:#222}
 #agregar-sitio p{margin:10px 0 0 0;padding:0}

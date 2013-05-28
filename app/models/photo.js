@@ -8,10 +8,16 @@ var mongoose = require('mongoose'),
     photoSchema,
     alternate_upload;
 
-alternate_upload = function (origin, destination) {
+alternate_upload = function (origin, destination, next) {
     var read  = fs.createReadStream(origin),
         write = fs.createWriteStream(destination);
+
     read.pipe(write);
+    write.on('close', function () {
+        fs.unlink(origin, function (err) {
+            next(err);
+        });
+    });
 };
 
 var methods = {
@@ -21,24 +27,23 @@ var methods = {
                 (String(self._id) + '.' + self.image.ext));
 
         fs.rename(path_file, path_upload, function (err) {
-            if (err) { return alternate_upload(path_file, path_upload); }
+            if (err) { return alternate_upload(path_file, path_upload, next); }
             next(null);
         });
     }
 };
 
 photoSchema = new Schema({
-    user: {
-        type    : ObjectId
-    },
-    name: {
-        type    : String
-    },
-    url: {
-        type: String
-    },
+    user: {type: ObjectId},
+    name: {type: String},
+    url : {type: String},
     image: {
         ext: String
+    },
+    place: {
+        type    : ObjectId,
+        ref     : 'place',
+        required: false
     }
 });
 

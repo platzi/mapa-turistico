@@ -1,6 +1,4 @@
-var Widget;
-
-Widget = Backbone.View.extend({
+var HeaderView = Backbone.View.extend({
     el: '#header',
 
     events: {

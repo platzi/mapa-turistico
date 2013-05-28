@@ -28,7 +28,9 @@ placesSchema = new Schema({
             required: true
         }
     },
-    photo : [String]
+    image: {
+        type: String
+    }
 });
 
 module.exports = {

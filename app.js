@@ -15,7 +15,9 @@ app.configure(function() {
     app.use(express.logger('dev'));
     app.use(express.favicon());
     app.use(express.cookieParser());
-    app.use(express.bodyParser());
+    app.use(express.bodyParser({
+        uploadDir: '/tmp'
+    }));
     app.use(express.methodOverride());
     app.use(express.session({
         key   : cfg.session.key,
@@ -27,8 +29,8 @@ app.configure(function() {
     app.use(app.router);
 
     app.use(express.static(path.join(__dirname, 'public')));
+    app.use(express.static(path.join(__dirname, 'uploads')));
 });
 
 require('./app/auth/twitter')();
-require('./app/auth/facebook')();
 require('./app/routers')(app);

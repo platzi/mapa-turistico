@@ -56,25 +56,31 @@ block main
 	section(id="agregar-sitio")
 		a(href="#", title="Cerrar", id="closeButton", class="close") X 
 		h2 Agregar sitio turistico
-		form(id="form-agregar-sitio", method="post", action="")
+		form(id="form-agregar-sitio", method="post", action="/places")
 			p
-				input(type="text", id="namePlace", name="namePlace", placeholder="Nombre del lugar")
+				input(type="text", id="namePlace", name="name", placeholder="Nombre del lugar", required)
+			p
+				select(id="countryPlace", name="country", required)
+					option(selected) Elige un país
+			p
+				input(type="text", id="cityPlace", name="city", placeholder="Ciudad", required)
 			p(class="radios")
-				input(type="radio", name="lugar", value="estoyAqui")
+				input(type="radio", id="geolocationOption", name="lugar", value="geolocation", required)
 				span  Estoy en el lugar
-			p(class="radios")
-				input(type="radio", name="lugar", value="noAqui")
-				span  No estoy en el lugar
+			//- p(class="radios")
+			//- 	input(type="radio", id="manualOption", name="lugar", value="nogeolocation")
+			//- 	span  No estoy en el lugar
+				//- span(id="pos") Posición
 			p
-				input(type="text", id="positionPlace", name="positionPlace", placeholder="Localizacion")
-				span(id="pos") Posición
+				input(type="file", id="imagePlace", name="file", required)
+				//- input(id="upload_value", value="")
+				//- span(class="upload")
+				//- 	input(type="file")
+				//- span(id="fileImage") Imagen
 			p
-				input(id="upload_value", value="")
-				span(class="upload")
-					input(type="file")
-				span(id="fileImage") Imagen
-			p
-				textarea(id="descriptionPlace", name="descriptionPlace", placeholder="Descripcion", rows="8")
+				textarea(id="descriptionPlace", name="description", placeholder="Descripcion", rows="8", required)
+			input(type="hidden", id="latPlace", name="lat")
+			input(type="hidden", id="lngPlace", name="lng")
 			p(class="clearfix")
 				input(type="submit", value="Agregar")
 
@@ -84,13 +90,15 @@ block javascripts
 	script(src="/socket.io/socket.io.js")
 	script(src="/js/vendor/underscore.js")
 	script(src="/js/vendor/backbone.js")
+	script(src="/js/vendor/jquery.form.js")
 	//- Modelos
 	script(src="/js/models/user.js")
 	script(src="/js/models/place.js")
 	//- Vistas
 	script(src="/js/views/map.js")
 	script(src="/js/views/sidebar.js")
-	script(src="/js/views/headerView.js")
+	script(src="/js/views/add_place.js")
+	script(src="/js/views/header.js")
 
 	//- Router
 	script(src="/js/routes.js")

@@ -26,3 +26,7 @@ exports.savePhoto = function (file, next) {
         next(err, photo);
     });
 };
+
+exports.updatePhoto = function (id, photo, next) {
+    Photo.findByIdAndUpdate(id, photo, next);
+};
