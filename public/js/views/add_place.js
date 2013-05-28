@@ -232,13 +232,13 @@ AddPlaceView = Backbone.View.extend({
                 success: function(data) {
                     app.places.fetch({
                         success: function(collection, data){
-                            console.log('yeah!');
                             app.sidebar.addPlaces(collection);
                         }
                     });
                 }
             });
             self.$el.fadeOut('fast');
+            this.reset();
         }
 
         function onClickClose(e) {
