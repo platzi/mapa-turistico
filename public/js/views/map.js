@@ -1,7 +1,9 @@
 var MapView = Backbone.View.extend({
 	el: '#mimapa',
 	initialize: function() {
-		this.createMap()
+		this.createMap();
+		this.map.on('click', this.onClickLatLng);
+
 	},
 	createMap: function() {
 		var self = this;
@@ -29,11 +31,11 @@ var MapView = Backbone.View.extend({
 
 		this.map.on('locationfound', onLocationFound);
 	},
-	centerMap: function(lat, lng) {		
-		this.map.setView(new L.LatLng(lat,lng), 14);		
+	centerMap: function(lat, lng) {
+		this.map.setView(new L.LatLng(lat,lng), 14);
 	},
 	addMarker: function(lat,lng, name, image, description){
-		var marker = L.marker([lat,lng]); 
+		var marker = L.marker([lat,lng]);
 		this.map.addLayer(marker);
 		var popupOptions =
 	    {
@@ -43,5 +45,10 @@ var MapView = Backbone.View.extend({
 	    }
 	    var htmlPopup='<p>'+name+'<br />'+description+'</p><br/><img src=../../'+image+' witdh=80 height=80 />';
 		marker.bindPopup(htmlPopup,popupOptions);
+	},
+	onClickLatLng: function(e) {
+		console.log(e.latlng.toString());
+		$('#manualOption').attr('checked', 'checked')
+		$('#coordsLtnLng').val(e.latlng.toString().slice(7, -1));
 	}
 });

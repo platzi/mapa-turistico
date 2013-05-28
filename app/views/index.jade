@@ -67,9 +67,11 @@ block main
 			p(class="radios")
 				input(type="radio", id="geolocationOption", name="lugar", value="geolocation", required)
 				span  Estoy en el lugar
-			//- p(class="radios")
-			//- 	input(type="radio", id="manualOption", name="lugar", value="nogeolocation")
-			//- 	span  No estoy en el lugar
+			p(class="radios")
+				input(type="radio", id="manualOption", name="lugar", value="nogeolocation")
+				span No estoy en el lugar
+			p
+				input(type="text", id="coordsLtnLng", name="coords", placeholder="Coordenadas")
 				//- span(id="pos") Posición
 			p
 				input(type="file", id="imagePlace", name="file", required)
