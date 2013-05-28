@@ -84,7 +84,8 @@ module.exports = function (grunt) {
                           'public/dist/views',
                           'public/dist/build.txt',
                           'public/dist/collections',
-                          'public/dist/model']
+                          'public/dist/model',
+                          'public/dist/templates']
                 }]
             }
         }
