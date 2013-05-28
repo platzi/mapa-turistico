@@ -239,13 +239,14 @@ AddPlaceView = Backbone.View.extend({
                 }
             });
             self.$el.fadeOut('fast');
+            this.reset();
         }
 
         function onClickClose(e) {
             e.preventDefault();
             self.$el.fadeOut('fast');
         }
-        
+
         _.each(countries, function(country) {
             htmlCountries += '<option value="' + country + '">' + country + '</option>';
         });
