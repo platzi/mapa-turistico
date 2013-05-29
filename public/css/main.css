@@ -74,6 +74,10 @@ a{text-decoration:none}
 #sidebar .elemList .thumb img{display:block;height:90px;width:90px}
 #sidebar .elemList:hover{background:#d9d9d9;transition:all .8s ease-out}
 #sidebar h2{background:#666;color:#fff;filter:dropshadow(#000,1,1);font-size:15px;font-weight:normal;margin:0;padding:5px 10px}
+#popupPlace{font-family:'Open Sans',Helvetica,Arial,sans-serif;font-size:1em;height:110px;width:400px;}
+#popupPlace img{border-radius:100%;float:left;height:100px;overflow:hidden;width:100px}
+#popupPlace p{padding-left:110px}
+#popupPlace p#popupName{font-weight:bold}
 .leaflet-top.leaflet-center{display:none}
 .clearfix:after,.clearfix:before{content:" ";display:table}
 .clearfix:after{clear:both}

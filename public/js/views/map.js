@@ -41,11 +41,18 @@ var MapView = Backbone.View.extend({
 	        'maxWidth': '200px',
 	        'closeButton': true
 	    }
-	    var htmlPopup='<p>'+name+'<br />'+description+'</p><br/><img src=../../'+image+' witdh=80 height=80 />';
+	    // var htmlPopup='<p id="namePlacetest">'+name+'<br />'+description+'</p><br/><img src=../../'+image+' id="ea" witdh=100 height=100 />';
+	    var htmlPopup = '';
+	    htmlPopup += '<div id="popupPlace">';
+	    htmlPopup +='<img src=../../' + image + ' />';
+	    htmlPopup +='<p id="popupName">' + name + '</p>';
+	    htmlPopup += '<p id="popupDes">' + description + '</p>';
+	    htmlPopup += '</div>';
+
 		marker.bindPopup(htmlPopup,popupOptions);
 	},
 	onClickLatLng: function(e) {
-		console.log(e.latlng.toString());
+		//console.log(e.latlng.toString());
 		$('#manualOption').attr('checked', 'checked')
 		$('#coordsLtnLng').val(e.latlng.toString().slice(7, -1));
 		$('#agregar-sitio').show();
