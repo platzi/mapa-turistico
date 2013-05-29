@@ -3,7 +3,7 @@ define([
         'underscore',
         'backbone',
         'Handlebars',
-        'text!../templates/addPlaceTemplate.html',
+        'text!templates/addPlaceTemplate.html',
         '../countries',
         'jqueryform'
     ], function ($, _, Backbone, Handlebars, addPlaceTemplate, countries) {

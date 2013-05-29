@@ -1,7 +1,7 @@
 define([
         'backbone',
         'Handlebars',
-        'text!../templates/loginTemplate.html'
+        'text!templates/loginTemplate.html'
     ], function (Backbone, Handlebars, logintTemplate) {
         'use strict';
 

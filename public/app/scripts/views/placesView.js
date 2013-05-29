@@ -1,7 +1,7 @@
 define([
         'backbone',
         'Handlebars',
-        'text!../templates/sidebarTemplate.html'
+        'text!templates/sidebarTemplate.html'
     ], function (Backbone, Handlebars, sidebarTemplate) {
         'use strict';
 

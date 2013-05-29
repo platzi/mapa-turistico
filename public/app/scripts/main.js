@@ -6,7 +6,8 @@ require.config({
         'text'      : 'vendor/text/text',
         'Leaflet'   : 'vendor/leaflet/dist/leaflet',
         'jqueryform': 'vendor/jquery.form/jquery.form',
-        'Handlebars': 'vendor/handlebars/handlebars'
+        'Handlebars': 'vendor/handlebars/handlebars',
+        'templates' : 'templates'
     },
     shim: {
         'Leaflet': {
@@ -21,8 +22,7 @@ require.config({
     }
 });
 
-require(['backbone','views/app'], function (Backbone, AppView) {
+require(['routers'], function (AppRouter) {
     'use strict';
-    new AppView();
-    Backbone.history.start({pushState: true});
+    AppRouter.initialize();
 });

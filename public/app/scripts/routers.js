@@ -1,18 +1,18 @@
 define([
         'backbone',
-        '../views/sidebarView',
-        '../collections/placesCollection',
-        '../views/mapView',
-        '../model/mapModel',
-        '../views/headerView'
+        'views/sidebarView',
+        'collections/placesCollection',
+        'views/mapView',
+        'model/mapModel',
+        'views/headerView'
     ], function (Backbone, SidebarView, PlacesCollection,
-                 MapView, MapModel, HeaderView) {
-
+                     MapView, MapModel, HeaderView) {
         'use strict';
+        var AppRouter, initialize;
 
-        var Routes = Backbone.Router.extend({
+        AppRouter = Backbone.Router.extend({
             routes: {
-                '' : 'homepage'
+                '': 'homepage'
             },
 
             initialize: function () {
@@ -37,5 +37,12 @@ define([
             }
         });
 
-        return Routes;
+        initialize = function () {
+            new AppRouter();
+            Backbone.history.start({pushState: true});
+        };
+
+        return {
+            initialize: initialize
+        };
     });
