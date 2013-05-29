@@ -7,6 +7,7 @@ define([
         '../views/headerView'
     ], function (Backbone, SidebarView, PlacesCollection,
                  MapView, MapModel, HeaderView) {
+
         'use strict';
 
         var Routes = Backbone.Router.extend({
