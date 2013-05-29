@@ -218,14 +218,21 @@ a
 		&:hover
 			background-image radial-gradient(circle, lighten(rojizo, 40%) 0%, rojizo 100%)
 	form#form-agregar-sitio
+		p.formText
+			font-weight bold
 		p.radios
 			color darken(blanco, 60%)
 			display inline
 			font-size 12px
 			vertical-align top
 			input[type="radio"]
-				margin-bottom .5em
-				margin-top .5em
+				// margin-bottom .5em
+				// margin-top .5em
+				margin .5em
+			span
+				margin 0 .3em 0 .3em
+		p#coords
+			display none
 		span#pos
 			background lighten(gris, 60%)
 			color blanco
@@ -453,10 +460,30 @@ a
 		margin 0
 		padding 5px 10px
 
+// Estilos para el popup
+#popupPlace
+	font-family 'Open Sans', Helvetica, Arial, sans-serif
+	font-size 1em;
+	height 110px
+	width 400px
+
+	img
+		border-radius 100%
+		float left
+		height 100px
+		overflow hidden
+		width 100px
+
+	p
+		padding-left 110px
+
+	p#popupName
+		font-weight bold
+// Fin
+
 .leaflet-top
 	&.leaflet-center
 		display none
-
 
 .clearfix:after, .clearfix:before
 	content " "
