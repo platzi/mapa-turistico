@@ -52,6 +52,5 @@ var MapView = Backbone.View.extend({
 		var coords = $('#coordsLtnLng').val().split(',');
 		$('#latPlace').val(coords[0]);
 		$('#lngPlace').val(coords[1]);
-        console.log(coords);
 	}
 });
