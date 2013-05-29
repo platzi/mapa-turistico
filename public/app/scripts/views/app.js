@@ -1,61 +1,40 @@
 define([
         'backbone',
-        '../collections/places',
-        '../views/sidebar',
-        '../views/map',
-        '../views/addPlace',
-        '../views/header'
-    ], function (Backbone, placesCollection, sidebarView, mapView, AddPlace) {
+        '../views/sidebarView',
+        '../collections/placesCollection',
+        '../views/mapView',
+        '../model/mapModel',
+        '../views/headerView'
+    ], function (Backbone, SidebarView, PlacesCollection,
+                 MapView, MapModel, HeaderView) {
         'use strict';
 
         var Routes = Backbone.Router.extend({
             routes: {
-                '': 'homepage'
+                '' : 'homepage'
             },
 
             initialize: function () {
-                mapView.render();
-                new AddPlace();
+                this.placesCollection = new PlacesCollection();
+                this.map = new MapModel();
+
+                new MapView({ model: this.map }).render();
+                new HeaderView({ model: this.map });
             },
 
             homepage: function () {
-                placesCollection.fetch({
-                    success: function (collection) {
-                        sidebarView.addPlaces(collection);
-                    }
+                var places = this.placesCollection.fetch(),
+                    self   = this;
+
+                places.done(function () {
+                    var sidebarView = new SidebarView({
+                        collection: self.placesCollection
+                    });
+
+                    sidebarView.render();
                 });
             }
         });
 
         return Routes;
     });
-
-
-
-// define([
-//         'backbone',
-//         '../views/sidebarView',
-//         '../collections/placesCollection'
-//     ], function (Backbone, SidebarView, PlacesCollection) {
-//         'use strict';
-
-//         var Routes = Backbone.Router.extend({
-//             routes: {
-//                 '': 'homepage'
-//             },
-
-//             initialize: function () {
-//                 this.placesCollection = new PlacesCollection();
-//                 this.placesCollection.fetch();
-//             },
-
-//             homepage: function () {
-//                 var sidebarView = new SidebarView({
-//                     collection: this.placesCollection
-//                 });
-//                 sidebarView.render();
-//             }
-//         });
-
-//         return Routes;
-//     });

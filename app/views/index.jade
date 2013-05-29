@@ -13,10 +13,10 @@ block main
 
 		div(class="actions_area")
 			if profile
-				a(href="/sitio/", id="addButton") Agregar lugar
+				a(href="#", id="addButton") Agregar lugar
 				a(href="/logout", id="logoutButton") Salir
 			else
-				a(href="/login/", id="loginButton") Ingresar o registrarme
+				a(href="#", id="loginButton") Ingresar o registrarme
 
 		if profile
 			div(class="user_area clearfix")
@@ -33,38 +33,30 @@ block main
 		div(id="mimapa")
 
 	section(id="logintt")
-		h2 Iniciar Sesión o registrarme
-
-		a(id="tt", href="/auth/twitter", title="Conéctate con Twitter")
-			img(src="/app/img/assets/twitter.png", alt="")
-			span Conéctate con Twitter
-		a(id="fb", href="/auth/facebook", title="Conéctate con Facebook")
-			img(src="/app/img/assets/facebook.png", alt="")
-			span Conéctate con Facebook
 
 	section(id="agregar-sitio")
-		a(href="#", title="Cerrar", id="closeButton", class="close") X
-		h2 Agregar sitio turistico
-		form(id="form-agregar-sitio", method="POST", action="/places", enctype="multipart/form-data")
-			p
-				input(type="text", id="namePlace", name="name", placeholder="Nombre del lugar")
-			p
-				select(id="countryPlace", name="country")
-					option(selected) Elige un país
-			p
-				input(type="text", id="cityPlace", name="city", placeholder="Ciudad")
-			p(class="radios")
-				input(type="radio", id="geolocationOption", name="lugar", value="geolocation")
-				span  Estoy en el lugar
-			p
-				input(type="file", id="imagePlace", name="file")
-			p
-				textarea(id="descriptionPlace", name="description", placeholder="Descripcion", rows="8")
-			input(type="hidden", id="latPlace", name="lat")
-			input(type="hidden", id="lngPlace", name="lng")
-			p(class="clearfix")
-				input(type="submit", value="Agregar")
+		//- a(href="#", title="Cerrar", id="closeButton", class="close") X
+		//- h2 Agregar sitio turistico
+		//- form(id="form-agregar-sitio", method="POST", action="/places", enctype="multipart/form-data")
+		//- 	p
+		//- 		input(type="text", id="namePlace", name="name", placeholder="Nombre del lugar")
+		//- 	p
+		//- 		select(id="countryPlace", name="country")
+		//- 			option(selected) Elige un país
+		//- 	p
+		//- 		input(type="text", id="cityPlace", name="city", placeholder="Ciudad")
+		//- 	p(class="radios")
+		//- 		input(type="radio", id="geolocationOption", name="lugar", value="geolocation")
+		//- 		span  Estoy en el lugar
+		//- 	p
+		//- 		input(type="file", id="imagePlace", name="file")
+		//- 	p
+		//- 		textarea(id="descriptionPlace", name="description", placeholder="Descripcion", rows="8")
+		//- 	input(type="hidden", id="latPlace", name="lat")
+		//- 	input(type="hidden", id="lngPlace", name="lng")
+		//- 	p(class="clearfix")
+		//- 		input(type="submit", value="Agregar")
 
 block javascripts
-	script(data-main="/dist/main.js", src="/app/scripts/vendor/requirejs/require.js")
-	//- script(data-main="/app/scripts/main.js", src="/app/scripts/vendor/requirejs/require.js")
+	//- script(data-main="/dist/main.js", src="/app/scripts/vendor/requirejs/require.js")
+	script(data-main="/app/scripts/main.js", src="/app/scripts/vendor/requirejs/require.js")
