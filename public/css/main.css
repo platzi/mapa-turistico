@@ -28,8 +28,11 @@ a{text-decoration:none}
 #agregar-sitio{background:#fafafa;border-radius:4px;box-shadow:0 0 10px rgba(0,0,0,0.3);display:none;font-size:13px;left:50%;margin-left:-182px;padding:15px;position:absolute;text-align:left;top:70px;width:350px;z-index:1003;}
 #agregar-sitio .close{background:#dc2833;border-radius:100%;color:#fff;font-weight:bold;line-height:29px;position:absolute;right:-12px;text-align:center;text-decoration:none;top:-10px;width:28px;}
 #agregar-sitio .close:hover{background-image:radial-gradient(circle,#ea7e85 0%,#dc2833 100%)}
+#agregar-sitio form#form-agregar-sitio p.formText{font-weight:bold}
 #agregar-sitio form#form-agregar-sitio p.radios{color:#666;display:inline;font-size:12px;vertical-align:top;}
-#agregar-sitio form#form-agregar-sitio p.radios input[type="radio"]{margin-bottom:.5em;margin-top:.5em}
+#agregar-sitio form#form-agregar-sitio p.radios input[type="radio"]{margin:.5em}
+#agregar-sitio form#form-agregar-sitio p.radios span{margin:0 .3em 0 .3em}
+#agregar-sitio form#form-agregar-sitio p#coords{display:none}
 #agregar-sitio form#form-agregar-sitio span#pos{background:#a7a7a7;color:#fff;font-weight:bold;padding:.65em 1.4em .5em 1.2em}
 #agregar-sitio form#form-agregar-sitio p#selectFile{margin-top:1em;}
 #agregar-sitio form#form-agregar-sitio p#selectFile input#upload_value,#agregar-sitio form#form-agregar-sitio p#selectFile span.upload{display:inline-block;padding:5px;vertical-align:top;width:70%}

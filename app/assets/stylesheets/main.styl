@@ -218,14 +218,21 @@ a
 		&:hover
 			background-image radial-gradient(circle, lighten(rojizo, 40%) 0%, rojizo 100%)
 	form#form-agregar-sitio
+		p.formText
+			font-weight bold
 		p.radios
 			color darken(blanco, 60%)
 			display inline
 			font-size 12px
 			vertical-align top
 			input[type="radio"]
-				margin-bottom .5em
-				margin-top .5em
+				// margin-bottom .5em
+				// margin-top .5em
+				margin .5em
+			span
+				margin 0 .3em 0 .3em
+		p#coords
+			display none
 		span#pos
 			background lighten(gris, 60%)
 			color blanco

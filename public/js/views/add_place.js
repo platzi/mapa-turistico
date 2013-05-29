@@ -241,8 +241,11 @@ AddPlaceView = Backbone.View.extend({
                     });
                 }
             });
-            self.$el.fadeOut('fast');
             this.reset();
+            $('input[type=radio]').attr('checked', false);
+            $('#coords').hide();
+            self.$el.fadeOut('fast');
+            alertify.success('Lugar agregado exitosamente.');
         }
 
         function onClickClose(e) {
@@ -257,11 +260,10 @@ AddPlaceView = Backbone.View.extend({
         countryPlace.append(htmlCountries);
 
         geolocationOption.on('click', getUserGeolocation);
-
         nogeolocationOption.on('click', function() {
             app.map.map.on('click', app.map.onClickLatLng);
-
-            alertify.alert('Pincha en el mapa para agregar la locacion del sitio.');
+            alertify.alert('Pincha en el mapa para localizar el sitio y agregar su ubicacion.');
+            $('#coords').show();
             self.$el.fadeOut('fast');
         });
 
