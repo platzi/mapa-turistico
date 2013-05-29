@@ -7,7 +7,7 @@ require.config({
         'Leaflet'   : 'vendor/leaflet/dist/leaflet',
         'jqueryform': 'vendor/jquery.form/jquery.form',
         'Handlebars': 'vendor/handlebars/handlebars',
-        'templates' : 'templates'
+        'templates' : '../templates'
     },
     shim: {
         'Leaflet': {
