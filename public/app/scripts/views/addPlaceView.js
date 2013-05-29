@@ -16,7 +16,8 @@ define([
 
             events: {
                 'submit #form-agregar-sitio': 'onSubmit',
-                'click #geolocationOption'  : 'putCurrentLocation'
+                'click #geolocationOption'  : 'putCurrentLocation',
+                'click #closeButton'        : 'close'
             },
 
             initialize:  function () {
@@ -33,8 +34,18 @@ define([
             },
 
             onSubmit: function (e) {
+                var self = this;
                 e.preventDefault();
-                console.log('Enviado');
+                $('#form-agregar-sitio').ajaxSubmit({
+                    success: function (data) {
+                        self.close();
+                        console.log(data);
+                    }
+                });
+            },
+
+            close: function () {
+                this.$el.hide();
             },
 
             putCurrentLocation: function () {

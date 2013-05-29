@@ -17,7 +17,7 @@ handleResponse = function (err, res) {
 };
 
 exports.create = function (req, res) {
-    if (!req.files) {return res.send(400);}
+    if (!req.files || !req.files.file) {return res.send(400);}
 
     var file     = req.files.file,
         file_ext = helpers.image.extensions[file.type],
@@ -61,5 +61,4 @@ exports.findAll = function (req, res) {
         if (err) {return res.send(500); }
         res.send(places);
     });
-
 };
