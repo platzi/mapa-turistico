@@ -32,7 +32,8 @@ var MapView = Backbone.View.extend({
 	centerMap: function(lat, lng) {
 		this.map.setView(new L.LatLng(lat,lng), 14);
 	},
-	addMarker: function(lat,lng, name, image, description){
+	// addMarker: function(lat,lng, name, image, description){
+	addMarker: function(city, country, lat, lng, image, name) {
 		var marker = L.marker([lat,lng]);
 		this.map.addLayer(marker);
 		var popupOptions =
@@ -46,7 +47,8 @@ var MapView = Backbone.View.extend({
 	    htmlPopup += '<div id="popupPlace">';
 	    htmlPopup +='<img src=../../' + image + ' />';
 	    htmlPopup +='<p id="popupName">' + name + '</p>';
-	    htmlPopup += '<p id="popupDes">' + description + '</p>';
+	    htmlPopup += '<p><i class="icon-map-marker"></i> ' + city + ', ' + country + '.</p>';
+	    htmlPopup += '<p id="popupDet"><a href="">Ver mas detalles...</a></p>';
 	    htmlPopup += '</div>';
 
 		marker.bindPopup(htmlPopup,popupOptions);
