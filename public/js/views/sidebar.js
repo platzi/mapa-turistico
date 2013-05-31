@@ -13,7 +13,8 @@ var SidebarView = Backbone.View.extend({
 	    	htmlPlaces += '<figcaption class="caption"><p class="name">' + place.name + '</p>';
 	    	htmlPlaces += '<p class="description">' + place.description.substring(0,80) + '...</p></figcaption></figure>';
 	    	htmlPlaces += '</article>';
-	    	app.map.addMarker(place.point.lat,place.point.lng,place.name,place.image,place.description);
+	    	//app.map.addMarker(place.point.lat,place.point.lng,place.name,place.image,place.description);
+	    	app.map.addMarker(place.city, place.country, place.point.lat, place.point.lng, place.image, place.name);
 	    });
 
 	    this.$el.html(htmlPlaces);

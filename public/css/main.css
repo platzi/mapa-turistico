@@ -75,10 +75,11 @@ a{text-decoration:none}
 #sidebar .elemList:hover{background:#d9d9d9;transition:all .8s ease-out}
 #sidebar h2{background:#666;position:fixed;top:45px;color:#fff;filter:dropshadow(#000,1,1);font-size:15px;font-weight:normal;margin:0;width:302px;padding:5px 8px 5px 10px;}
 #sidebar h2 i{float:right}
-#popupPlace{font-family:'Open Sans',Helvetica,Arial,sans-serif;font-size:1em;height:110px;width:400px;}
-#popupPlace img{border-radius:100%;float:left;height:100px;overflow:hidden;width:100px}
-#popupPlace p{padding-left:110px}
-#popupPlace p#popupName{font-weight:bold}
+#popupPlace{font-family:'Open Sans',Helvetica,Arial,sans-serif;font-size:1em;height:90px;width:350px;}
+#popupPlace img{border-radius:100%;float:left;height:90px;overflow:hidden;width:90px}
+#popupPlace p{padding-left:100px;margin:5px;font-size:.9em}
+#popupPlace #popupName{color:#222;font-size:1.2em}
+#popupPlace #popupDet{display:inline;float:right;padding:0;margin-top:20px}
 .leaflet-top.leaflet-center{display:none}
 .clearfix:after,.clearfix:before{content:" ";display:table}
 .clearfix:after{clear:both}
