@@ -1,10 +1,11 @@
 'use strict';
 
-var express      = require('express'),
-    path         = require('path'),
-    cfg          = require('./app/config').cfg,
-    passport     = require('passport'),
-    sessionStore = require('./app/sessionStore').create(express);
+var express          = require('express'),
+    path             = require('path'),
+    cfg              = require('./app/config').cfg,
+    passport         = require('passport'),
+    expressValidator = require('express-validator'),
+    sessionStore     = require('./app/sessionStore').create(express);
 
 var app = module.exports = express();
 
@@ -18,6 +19,7 @@ app.configure(function() {
     app.use(express.bodyParser({
         uploadDir: '/tmp'
     }));
+    app.use(expressValidator);
     app.use(express.methodOverride());
     app.use(express.session({
         key   : cfg.session.key,

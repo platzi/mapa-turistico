@@ -16,7 +16,8 @@
     "cookie": "~0.1.0",
     "connect": "~2.7.10",
     "invoke": "~0.1.2",
-    "async": "~0.2.8"
+    "async": "~0.2.8",
+    "express-validator": "~0.3.2"
   },
   "devDependencies": {
     "should": "~1.2.2",

@@ -4,11 +4,13 @@ var Places          = require('../models/places').Places,
     photoController = require('../controller/photo'),
     async           = require('async'),
     helpers         = require('../lib/helpers'),
-    handleResponse;
+    handleResponse,
+    savePhotoAndPlaces,
+    validatePostCreate;
 
 handleResponse = function (err, res) {
     if (err) {
-        if (err.name === 'ValidationError') {
+        if (err.name === 'ValidationError' || err.errors) {
             return res.send(400);
         }
         return res.send(500);
@@ -16,22 +18,8 @@ handleResponse = function (err, res) {
     return res.send(201);
 };
 
-exports.create = function (req, res) {
-    if (!req.files || !req.files.file) {return res.send(400);}
-
-    var file     = req.files.file,
-        file_ext = helpers.image.extensions[file.type],
-        place    = {
-            city: req.param('city'),
-            country: req.param('country'),
-            description: req.param('description'),
-            name : req.param('name'),
-            image : req.param('image'),
-            point: {
-                lat: Number(req.param('lat') || 0),
-                lng: Number(req.param('lng') || 0)
-            }
-        };
+savePhotoAndPlaces = function (file, place, next) {
+    var file_ext = helpers.image.extensions[file.type];
 
     async.waterfall([
         function (callback) {
@@ -51,8 +39,48 @@ exports.create = function (req, res) {
                 }, callback);
             });
         }
-    ], function (err) {
-        handleResponse(err, res);
+    ], next);
+};
+
+validatePostCreate = function (req, res, next) {
+    req.assert('lat', 'Invalid lat').isDecimal();
+    req.assert('lng', 'Invalid lat').isDecimal();
+
+    req.sanitize('city').xss();
+    req.sanitize('country').xss();
+    req.sanitize('description').xss();
+    req.sanitize('name').xss();
+
+    var errors = req.validationErrors();
+    if (errors) {
+        handleResponse({errors: errors}, res);
+    }
+
+    next();
+};
+
+
+
+exports.create = function (req, res) {
+    if (!req.files || !req.files.file) {return res.send(400);}
+
+    validatePostCreate(req, res, function () {
+        var file     = req.files.file,
+            place    = {
+                city: req.param('city'),
+                country: req.param('country'),
+                description: req.param('description'),
+                name : req.param('name'),
+                image : req.param('image'),
+                point: {
+                    lat: req.param('lat'),
+                    lng: req.param('lng')
+                }
+            };
+
+        savePhotoAndPlaces(file, place, function (err) {
+            handleResponse(err, res);
+        });
     });
 };
 

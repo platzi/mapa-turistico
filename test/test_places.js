@@ -21,11 +21,22 @@ describe('#Places', function (){
                 .expect(201, done);
         });
 
-        it('should returnar 400 because the post is wrong', function (done) {
+        it('should return 400 because the post is wrong', function (done) {
             request(app)
                 .post('/places')
                 .send({})
                 .set('Accept', 'application/json')
+                .expect(400, done);
+        });
+
+        it('should return 400 because not exist lat and lng', function (done) {
+            request(app)
+                .post('/places')
+                .field('description' ,'Este es un lugar bonito')
+                .field('city' ,'Santo Domingo')
+                .field('country' ,'Republica Dominica')
+                .field('name' ,'Faro colon')
+                .attach('file', path)
                 .expect(400, done);
         });
     });
