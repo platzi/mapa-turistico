@@ -1,5 +1,5 @@
 -moz-background-size cover,box-shadow(arguments){-webkit-box-shadow:arguments;-moz-box-shadow:arguments;-o-box-shadow:arguments;-ms-box-shadow:arguments;box-shadow:arguments}
-body{background:#222;color:#333;font-family:'Open Sans',Helvetica,Arial,sans-serif;font-size:16px}
+body{background:#666;color:#333;font-family:'Open Sans',Helvetica,Arial,sans-serif;font-size:16px}
 a{text-decoration:none}
 #header{background:linear-gradient(to bottom,#fff 0%,#eee 100%);border-bottom:1px solid #ccc;box-shadow:0 0 5px rgba(0,0,0,0.3);height:44px;position:absolute;width:100%;z-index:1002;}
 #header .brand_area{float:left;margin:4px 10px;}
@@ -48,7 +48,7 @@ a{text-decoration:none}
 #agregar-sitio #positionPlace{width:70%;}
 #agregar-sitio #positionPlace span{background-color:#222}
 #agregar-sitio p{margin:10px 0 0 0;padding:0}
-#main{bottom:0;left:15px;position:absolute;right:0;top:45px}
+#main{bottom:0;left:25px;position:absolute;right:0;top:45px}
 #mimapa{height:100%;width:100%}
 #places{list-style:none;padding:0;}
 #places li{padding:0;margin-bottom:.5em;}
@@ -64,7 +64,7 @@ a{text-decoration:none}
 #place p{background:rgba(0,0,0,0.4);box-shadow:rgba(0,0,0,0.3) 5px 5px 7px;color:#fff;padding:1em}
 #place abbr{color:#fff;font-size:.8em;margin:0 1.4em;position:absolute;right:0;text-shadow:2px 2px 5px rgba(0,0,0,0.5)}
 #place a{text-decoration:none}
-#sidebar{background:#f6f6f6;bottom:0;box-shadow:0 0 10px -2px rgba(0,0,0,0.5);left:-300px;overflow:auto;position:absolute;top:45px;transition:all .3s ease;width:320px;z-index:1001;}
+#sidebar{background:#f6f6f6;bottom:0;box-shadow:0 0 10px -2px rgba(0,0,0,0.5);left:-295px;overflow:auto;position:absolute;top:75px;transition:all .3s ease;width:320px;z-index:1001;}
 #sidebar:hover{left:0;border:0}
 #sidebar .elemList{background:#fff;color:#222;cursor:pointer;margin:.5em auto;overflow:hidden;padding:5px;}
 #sidebar .elemList .name{font-size:15px;font-weight:bold;margin:0}
@@ -73,7 +73,8 @@ a{text-decoration:none}
 #sidebar .elemList .thumb{border-radius:100%;float:left;overflow:hidden}
 #sidebar .elemList .thumb img{display:block;height:90px;width:90px}
 #sidebar .elemList:hover{background:#d9d9d9;transition:all .8s ease-out}
-#sidebar h2{background:#666;color:#fff;filter:dropshadow(#000,1,1);font-size:15px;font-weight:normal;margin:0;padding:5px 10px}
+#sidebar h2{background:#666;position:fixed;top:45px;color:#fff;filter:dropshadow(#000,1,1);font-size:15px;font-weight:normal;margin:0;width:302px;padding:5px 8px 5px 10px;}
+#sidebar h2 i{float:right}
 #popupPlace{font-family:'Open Sans',Helvetica,Arial,sans-serif;font-size:1em;height:110px;width:400px;}
 #popupPlace img{border-radius:100%;float:left;height:100px;overflow:hidden;width:100px}
 #popupPlace p{padding-left:110px}

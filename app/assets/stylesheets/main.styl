@@ -2,7 +2,8 @@
 @import "_mixins"
 
 body
-	background gris
+	//background gris
+	background #666
 	color gris2
 	font-family 'Open Sans', Helvetica, Arial, sans-serif
 	font-size 16px
@@ -307,9 +308,8 @@ a
 
 
 #main
-	// left -100px
 	bottom 0
-	left 15px
+	left 25px
 	position absolute
 	right 0
 	top 45px
@@ -404,10 +404,10 @@ a
 	background #f6f6f6
 	bottom 0
 	box-shadow 0 0 10px -2px rgba(0, 0, 0, .5)
-	left -300px
+	left -295px
 	overflow auto
 	position absolute
-	top 45px
+	top 75px
 	transition all .3s ease
 	width 320px
 	z-index 1001
@@ -415,7 +415,6 @@ a
 	&:hover
 		left 0
 		border 0
-
 
 	.elemList
 		background blanco
@@ -453,12 +452,18 @@ a
 
 	h2
 		background #666
+		position fixed
+		top 45px
 		color blanco
 		filter dropshadow(color=#000, offx=1, offy=1)
 		font-size 15px
 		font-weight normal
 		margin 0
-		padding 5px 10px
+		width 302px
+		padding 5px 8px 5px 10px
+
+		i
+			float right
 
 // Estilos para el popup
 #popupPlace
