@@ -59,8 +59,6 @@ validatePostCreate = function (req, res, next) {
     next();
 };
 
-
-
 exports.create = function (req, res) {
     if (!req.files || !req.files.file) {return res.send(400);}
 

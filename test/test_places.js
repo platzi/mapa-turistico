@@ -12,7 +12,7 @@ describe('#Places', function (){
             request(app)
                 .post('/places')
                 .field('description' ,'Este es un lugar bonito')
-                .field('city' ,'Santo Domingo')
+                .field('city' ,'<script>alert(Santo Domingo)</script>')
                 .field('country' ,'Republica Dominica')
                 .field('name' ,'Faro colon')
                 .field('lat' , '40')
