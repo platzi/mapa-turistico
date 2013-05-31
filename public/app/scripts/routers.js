@@ -12,7 +12,7 @@ define([
 
         AppRouter = Backbone.Router.extend({
             routes: {
-                '': 'homepage'
+                '*actions': 'homepage'
             },
 
             initialize: function () {
