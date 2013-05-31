@@ -41,7 +41,7 @@ module.exports = function (grunt) {
         },
         mochacli: {
             options: {
-                require: ['test/connection_test','should'],
+                require: ['should'],
                 bail: true,
                 debug: true,
                 reporter: 'spec'

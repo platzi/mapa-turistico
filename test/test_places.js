@@ -1,6 +1,7 @@
+require('./utils');
+
 var app      = require('../app'),
     request  = require('supertest');
-
 
 describe('#Places', function (){
     'use strict';

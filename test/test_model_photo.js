@@ -1,8 +1,11 @@
+require('./utils');
+
 var Photo    = require('../app/models/photo'),
     ObjectId = require('mongoose').Types.ObjectId,
     photoController = require('../app/controller/photo'),
     path     = require('path'),
     fs       = require('fs');
+
 
 describe('#Photo', function () {
     'use strict';
