@@ -2,7 +2,6 @@
 @import "_mixins"
 
 body
-	//background gris
 	background #666
 	color gris2
 	font-family 'Open Sans', Helvetica, Arial, sans-serif
@@ -128,16 +127,15 @@ a
 		text-decoration underline
 
 #logintt
-	//background rgba(0, 0, 0, .8)
 	background darken(blanco, 2%)
 	border-radius 4px
 	box-shadow 0 0 10px rgba(0, 0, 0, .3)
 	display none
 	padding 15px
 	position absolute
-	right 15px
+	right 10px
 	text-align center
-	top 60px
+	top 45px
 	width 220px
 	z-index 999
 
@@ -481,9 +479,9 @@ a
 		width 90px
 
 	p
-		padding-left 100px
-		margin 5px
 		font-size .9em
+		margin 5px
+		padding-left 100px
 
 	#popupName
 		color gris
@@ -492,9 +490,20 @@ a
 	#popupDet
 		display inline
 		float right
-		padding 0
 		margin-top 20px
-// Fin
+		padding 0
+
+// Estilos menu contexual
+#menuContextual
+	display none
+	position absolute
+	width 150px
+	background #f6f6f6
+	border 1px solid gris
+	z-index 9999999999
+
+	ul
+		list-style none
 
 .leaflet-top
 	&.leaflet-center

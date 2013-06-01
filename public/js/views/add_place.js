@@ -201,12 +201,8 @@ AddPlaceView = Backbone.View.extend({
     initialize: function(){
         var self, countryPlace, htmlCountries, geolocationOption;
 
-
-
         var $latInput = $('#latPlace');
         var $lgnInput = $('#lngPlace');
-
-
         self = this;
         $form = $('#form-agregar-sitio');
         htmlCountries = '';
@@ -220,9 +216,7 @@ AddPlaceView = Backbone.View.extend({
                 $latInput.val(app.map.userLocation.lat);
                 $lgnInput.val(app.map.userLocation.lng);
             } else {
-                app.map.map.locate({
-                    enableHighAccuracy: true
-                });
+                app.map.map.locate({ enableHighAccuracy: true });
                 app.map.map.on('locationfound', function() {
                     $latInput.val(app.map.userLocation.lat);
                     $lgnInput.val(app.map.userLocation.lng);
@@ -256,7 +250,6 @@ AddPlaceView = Backbone.View.extend({
         _.each(countries, function(country) {
             htmlCountries += '<option value="' + country + '">' + country + '</option>';
         });
-
         countryPlace.append(htmlCountries);
 
         geolocationOption.on('click', getUserGeolocation);
@@ -266,9 +259,7 @@ AddPlaceView = Backbone.View.extend({
             $('#coords').show();
             self.$el.fadeOut('fast');
         });
-
         $form.on('submit', onSubmitForm);
-
         $close.on('click', onClickClose);
     }
 });
