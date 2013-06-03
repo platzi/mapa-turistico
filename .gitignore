@@ -6,4 +6,3 @@ test/bosque.jpg
 public/app/scripts/vendor/*
 public/dist/
 app/config/config.js
-uploads/*
