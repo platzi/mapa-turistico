@@ -1,23 +1,15 @@
-require('./utils');
-
-var Photo    = require('../app/models/photo'),
-    ObjectId = require('mongoose').Types.ObjectId,
+'use strict';
+var Photo           = require('../app/models/photo'),
+    ObjectId        = require('mongoose').Types.ObjectId,
     photoController = require('../app/controller/photo'),
-    path     = require('path'),
-    fs       = require('fs');
+    ObjectId        = require('mongoose').Types.ObjectId,
+    util_test       = require('./utils');
 
 
 describe('#Photo', function () {
-    'use strict';
-
-    var path_file = path.join(__dirname, '/bosque.jpg'),
-        readTemp,
-        writeTemp;
-
-    beforeEach(function () {
-        readTemp  = fs.createReadStream(path.join(__dirname, '/fixtures/bosque.jpg')),
-        writeTemp = fs.createWriteStream(path.join(__dirname, 'bosque.jpg')),
-        readTemp.pipe(writeTemp);
+    beforeEach(function (done) {
+        util_test.createDir();
+        done();
     });
 
     describe('#Save', function () {
@@ -42,7 +34,7 @@ describe('#Photo', function () {
                     }
                 });
 
-            photo.upload(path_file, done);
+            photo.upload(util_test.getPath(), done);
         });
     });
 
@@ -51,7 +43,8 @@ describe('#Photo', function () {
             var photo = {
                 name: 'bosque',
                 ext : 'jpg',
-                path: path_file
+                path: util_test.getPath(),
+                user: new ObjectId()
             };
 
             photoController.savePhoto(photo, done);

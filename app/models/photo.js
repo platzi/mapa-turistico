@@ -18,7 +18,7 @@ var methods = {
 };
 
 photoSchema = new Schema({
-    user: {type: ObjectId},
+    user: {type: ObjectId, required: true},
     name: {type: String},
     url : {type: String},
     image: {

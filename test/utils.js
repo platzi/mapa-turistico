@@ -1,10 +1,17 @@
 /*jshint loopfunc: true */
-var mongoose = require('mongoose');
+'use strict';
+
+var mongoose = require('mongoose'),
+    testutil = require('testutil'),
+    path     = require('path'),
+    DB       = 'mongodb://localhost:27017/mapatest',
+    SIZE     = 16 * 64 * 1024 + 7,
+    DIR_TEST,
+    SRC;
+
 process.env.NODE_ENV = 'test';
 
 beforeEach(function (done) {
-    'use strict';
-
     function clearDB() {
         for (var i in mongoose.connection.collections) {
             mongoose.connection.collections[i].remove(function () {});
@@ -13,7 +20,7 @@ beforeEach(function (done) {
     }
 
     function reconnect() {
-        mongoose.connect('mongodb://localhost:27017/mapatest', function (err) {
+        mongoose.connect(DB, function (err) {
             if (err) { throw err; }
             return clearDB();
         });
@@ -36,8 +43,15 @@ beforeEach(function (done) {
 });
 
 afterEach(function (done) {
-    'use strict';
-
     mongoose.disconnect();
     return done();
 });
+
+exports.createDir = function () {
+    DIR_TEST = testutil.createTestDir('file-move');
+    SRC      = testutil.createFileWithData(path.join(DIR_TEST, 'test.jpg'), SIZE);
+};
+
+exports.getPath = function () {
+    return SRC;
+};

@@ -2,7 +2,8 @@
 @import "_mixins"
 
 body
-	background gris
+	//background gris
+	background #666
 	color gris2
 	font-family 'Open Sans', Helvetica, Arial, sans-serif
 	font-size 16px
@@ -89,9 +90,9 @@ a
 		img
 			display block
 	.actions_area, .user_area
-		float right
 		border-left 1px solid #ddd
 		border-right 1px solid #fff
+		float right
 		padding 5px 10px
 		a
 			color gris2
@@ -132,9 +133,9 @@ a
 	border-radius 4px
 	box-shadow 0 0 10px rgba(0, 0, 0, .3)
 	display none
-	right 15px
 	padding 15px
 	position absolute
+	right 15px
 	text-align center
 	top 60px
 	width 220px
@@ -142,16 +143,16 @@ a
 
 	h2
 		color darken(blanco, 90%)
-		margin 0 0 10px 0
 		font-size 17px
+		margin 0 0 10px 0
 	a#tt, a#fb
 		background azul_tt
 		color #fff
 		display block
 		font-size 13px
 		font-weight bold
-		margin 10px 0 0 0
 		line-height 32px
+		margin 10px 0 0 0
 		padding 5px
 		text-align center
 		text-decoration none
@@ -181,8 +182,8 @@ a
 		color darken(blanco, 80%)
 		font-size 13px
 		font-weight bold
-		margin-left 15px
 		margin-bottom 1em
+		margin-left 15px
 		text-align left
 		a
 			color azul
@@ -210,22 +211,29 @@ a
 		line-height 29px
 		position absolute
 		right -12px
-		text-shadow(1px 1px 3px #000)
 		text-align center
 		text-decoration none
+		text-shadow(1px 1px 3px #000)
 		top -10px
 		width 28px
 		&:hover
 			background-image radial-gradient(circle, lighten(rojizo, 40%) 0%, rojizo 100%)
 	form#form-agregar-sitio
+		p.formText
+			font-weight bold
 		p.radios
 			color darken(blanco, 60%)
 			display inline
 			font-size 12px
 			vertical-align top
 			input[type="radio"]
-				margin-top .5em
-				margin-bottom .5em
+				// margin-bottom .5em
+				// margin-top .5em
+				margin .5em
+			span
+				margin 0 .3em 0 .3em
+		p#coords
+			display none
 		span#pos
 			background lighten(gris, 60%)
 			color blanco
@@ -252,9 +260,9 @@ a
 			span#fileImage
 				color blanco
 				cursor pointer
-				position relative
-				left 270px
 				font-weight bold
+				left 270px
+				position relative
 				top -25px
 				z-index 99999
 
@@ -272,8 +280,8 @@ a
 				background-image radial-gradient(circle,  lighten(azul, 40%) 0%, azul 100%)
 	h2
 		color darken(blanco, 90%)
-		margin 0 0 10px 0
 		font-size 17px
+		margin 0 0 10px 0
 		text-align center
 
 	input[type="text"], textarea
@@ -300,17 +308,17 @@ a
 
 
 #main
-	position absolute
 	bottom 0
-	left 320px
+	left 25px
+	position absolute
 	right 0
 	top 45px
 
 #mimapa
+	// left 0
+	// position absolute
+	// top 0
 	height 100%
-	left 0
-	position absolute
-	top 0
 	width 100%
 
 #places
@@ -350,31 +358,31 @@ a
 				margin 0
 
 #place
-	position absolute
+	background-image url(/../images/toronto.jpg)
+	background-position center
+	background-repeat no-repeat
+	background-size cover
+	background-size()
+	border-radius 0 7px 7px 7px
+	box-shadow rgba(0, 0, 0, .5) 5px 5px 7px
+	height 550px
 	left 350px
 	margin 50px auto 50px auto
 	margin-bottom 1.9em
 	padding 1em
+	position absolute
 	width 950px
-	height 550px
-	border-radius 0 7px 7px 7px
-	background-image url(/../images/toronto.jpg)
-	background-position center
-	background-size cover
-	background-repeat no-repeat
-	box-shadow rgba(0, 0, 0, .5) 5px 5px 7px
-	background-size()
 
 	h1
-		margin 0em 0
-		padding 0.5em 2em 0.5em 0.6em
 		background rgba(41, 128, 185, 1)
 		box-shadow rgba(52, 152, 219, .5) 0 .4em
 		color rgba(255, 255, 255, 1)
-		text-align left
-		text-transform uppercase
-		text-shadow 3px 3px 5px rgba(0, 0, 0, .5)
 		font-size 1.5em
+		margin 0em 0
+		padding 0.5em 2em 0.5em 0.6em
+		text-align left
+		text-shadow 3px 3px 5px rgba(0, 0, 0, .5)
+		text-transform uppercase
 
 	p
 		background rgba(0, 0, 0, .4)
@@ -396,12 +404,17 @@ a
 	background #f6f6f6
 	bottom 0
 	box-shadow 0 0 10px -2px rgba(0, 0, 0, .5)
-	left 0
+	left -295px
 	overflow auto
 	position absolute
-	top 45px
+	top 75px
+	transition all .3s ease
 	width 320px
 	z-index 1001
+
+	&:hover
+		left 0
+		border 0
 
 	.elemList
 		background blanco
@@ -425,8 +438,8 @@ a
 
 		.thumb
 			border-radius 100%
-			overflow hidden
 			float left
+			overflow hidden
 
 		.thumb img
 			display block
@@ -439,17 +452,53 @@ a
 
 	h2
 		background #666
+		position fixed
+		top 45px
 		color blanco
+		filter dropshadow(color=#000, offx=1, offy=1)
 		font-size 15px
 		font-weight normal
 		margin 0
-		padding 5px 10px
-		filter dropshadow(color=#000, offx=1, offy=1)
+		width 302px
+		padding 5px 8px 5px 10px
+
+		i
+			float right
+
+// Estilos para el popup
+#popupPlace
+	// padding 10px
+	font-family 'Open Sans', Helvetica, Arial, sans-serif
+	font-size 1em;
+	height 90px
+	width 350px
+
+	img
+		border-radius 100%
+		float left
+		height 90px
+		overflow hidden
+		width 90px
+
+	p
+		padding-left 100px
+		margin 5px
+		font-size .9em
+
+	#popupName
+		color gris
+		font-size 1.2em
+
+	#popupDet
+		display inline
+		float right
+		padding 0
+		margin-top 20px
+// Fin
 
 .leaflet-top
 	&.leaflet-center
 		display none
-
 
 .clearfix:after, .clearfix:before
 	content " "
@@ -457,42 +506,42 @@ a
 .clearfix:after
 	clear both
 
-@media screen and (max-width:1200px)
-	#formulario
-		left 140px
+// @media screen and (max-width:1200px)
+// 	// #formulario
+// 	// 	left 140px
 
-	#sidebar
-		width 290px
+// 	// #sidebar
+// 	//  	width 290px
 
-	#main
-		left 290px
+// 	#main
+// 		left 24px
 
-@media screen and (max-width:1024px)
-	#formulario
-		left 100px
+// @media screen and (max-width:1024px)
+// 	#formulario
+// 		left 100px
 
-	#sidebar
-		width 280px
+// 	// #sidebar
+// 	// 	width 280px
 
-	#main
-		left 280px
+// 	#main
+// 		left 280px
 
 
 
-@media screen and (max-width:768px)
-	#formulario
-		left 140px
+// @media screen and (max-width:768px)
+// 	#formulario
+// 		left 140px
 
-@media screen and (max-width:600px)
-	#formulario
-		left 0
+// @media screen and (max-width:600px)
+// 	#formulario
+// 		left 0
 
-	#sidebar
-		height 100%
-		top 650px
-		width 100%
+// 	#sidebar
+// 		height 100%
+// 		top 650px
+// 		width 100%
 
-	#main
-		left 0
-		height 620px
-		width  100%
+// 	#main
+// 		left 0
+// 		height 620px
+// 		width  100%

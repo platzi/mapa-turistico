@@ -3,6 +3,7 @@
 var indexController   = require('./controller/index'),
     placesController  = require('./controller/places'),
     profileController = require('./controller/profile'),
+    auth              = require('./auth'),
     passport          = require('passport');
 
 var logoutController = function (req, res) {
@@ -15,7 +16,7 @@ module.exports = function (app) {
     app.get('/logout', logoutController);
 
     //places url
-    app.post('/places', placesController.create);
+    app.post('/places', auth.ensureAuthenticated, placesController.create);
     app.get('/places', placesController.findAll);
 
     //get profile

@@ -6,11 +6,20 @@ define([
         'use strict';
 
         var PlacesView = Backbone.View.extend({
+
             template: Handlebars.compile(sidebarTemplate),
 
+            events: {
+                'click .elemList': 'addMarker'
+            },
+
             render: function () {
-                this.$el.html(this.template(this.model));
+                this.setElement(this.template(this.model));
                 return this;
+            },
+
+            addMarker: function () {
+
             }
         });
 

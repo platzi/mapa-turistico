@@ -1,11 +1,7 @@
 'use strict';
 
-var Places          = require('../models/places').Places,
-    photoController = require('../controller/photo'),
-    async           = require('async'),
-    helpers         = require('../lib/helpers'),
+var Places = require('../models/places'),
     handleResponse,
-    savePhotoAndPlaces,
     validatePostCreate;
 
 handleResponse = function (err, res) {
@@ -16,30 +12,6 @@ handleResponse = function (err, res) {
         return res.send(500);
     }
     return res.send(201);
-};
-
-savePhotoAndPlaces = function (file, place, next) {
-    var file_ext = helpers.image.extensions[file.type];
-
-    async.waterfall([
-        function (callback) {
-            photoController.savePhoto({
-                name: file.name,
-                ext : file_ext,
-                path: file.path
-            }, callback);
-        },
-        function (photo, callback) {
-            place.image = photo._id + '.' + photo.image.ext;
-            Places.create(place, function (err, doc) {
-                if (err) { return callback(err); }
-
-                photoController.updatePhoto(photo._id, {
-                    place: doc._id
-                }, callback);
-            });
-        }
-    ], next);
 };
 
 validatePostCreate = function (req, res, next) {
@@ -73,10 +45,11 @@ exports.create = function (req, res) {
                 point: {
                     lat: req.param('lat'),
                     lng: req.param('lng')
-                }
+                },
+                user: req.user.id
             };
 
-        savePhotoAndPlaces(file, place, function (err) {
+        Places.savePhotoAndPlaces(file, place, function (err) {
             handleResponse(err, res);
         });
     });

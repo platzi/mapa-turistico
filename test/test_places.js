@@ -1,53 +1,49 @@
-require('./utils');
-
-var app      = require('../app'),
-    request  = require('supertest');
+'use strict';
+var app       = require('../app'),
+    request   = require('supertest'),
+    Places    = require('../app/models/places'),
+    ObjectId  = require('mongoose').Types.ObjectId,
+    util_test = require('./utils');
 
 describe('#Places', function (){
-    'use strict';
-    var path = (__dirname + '/fixtures/bosque.jpg');
+    beforeEach(function (done) {
+        util_test.createDir();
+        done();
+    });
 
-    describe('#POST /places', function () {
-        it('should return 200', function (done) {
-            request(app)
-                .post('/places')
-                .field('description' ,'Este es un lugar bonito')
-                .field('city' ,'<script>alert(Santo Domingo)</script>')
-                .field('country' ,'Republica Dominica')
-                .field('name' ,'Faro colon')
-                .field('lat' , '40')
-                .field('lng' , '40')
-                .attach('file', path)
-                .expect(201, done);
-        });
+    describe('#SAVE places and photo', function () {
+        it('should return save Places and Photo', function (done) {
+            var objectId = new ObjectId(),
 
-        it('should return 400 because the post is wrong', function (done) {
-            request(app)
-                .post('/places')
-                .send({})
-                .set('Accept', 'application/json')
-                .expect(400, done);
-        });
+            file = {
+                name: 'test',
+                ext: 'jpg',
+                path: util_test.getPath()
+            },
 
-        it('should return 400 because not exist lat and lng', function (done) {
-            request(app)
-                .post('/places')
-                .field('description' ,'Este es un lugar bonito')
-                .field('city' ,'Santo Domingo')
-                .field('country' ,'Republica Dominica')
-                .field('name' ,'Faro colon')
-                .attach('file', path)
-                .expect(400, done);
+            place = {
+                description: 'Este es un lugar bonito',
+                city: '<script>alert(Santo Domingo)</script>',
+                country: 'Republica Dominica',
+                name: 'Faro colon',
+                point: {
+                    lat: '40',
+                    lng: '40'
+                },
+                user: objectId
+            };
+
+            Places.savePhotoAndPlaces(file, place, done);
         });
     });
 
     describe('#POST /places', function () {
-        it('should return 400 because the post wrong', function (done) {
+        it('should return 403 because the user is not authenticated', function (done) {
             request(app)
                 .post('/places')
-                .field('name', '<script>alert(Eduardo Diaz)</script>')
-                .attach('file', path)
-                .expect(400, done);
+                .send({})
+                .set('Accept', 'application/json')
+                .expect(403, done);
         });
     });
 

@@ -4,10 +4,10 @@
 
 <form id="form-agregar-sitio" method="post" action="/places" enctype="multipart/form-data">
     <p>
-        <input type="text" id="namePlace" name="name" placeholder="Nombre del lugar"/>
+        <input type="text" id="namePlace" name="name" placeholder="Nombre del lugar" required/>
     </p>
     <p>
-        <select name="country" id="countryPlace">
+        <select name="country" id="countryPlace" required>
             <option selected>Elige un pais</option>
             {{#each countries}}
             <option value="{{{ this }}}"> {{{ this }}}</option>
@@ -15,17 +15,30 @@
         </select>
     </p>
     <p>
-        <input type="text" id="cityPlace" name="city" placeholder="Ciudad" />
+        <input type="text" id="cityPlace" name="city" placeholder="Ciudad" required />
+    </p>
+    <p class="formText">
+        Estas ahora mismo en el lugar?
     </p>
     <p class="radios">
+        <label>Si estoy en el lugar</label>
         <input type="radio" id="geolocationOption" name="lugar" value="geolocation"/>
-        <span> Estoy en el lugar </span>
+    </p>
+    <p class="radios">
+        <label>No estoy en el lugar</label>
+        <input type="radio" id="manualOption" name="lugar" value="nogeolocation">
+    </p>
+    <p id="coords">
+        <input type="text" id="coordsLtnLng" name="coords" placeholder="Coordenadas" disabled>
+    </p>
+    <p class="formText">
+        Agregar una imagen
     </p>
     <p>
-        <input type="file" id="imagePlace" name="file" />
+        <input type="file" id="imagePlace" name="file" required />
     </p>
     <p>
-        <textarea name="description" id="descriptionPlace" rows="8" placeholder="Descripcion"></textarea>
+        <textarea name="description" id="descriptionPlace" rows="8" placeholder="Descripcion" required></textarea>
     </p>
     <input type="hidden" id="latPlace" name="lat"/>
     <input type="hidden" id="lngPlace" name="lng"/>

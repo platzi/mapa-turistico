@@ -5,10 +5,11 @@ var Photo = require('../models/photo'),
 
 exports.savePhoto = function (file, next) {
     var photo = new Photo({
-        name: file,
+        name: file.name,
         image: {
             ext: file.ext
-        }
+        },
+        user: file.user
     });
 
     async.series([

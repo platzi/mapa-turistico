@@ -1,15 +1,17 @@
 extends layout
 
 block stylesheets
-	link(rel="stylesheet", href="/app/css/normalize.css")
+	link(rel="stylesheet", href="/css/normalize.css")
 	link(rel="stylesheet", href="http://fonts.googleapis.com/css?family=Open+Sans:400,700")
-	link(rel="stylesheet", href="/app/css/leaflet.css")
-	link(rel="stylesheet", href="/app/css/main.css")
-
+	link(rel="stylesheet", href="/css/leaflet.css")
+	link(rel="stylesheet", href="/css/main.css")
+	link(rel="stylesheet", href="/css/alertify.core.css")
+	link(rel="stylesheet", href="/css/alertify.default.css")
+	link(rel="stylesheet", href="/css/font-awesome.min.css")
 block main
 	header(id="header")
 		a(href="#", class="brand_area")
-			img(src="/app/img/assets/logo-proudplaces.png", alt="Proud Places")
+			img(src="/img/assets/logo-proudplaces.png", alt="Proud Places")
 
 		div(class="actions_area")
 			if profile
@@ -23,10 +25,11 @@ block main
 				div(class="avatar")
 					img(src="#{profile.avatar}", height="34", width="34")
 				div(class="name") Hola
-					strong #{profile.username}
+					strong  #{profile.username}
 
 	section(id="sidebar")
 		h2 Últimos sitios agregados
+			i(class="icon-reorder")
 		div(id="placeList")
 
 	section(id="main")
@@ -39,3 +42,23 @@ block main
 block javascripts
 	//- script(data-main="/dist/main.js", src="/app/scripts/vendor/requirejs/require.js")
 	script(data-main="/app/scripts/main.js", src="/app/scripts/vendor/requirejs/require.js")
+	//- script(src="/js/vendor/jquery.js")
+	//- script(src="/js/vendor/leaflet.js")
+	//- script(src="/socket.io/socket.io.js")
+	//- script(src="/js/vendor/underscore.js")
+	//- script(src="/js/vendor/backbone.js")
+	//- script(src="/js/vendor/jquery.form.js")
+	//- script(src="/js/vendor/alertify.min.js")
+	//- //- Modelos
+	//- script(src="/js/models/user.js")
+	//- script(src="/js/models/place.js")
+	//- //- Vistas
+	//- script(src="/js/views/map.js")
+	//- script(src="/js/views/sidebar.js")
+	//- script(src="/js/views/add_place.js")
+	//- script(src="/js/views/header.js")
+
+	//- //- Router
+	//- script(src="/js/routes.js")
+	//- //- App
+	//- script(src="/js/main.js")
