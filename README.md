@@ -100,7 +100,7 @@ En esta fase vamos a hacer el formulario para agregar lugares, imágenes y un pe
 Puliremos nuestra aplicación para hacerlo más hermosa y además que se vea bien incluso desde un cepillo de dientes con pantalla y conexión a internet.
 
 
-## Recursos
+## Recursos interesantes
 
 * [Cómo hacer un fork](http://aprendegit.com/fork-de-repositorios-para-que-sirve/?goback=%2Egde_3956944_member_214176162)
 * [Mantener tu fork al día](http://aprendegit.com/mantener-tu-fork-al-dia/)
