@@ -93,4 +93,5 @@ module.exports = function (grunt) {
 
     grunt.registerTask('test', ['jshint:test', 'mochacli']);
     grunt.registerTask('build', ['requirejs', 'clean:rjs']);
+    grunt.registerTask('travis', ['jshint:test', 'jshint:app', 'mochacli']);
 };
