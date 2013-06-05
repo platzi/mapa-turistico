@@ -1,9 +1,9 @@
 dump.rdb
 .DS_Store
 node_modules
+app/config/config.js
 uploads/*.jpg
 uploads/*.undefined
 test/bosque.jpg
 public/app/scripts/vendor/*
 public/dist/
-app/config/config.js
