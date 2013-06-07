@@ -59,12 +59,7 @@ a{text-decoration:none}
 #places li a > div > .center{display:table-cell;vertical-align:middle}
 #places li a h3{font-size:.9em;margin:.2em 0}
 #places li a p{font-size:.7em;margin:0}
-#place{background-image:url("/../images/toronto.jpg");background-position:center;background-repeat:no-repeat;-webkit-background-size:cover;-webkit-background-size:cover;border-radius:0 7px 7px 7px;box-shadow:rgba(0,0,0,0.5) 5px 5px 7px;height:550px;left:350px;margin:50px auto 50px auto;margin-bottom:1.9em;padding:1em;position:absolute;width:950px;}
-#place h1{background:#2980b9;box-shadow:rgba(52,152,219,0.5) 0 .4em;color:#fff;font-size:1.5em;margin:0 0;padding:.5em 2em .5em .6em;text-align:left;text-shadow:3px 3px 5px rgba(0,0,0,0.5);text-transform:uppercase}
-#place p{background:rgba(0,0,0,0.4);box-shadow:rgba(0,0,0,0.3) 5px 5px 7px;color:#fff;padding:1em}
-#place abbr{color:#fff;font-size:.8em;margin:0 1.4em;position:absolute;right:0;text-shadow:2px 2px 5px rgba(0,0,0,0.5)}
-#place a{text-decoration:none}
-#sidebar{background:#f6f6f6;bottom:0;box-shadow:0 0 10px -2px rgba(0,0,0,0.5);left:-295px;overflow:auto;position:absolute;top:45px;transition:all .3s ease;width:320px;z-index:1001;}
+#sidebar{background:#f6f6f6;bottom:0;box-shadow:0 0 10px -2px rgba(0,0,0,0.5);left:-295px;overflow:auto;position:absolute;top:45px;transition:all .3s;width:320px;z-index:1001;}
 #sidebar h2{background:#666;color:#fff;font-size:15px;font-weight:normal;margin:0;padding:5px 8px 5px 10px;position:fixed;width:302px;}
 #sidebar h2 i{float:right}
 #sidebar #placeList{position:absolute;top:30px;z-index:-134}
