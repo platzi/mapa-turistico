@@ -39,6 +39,11 @@ block main
 		//include partials/places_list
 
 	section(id="main")
+		if profile
+			div(id="menuContextual")
+				ul
+					li(id="agregar") Agregar sitio
+					li @proudplaces
 		div(id="mimapa")
 
 	section(id="logintt")
@@ -96,6 +101,8 @@ block main
 			p(class="clearfix")
 				input(type="submit", value="Agregar")
 
+
+
 block javascripts
 	script(src="/js/vendor/jquery.js")
 	script(src="/js/vendor/leaflet.js")
@@ -112,6 +119,7 @@ block javascripts
 	script(src="/js/views/sidebar.js")
 	script(src="/js/views/add_place.js")
 	script(src="/js/views/header.js")
+	script(src="/js/views/menu_contextual.js");
 
 	//- Router
 	script(src="/js/routes.js")
