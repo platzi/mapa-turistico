@@ -11,6 +11,7 @@ function onDocumentReady() {
 	//app.login = new LoginView();
 	app.addPlace = new AddPlaceView();
 	app.header = new HeaderView();
+	app.mcontextual = new MenuContextualView();
 	// enrutador
 	app.routes = new Routes();
 	Backbone.history.start({ pushState: true });

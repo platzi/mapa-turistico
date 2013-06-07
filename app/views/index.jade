@@ -42,7 +42,7 @@ block main
 		if profile
 			div(id="menuContextual")
 				ul
-					li Agregar sitio
+					li(id="agregar") Agregar sitio
 					li @proudplaces
 		div(id="mimapa")
 
@@ -119,6 +119,7 @@ block javascripts
 	script(src="/js/views/sidebar.js")
 	script(src="/js/views/add_place.js")
 	script(src="/js/views/header.js")
+	script(src="/js/views/menu_contextual.js");
 
 	//- Router
 	script(src="/js/routes.js")
