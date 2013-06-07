@@ -21,10 +21,11 @@ var MapView = Backbone.View.extend({
 	    }
 
 	    function menucontextual(e) {
+	    	console.log(e);
 	    	$('#menuContextual').css({
 	    		'display': 'block',
-	    		'left': e.layerPoint.x,
-	    		'top': e.layerPoint.y
+	    		'left': e.originalEvent.pageX,
+	    		'top': e.originalEvent.pageY
 	    	});
 	    	// $('#menuContextual').show();
 	    }

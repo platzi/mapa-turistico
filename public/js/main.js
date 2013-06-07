@@ -1,7 +1,6 @@
 var app = {};
 
 function onDocumentReady() {
-
 	// modelos
 	app.users = new UsersCollection();
 	app.places = new PlacesCollection();
