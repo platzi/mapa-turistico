@@ -22,7 +22,6 @@ var MapView = Backbone.View.extend({
 		}
 
 		function menucontextual(e) {
-			console.log(e);
 			$('#menuContextual').css({
 				'display': 'block',
 				'left': e.containerPoint.x,
@@ -65,11 +64,4 @@ var MapView = Backbone.View.extend({
 		htmlPopup += '</div>';
 		marker.bindPopup(htmlPopup,popupOptions);
 	},
-	onClickLatLng: function(e) {
-		$('#manualOption').attr('checked', 'checked')
-		$('#agregar-sitio').show();
-		$('#latPlace').val(e.latlng.lat);
-		$('#lngPlace').val(e.latlng.lng);
-		$('#coordsLtnLng').val(e.latlng.lat + ',' + e.latlng.lng);
-	}
 });

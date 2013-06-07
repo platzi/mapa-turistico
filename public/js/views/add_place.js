@@ -254,9 +254,7 @@ AddPlaceView = Backbone.View.extend({
 
         geolocationOption.on('click', getUserGeolocation);
         nogeolocationOption.on('click', function() {
-            //app.map.map.on('click', app.map.onClickLatLng);
             alertify.alert('Pincha en el mapa para localizar el sitio y agregar su ubicacion.');
-            //$('#coords').show();
             self.$el.fadeOut('fast');
         });
 
