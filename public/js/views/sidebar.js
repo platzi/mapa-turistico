@@ -1,10 +1,8 @@
 var SidebarView = Backbone.View.extend({
 	el: '#placeList',
-
 	events: {
 		"click .elemList": "onClickSidebar"
 	},
-
 	addPlaces: function(places) {
 	    var htmlPlaces = "";
 	    var marker;
@@ -21,7 +19,6 @@ var SidebarView = Backbone.View.extend({
 
 	    this.$el.html(htmlPlaces);
 	},
-
 	onClickSidebar: function(param){
 		var placeId = param.currentTarget.id;
 		var placeLat = $("#" + placeId).attr("data-lat");
