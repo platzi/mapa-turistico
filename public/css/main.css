@@ -15,7 +15,7 @@ a{text-decoration:none}
 #header #addButton{background:#238c00;margin-right:10px;}
 #header #addButton:hover{background-image:radial-gradient(circle,#35d600 0%,#238c00 100%)}
 #header #logoutButton:hover{text-decoration:underline}
-#logintt{background:#fafafa;border-radius:4px;box-shadow:0 0 10px rgba(0,0,0,0.3);display:none;padding:15px;position:absolute;right:10px;text-align:center;top:45px;width:220px;z-index:999;}
+#logintt{background:#fafafa;border-radius:0 0 4px 4px;box-shadow:0 0 10px rgba(0,0,0,0.3);display:none;padding:15px;position:absolute;right:10px;text-align:center;top:45px;width:220px;z-index:999;}
 #logintt h2{color:#1a1a1a;font-size:17px;margin:0 0 10px 0}
 #logintt a#tt,#logintt a#fb{background:#1bb2e9;color:#fff;display:block;font-size:13px;font-weight:bold;line-height:32px;margin:10px 0 0 0;padding:5px;text-align:center;text-decoration:none;}
 #logintt a#tt img,#logintt a#fb img{display:block;float:left}
@@ -76,8 +76,10 @@ a{text-decoration:none}
 #popupPlace p{font-size:.9em;margin:5px;padding-left:100px}
 #popupPlace #popupName{color:#222;font-size:1.2em}
 #popupPlace #popupDet{display:inline;float:right;margin-top:20px;padding:0}
-#menuContextual{display:none;position:absolute;width:150px;background:#f6f6f6;border:1px solid #222;z-index:9999999999;}
-#menuContextual ul{list-style:none}
+#menuContextual{display:none;position:absolute;border-radius:0 0 4px 4px;width:150px;background:#f6f6f6;box-shadow:0 0 10px rgba(0,0,0,0.3);z-index:9999999999;}
+#menuContextual ul{list-style:none;padding:5px;margin:0;}
+#menuContextual ul li{cursor:pointer;padding:5px;font-size:.8em;border-radius:5px;}
+#menuContextual ul li:hover{background:#d9d9d9;transition:all .8s ease-out}
 .leaflet-top.leaflet-center{display:none}
 .clearfix:after,.clearfix:before{content:" ";display:table}
 .clearfix:after{clear:both}
