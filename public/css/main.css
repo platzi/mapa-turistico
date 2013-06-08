@@ -78,7 +78,7 @@ a{text-decoration:none}
 #popupPlace #popupDet{display:inline;float:right;margin-top:20px;padding:0}
 #menuContextual{display:none;position:absolute;border-radius:5px;width:150px;background:#f6f6f6;box-shadow:0 5px 15px #000;z-index:9999999999;}
 #menuContextual ul{list-style:none;padding:5px;margin:0;}
-#menuContextual ul li{cursor:pointer;padding:5px 5px 5px 15px;font-size:.8em;}
+#menuContextual ul li{cursor:pointer;padding:5px;font-size:.8em;border-radius:5px;}
 #menuContextual ul li:hover{background:#d9d9d9;transition:all .8s ease-out}
 .leaflet-top.leaflet-center{display:none}
 .clearfix:after,.clearfix:before{content:" ";display:table}
