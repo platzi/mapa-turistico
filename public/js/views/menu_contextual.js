@@ -13,6 +13,8 @@ MenuContextualView = Backbone.View.extend({
     addPlace: function () {
         this.$el.css({'display': 'none'});
         $('#coords').show();
+        $('#manualOption').attr('checked', true);
+        $('input[type=radio]').attr('disabled', 'disabled');
         $('#agregar-sitio').fadeIn('fast');
         $('#latPlace').val(this.lat);
         $('#lngPlace').val(this.lng);

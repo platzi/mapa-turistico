@@ -423,13 +423,26 @@ a
 #menuContextual
 	display none
 	position absolute
+	border-radius 5px
 	width 150px
 	background #f6f6f6
-	border 1px solid gris
+	box-shadow 0px 5px 15px black
 	z-index 9999999999
 
 	ul
 		list-style none
+		padding 5px
+		margin 0px
+
+		li
+			cursor pointer
+			padding 5px 5px 5px 15px
+			font-size .8em
+
+			&:hover
+				background darken(blanco, 15%)
+				transition all 0.8s ease-out
+
 
 .leaflet-top
 	&.leaflet-center
