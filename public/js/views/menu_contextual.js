@@ -15,9 +15,10 @@ MenuContextualView = Backbone.View.extend({
         $('#coords').show();
         $('#manualOption').attr('checked', true);
         $('input[type=radio]').attr('disabled', 'disabled');
-        $('#agregar-sitio').fadeIn('fast');
         $('#latPlace').val(this.lat);
         $('#lngPlace').val(this.lng);
         $('#coordsLtnLng').val(this.lat + ',' + this.lng);
+        $('#agregar-sitio').fadeIn('fast');
+
     }
 });
