@@ -4,4 +4,4 @@ node_modules
 uploads/*
 uploads/!.gitkeep
 app/config/config.js
-public/js/vendor/*
+public/components/*

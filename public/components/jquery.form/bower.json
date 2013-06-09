@@ -1,8 +1,0 @@
-{
-  "name": "jquery.form",
-  "version": "3.18.0",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/chiefy/form.git"
-  }
-}
