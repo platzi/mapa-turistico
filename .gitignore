@@ -3,7 +3,7 @@ dump.rdb
 node_modules
 uploads/*.jpg
 uploads/*.undefined
-test/bosque.jpg
 public/app/scripts/vendor/*
 public/dist/
 keys
+app/config/config.js
