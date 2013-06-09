@@ -33,6 +33,12 @@ var MapView = Backbone.View.extend({
 			app.mcontextual.lng = e.latlng.lng;
 		}
 
+		function clickMap(e) {
+			$('#menuContextual').css({
+				'display': 'none'
+			});
+		}
+
 		this.map.addLayer(tiles);
 		this.map.locate({
 			enableHighAccuracy: true
@@ -40,6 +46,7 @@ var MapView = Backbone.View.extend({
 
 		this.map.on('locationfound', onLocationFound);
 		this.map.on('contextmenu', menucontextual);
+		this.map.on('click', clickMap);
 	},
 	centerMap: function(lat, lng) {
 		this.map.setView(new L.LatLng(lat,lng), 14);
