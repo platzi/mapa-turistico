@@ -1,14 +1,8 @@
 extends layout
 
 block stylesheets
-	link(rel="stylesheet", href="/css/normalize.css")
 	link(rel="stylesheet", href="http://fonts.googleapis.com/css?family=Open+Sans:400,700")
-	link(rel="stylesheet", href="http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.css")
-	//- link(rel="stylesheet", href="/css/alertify.bootstrap.css")
-	link(rel="stylesheet", href="/css/alertify.core.css")
-	link(rel="stylesheet", href="/css/alertify.default.css")
-	link(rel="stylesheet", href="/css/font-awesome.min.css")
-	link(rel="stylesheet", href="/css/main.css")
+	link(rel="stylesheet", href="/css/app.min.css")
 
 block main
 	header(id="header")
@@ -108,13 +102,14 @@ block main
 				img(src="/img/assets/github.png")
 
 block javascripts
-	script(src="/js/vendor/jquery.js")
-	script(src="/js/vendor/leaflet.js")
+	script(src="/components/jquery/jquery.js")
+	script(src="/js/vendor_old/jquery.js")
+	script(src="/js/vendor_old/leaflet.js")
 	script(src="/socket.io/socket.io.js")
-	script(src="/js/vendor/underscore.js")
-	script(src="/js/vendor/backbone.js")
-	script(src="/js/vendor/jquery.form.js")
-	script(src="/js/vendor/alertify.min.js")
+	script(src="/js/vendor_old/underscore.js")
+	script(src="/js/vendor_old/backbone.js")
+	script(src="/js/vendor_old/jquery.form.js")
+	script(src="/js/vendor_old/alertify.min.js")
 	//- Modelos
 	script(src="/js/models/user.js")
 	script(src="/js/models/place.js")

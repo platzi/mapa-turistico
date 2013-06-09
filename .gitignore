@@ -1,9 +1,7 @@
-dump.rdb
 .DS_Store
+dump.rdb
 node_modules
-uploads/*.jpg
-uploads/*.undefined
-public/app/scripts/vendor/*
-public/dist/
-keys
+uploads/*
+uploads/!.gitkeep
 app/config/config.js
+public/js/vendor/*

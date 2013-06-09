@@ -1,15 +1,14 @@
 {
-  "name": "map-turistico",
-  "version": "0.0.2",
+  "name": "proudplaces",
+  "version": "1.0.0",
   "dependencies": {
-    "requirejs": "~2.1.6",
-    "backbone-amd": "~1.0.0",
-    "underscore-amd": "~1.4.4",
-    "jquery": "~2.0.1",
-    "socket.io-client": "~0.9.11",
-    "text": "~2.0.6",
+    "backbone": "~1.0.0",
+    "jquery": "~2.0.2",
+    "underscore": "~1.4.4",
     "leaflet": "~0.5.1",
     "jquery.form": "~3.18.0",
-    "handlebars": "~1.0.0-rc.4"
+    "requirejs": "~2.1.6",
+    "normalize-css": "~2.1.2",
+    "font-awesome": "~3.1.1"
   }
 }
