@@ -5,3 +5,4 @@ uploads/*
 uploads/!.gitkeep
 app/config/config.js
 public/components/*
+public/components/!.gitkeep
