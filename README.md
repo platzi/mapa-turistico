@@ -27,8 +27,8 @@ Configuracion:
 
     Archivo de configuracion:
 
-        renombramos el archivo example-config por config.js, que se encuentra en la ruta
-        app/config/example-config.js.
+        renombramos el archivo config.sample por config.js, que se encuentra en la ruta
+        app/config/
 
         Agregamos nuestras configuraciones a dicho archivo.
 
