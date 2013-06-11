@@ -8,8 +8,8 @@ var url       = require('url'),
 
 module.exports = {
     PORT                    : (process.env.PORT || 3000),
-    TWITTER_CONSUMER_KEY    : '1234jknmbysdrrQTKm423vQ', //requeridas
-    TWITTER_CONSUMER_SECRET : 'T1234567890123aKTmkijhygtfrdeswervQAnD9bIos', //requeridas
+    TWITTER_CONSUMER_KEY    : (process.env.CONSUMER_KEY || 'y8szxb2vTxL3VQTKm4lLvQ'),
+    TWITTER_CONSUMER_SECRET : (process.env.CONSUMER_SECRET || 'TCzdX9ff8iP4B3aKTNLw7W5yfoeDylXWpvQAnD9bIos'),
     MONGO_URL: MONGO_URL,
     session: {
         key   : 'proudplace.sid',
