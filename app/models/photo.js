@@ -14,6 +14,7 @@ var methods = {
             path_upload = path.join(cfg.STATIC_DIR,
                 (String(self._id) + '.' + self.image.ext));
 
+        console.log(cfg.STATIC_DIR);
         console.log(path_upload);
 
         move(path_file, path_upload, next);
