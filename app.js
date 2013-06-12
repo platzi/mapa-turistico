@@ -7,6 +7,8 @@ var express          = require('express'),
     expressValidator = require('express-validator'),
     sessionStore     = require('./app/sessionStore').create(express);
 
+console.log(cfg.STATIC_DIR);
+
 var app = module.exports = express();
 
 app.configure(function() {
