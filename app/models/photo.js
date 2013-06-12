@@ -5,12 +5,13 @@ var mongoose = require('mongoose'),
     ObjectId = Schema.ObjectId,
     path     = require('path'),
     move     = require('file-move'),
+    cfg      = require('../config').cfg,
     photoSchema;
 
 var methods = {
     upload: function (path_file, next) {
         var self        = this,
-            path_upload = path.join(__dirname, '../../uploads/',
+            path_upload = path.join(cfg.STATIC_DIR,
                 (String(self._id) + '.' + self.image.ext));
 
         move(path_file, path_upload, next);
