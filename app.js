@@ -7,7 +7,7 @@ var express          = require('express'),
     expressValidator = require('express-validator'),
     sessionStore     = require('./app/sessionStore').create(express);
 
-var STATIC_DIR = process.env.STATIC_DIR || (path.join(__dirname, 'uploads'));
+var STATIC_DIR = process.env.STATIC_DIR|| (path.join(__dirname, 'uploads'));
 
 var app = module.exports = express();
 
