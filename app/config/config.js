@@ -1,5 +1,6 @@
 'use strict';
 var url       = require('url'),
+    path      = require('path'),
     MONGO_URL = (process.env.MONGOHQ_URL || 'mongodb://localhost:27017/mapaturistico'),
     REDISTOGO = url.parse(process.env.REDISTOGO_URL || 'http://localhost:6379'), //
     REDISHOST = REDISTOGO.hostname,
@@ -8,6 +9,7 @@ var url       = require('url'),
 
 module.exports = {
     PORT                    : (process.env.PORT || 3000),
+    STATIC_DIR              : (process.env.STATIC_DIR || (path.join(__dirname, '../../uploads'))),
     TWITTER_CONSUMER_KEY    : (process.env.CONSUMER_KEY || 'y8szxb2vTxL3VQTKm4lLvQ'),
     TWITTER_CONSUMER_SECRET : (process.env.CONSUMER_SECRET || 'TCzdX9ff8iP4B3aKTNLw7W5yfoeDylXWpvQAnD9bIos'),
     MONGO_URL: MONGO_URL,

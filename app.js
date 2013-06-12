@@ -7,8 +7,6 @@ var express          = require('express'),
     expressValidator = require('express-validator'),
     sessionStore     = require('./app/sessionStore').create(express);
 
-var STATIC_DIR = process.env.STATIC_DIR || (path.join(__dirname, 'uploads'));
-
 var app = module.exports = express();
 
 app.configure(function() {
@@ -33,7 +31,7 @@ app.configure(function() {
     app.use(app.router);
 
     app.use(express.static(path.join(__dirname, 'public')));
-    app.use(express.static(STATIC_DIR));
+    app.use(express.static(cfg.STATIC_DIR));
 });
 
 require('./app/auth/twitter')();
