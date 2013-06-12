@@ -235,10 +235,11 @@ AddPlaceView = Backbone.View.extend({
                     });
                 }
             });
+            self.$el.fadeOut('fast');
             this.reset();
+            $('input[type=radio]').attr('disabled', false);
             $('input[type=radio]').attr('checked', false);
             $('#coords').hide();
-            self.$el.fadeOut('fast');
             alertify.success('Lugar agregado exitosamente.');
         }
 

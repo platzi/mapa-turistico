@@ -48,6 +48,23 @@ module.exports = function (grunt) {
             },
             all: ['test/*.js']
         },
+        concat: {
+            css: {
+                src: [
+                    'public/components/normalize-css/normalize.css',
+                    'public/components/font-awesome/build/assets/font-awesome/css/font-awesome.css',
+                    'public/components/leaflet/dist/leaflet.css',
+                    'public/css/main.css'
+                ],
+                dest: 'public/css/app.css'
+            }
+        },
+        cssmin: {
+            css: {
+                src: 'public/css/app.css',
+                dest: 'public/css/app.min.css'
+            }
+        },
         stylus: {
             compile: {
                 options: {

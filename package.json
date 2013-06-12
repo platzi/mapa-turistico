@@ -26,6 +26,7 @@
     "grunt-contrib-watch": "~0.4.3",
     "grunt-mocha-cli": "~1.0.6",
     "grunt-contrib-jshint": "~0.5.4",
+    "grunt-contrib-concat": "*",
     "fluidity": "~0.1.5",
     "stylus": "~0.32.1",
     "supertest": "~0.6.0",

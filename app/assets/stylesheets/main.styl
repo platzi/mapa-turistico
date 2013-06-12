@@ -74,7 +74,7 @@ a
 
 #logintt
 	background darken(blanco, 2%)
-	border-radius 4px
+	border-radius 0px 0px 4px 4px
 	box-shadow 0 0 10px rgba(0, 0, 0, .3)
 	display none
 	padding 15px
@@ -423,13 +423,27 @@ a
 #menuContextual
 	display none
 	position absolute
+	border-radius 0px 0px 4px 4px
 	width 150px
 	background #f6f6f6
-	border 1px solid gris
+	box-shadow 0 0 10px rgba(0, 0, 0, .3)
 	z-index 9999999999
 
 	ul
 		list-style none
+		padding 5px
+		margin 0px
+
+		li
+			cursor pointer
+			padding 5px
+			font-size .8em
+			border-radius 5px
+
+			&:hover
+				background darken(blanco, 15%)
+				transition all 0.8s ease-out
+
 
 .leaflet-top
 	&.leaflet-center

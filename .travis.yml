@@ -9,5 +9,6 @@ notifications:
   email:
     recipients:
       - eduar.diaz37@gmail.com
+      - davidsingal@icloud.com
     on_success: always
     on_failure: always
