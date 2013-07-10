@@ -72,7 +72,7 @@ Una vez tengas hecho el Fork y tu copia funcione puedes **revisar la pestaña de
 
 Por otro lado los viernes a las 21:00 (hora en España) tenemos reuniones de los colaboradores donde puedes participar y conocer al resto de desarrolladores activos en el desarrollo del proyecto. Para participar en estas sesiones necesitas Google + y [añadirme](https://plus.google.com/u/0/111142569351915543389/posts).
 
-Si sólo quieres dar una opinión, comentario o sugerencia puedes enviar un correo a la dirección [davidsingal@icloud.com](mailto:davidsingal@icloud.com) o puedes usar la pestañita de Issues de Github (preferentemente).
+Si sólo quieres dar una opinión, comentario o sugerencia puedes usar la pestañita de Issues de Github.
 
 ## Recomendaciones antes de empezar
 
